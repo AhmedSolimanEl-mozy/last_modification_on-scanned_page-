@@ -1,0 +1,29 @@
+# Virtual environment
+bin/
+lib/
+lib64
+include/
+etc/
+opt/
+share/
+pyvenv.cfg
+__pycache__/
+*.pyc
+
+# Large model files
+publaynet_model/
+
+# Generated image/extraction dirs (reproducible from scripts)
+table_extraction/
+table_images/
+
+# Large model caches
+.consensus_cache/
+
+# Temp/log files
+*.log
+nohup.out
+
+# OS files
+.DS_Store
+Thumbs.db

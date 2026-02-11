@@ -1,0 +1,527 @@
+{"page": 1, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري", "numeric_data": null}
+{"page": 1, "type": "TEXT_ONLY", "sentence": "كة مساهمة مرصية )", "numeric_data": null}
+{"page": 1, "type": "TEXT_ONLY", "sentence": "القوائم المالية المستقلة ( الملخصة )", "numeric_data": null}
+{"page": 1, "type": "TEXT_ONLY", "sentence": "العام المايل المنتهي في", "numeric_data": null}
+{"page": 1, "type": "TEXT_ONLY", "sentence": "31 ديسمبر2024", "numeric_data": null}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "وجي تقرير", "numeric_data": {"عمود 2": "في"}, "column_headers": ["عمود 2"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "وهم", "numeric_data": null, "column_headers": ["عمود 2"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "ضي* وفي المصرية", "numeric_data": {"عمود 2": "لمستقلة"}, "column_headers": ["عمود 1", "عمود 2"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "المراجعة فتد ابدينا رايا", "numeric_data": {"عمود 1": "المالية القتوائم"}, "column_headers": ["عمود 1", "عمود 2"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "طبقا لمعابير 5١76‏", "numeric_data": {"عمود 1": "منها"}, "column_headers": ["عمود 1", "عمود 2"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "والتي ويونيو", "numeric_data": {"عمود 1": "استخرجت"}, "column_headers": ["عمود 1", "عمود 2"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "60 المؤرخ يتقريرنا", "numeric_data": null, "column_headers": ["عمود 1", "عمود 2"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "في 1 ديسمبر", "numeric_data": null, "column_headers": ["عمود 1", "عمود 2"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "حلي تفهم", "numeric_data": {"عمود 2": "اشمل", "مراجعتناء": "اعمال نطاق", "عمود 4": "7١175‏"}, "column_headers": ["عمود 2", "عمود 3", "مراجعتناء", "يقتضي", "عمود 4"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "الحصول", "numeric_data": {"عمود 3": "وكذا عن التاريخ", "مراجعتناء": "وم في المنتهية", "يقتضي": "ديسمسر"}, "column_headers": ["عمود 2", "عمود 3", "مراجعتناء", "يقتضي", "عمود 4"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "المالية", "numeric_data": {"عمود 2": "الكاملة", "عمود 3": "السنة للبنك"}, "column_headers": ["عمود 2", "عمود 3", "مراجعتناء", "يقتضي", "عمود 4"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "السنة", "numeric_data": {"عمود 3": "عن"}, "column_headers": ["عمود 2", "عمود 3", "مراجعتناء", "يقتضي", "عمود 4"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "المالية", "numeric_data": null, "column_headers": ["عمود 2", "عمود 3", "مراجعتناء", "يقتضي", "عمود 4"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "المخاسبين", "numeric_data": {"زميل مجمع": "جمعية"}, "column_headers": ["زميل مجمع"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "المصرية", "numeric_data": {"زميل مجمع": "زميل"}, "column_headers": ["زميل مجمع"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "والمراجعين", "numeric_data": {"زميل مجمع": "زميل جمعية"}, "column_headers": ["زميل مجمع"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "يك", "numeric_data": null, "column_headers": ["زميل مجمع"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "رقم المالية للرقابة", "numeric_data": null, "column_headers": ["زميل مجمع"]}
+{"page": 2, "type": "TABLE_BACKED", "sentence": "وشركاه", "numeric_data": {"زميل مجمع": "١‏"}, "column_headers": ["زميل مجمع"]}
+{"page": 2, "type": "TABLE_ANNOTATION", "sentence": "السنة المالية\tريامة\tمع\tالقوائم المالية", "numeric_data": null, "annotation_for": "في 1 ديسمبر"}
+{"page": 2, "type": "TABLE_ANNOTATION", "sentence": "الرجوع الي\tالقوائم", "numeric_data": null, "annotation_for": "المالية"}
+{"page": 2, "type": "TABLE_ANNOTATION", "sentence": "0«هخالد", "numeric_data": null, "annotation_for": "وشركاه"}
+{"page": 2, "type": "TABLE_ANNOTATION", "sentence": "ومستشاروت", "numeric_data": null, "annotation_for": "وشركاه"}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "كمال", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "محاسيون", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "\"شركة مساهمة", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "لاهلي المصري\tالسنة المالية", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "مساهمي\tمصرية\" \"البنك\"\tعن", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "الي السادة /\tمساهمة\tالمرفقة» وذلك", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "كة", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "-", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "وتقريرنا عليها.", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "0\tا", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "١‏", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "في\t١‏ اااي", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "القاهرة\tفي", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "الحسابات\tسس\tاوسا\tور", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "و\t)ا\tمراقبا", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "٠:‏\t.\tرن", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "4\t9\tا", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "58\tا", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "سس", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "1", "numeric_data": null}
+{"page": 2, "type": "TEXT_ONLY", "sentence": "محاسبون قانونيون", "numeric_data": null}
+{"page": 3, "type": "TABLE_REGION_TEXT", "sentence": "نقدية\tوارصدة لدي البنك المركزي\t0", "numeric_data": null}
+{"page": 3, "type": "TABLE_REGION_TEXT", "sentence": "في اطار نسبة الاحتياطي", "numeric_data": null}
+{"page": 3, "type": "TABLE_REGION_TEXT", "sentence": "ار صدة لدي البنوك (بالصافي)\t0\tلام سا", "numeric_data": null}
+{"page": 3, "type": "TABLE_REGION_TEXT", "sentence": "استثمارات مالية بالقيمة العادلة\tخلال الارباح\t0", "numeric_data": null}
+{"page": 3, "type": "TABLE_REGION_TEXT", "sentence": "من\tاو الخسائر", "numeric_data": null}
+{"page": 3, "type": "TABLE_REGION_TEXT", "sentence": "قروض وتسهيلات العملاء والبنوك\t0\t6م", "numeric_data": null}
+{"page": 3, "type": "TABLE_REGION_TEXT", "sentence": "(بالصافي)", "numeric_data": null}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "اصول اخري استثمارات", "numeric_data": {"عمود 2": "101"}, "column_headers": ["عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "عقارية", "numeric_data": {"عمود 2": "ةو"}, "column_headers": ["عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "الاصول اجمالي", "numeric_data": null, "column_headers": ["عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "اخري مخصصات", "numeric_data": {"عمود 2": "كل"}, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "التزامات مزايا التقاعد", "numeric_data": {"ايضاح": "0"}, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "اجمالي الالتزامات", "numeric_data": {"عمود 2": ".مه"}, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "حقوق الملكية", "numeric_data": null, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "راس المال", "numeric_data": null, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "احتياطيات", "numeric_data": null, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "١‏", "numeric_data": {"عمود 2": "00"}, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "الحالية للقرض من فروق القيمة الاسمية القيمة", "numeric_data": null, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "المسائد البنك المركزي", "numeric_data": null, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "احتياطيات القيمة العادلة خلال الدخل الشامل الاخر من", "numeric_data": null, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "ارباح", "numeric_data": {"ايضاح": "1"}, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "محتجزة", "numeric_data": null, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "اجمالي الالتزامات الملكية وحقوق", "numeric_data": null, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "وارتباطات", "numeric_data": {"عمود 2": "00110"}, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "التزامات عرضية", "numeric_data": null, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "التزامات", "numeric_data": {"عمود 1": "3", "عمود 2": "للحم"}, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_BACKED", "sentence": "مقابل خطابات ضمان واعتمادات مستندية اخري وارتباطات", "numeric_data": {"ايضاح": "0"}, "column_headers": ["عمود 1", "ايضاح", "عمود 2"]}
+{"page": 3, "type": "TABLE_ANNOTATION", "sentence": "1", "numeric_data": null, "annotation_for": "الاصول اجمالي"}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "0", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "١11‏", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "البنك الاهلي المصري (شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "ملخص القوائم المالية - المستخرجة من\tالقوائم المالية الكاملة للبنك", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "قائمة المركز المالي المستقلة\tديسمير", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "-\t4؟.؟", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "( جميع المبالغ الواردة بالمليون جنيه)", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "ااصول\tايضاح\t11", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "لم", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "لقف", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "0", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "الالتزنامات\tحقوق\tالملكية", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "الالتزامات", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "الايضاحات المرفقة من )١(‏\t)١5(‏\tمتممة للقوائم المالية\tمعها", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "3\t١‏", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "د\t-", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "3\tب _\t62م", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "الرئؤس\t1", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "ل", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "وائل ايي\tرئيس مجلس", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "محمو\tالاتربي", "numeric_data": null}
+{"page": 3, "type": "TEXT_ONLY", "sentence": "محمد كمال الدين يركات", "numeric_data": null}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "عائد القروض وااليرادات المشابهة", "numeric_data": {"عمود 2": "٨٤٩ ٥٦٩", "عمود 3": "٥٠٦ ١٨١"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "صافي الدخل من العائد", "numeric_data": {"عمود 2": "٨٧٢ ٥١٠", "عمود 3": "٧٧١ ١٤٩"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "ايرادات االتعاب والعموالت", "numeric_data": {"عمود 2": "٨٢ ٤٦٤", "عمود 3": "٨١ ٤٢٧"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "صافي الدخل من االتعاب والعموالت", "numeric_data": {"عمود 2": "٦٢ ٩٠٩", "عمود 3": "٨١ ٤٠٠"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "توزيعات ارباح", "numeric_data": {"عمود 2": "١ ٥٣٧", "عمود 3": "٢ ٨٣٠"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "صافي دخل المتاجرة", "numeric_data": {"عمود 2": "٢٢ ٩٤٤", "عمود 3": "(١ ٤٠٠)"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "ارباح استثمارات مالية", "numeric_data": {"عمود 2": "٣ ١١١", "عمود 3": "٢٠٤"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "عبء الخسائر االئتمانية المتوقعة", "numeric_data": {"عمود 2": "(٧٣ ٥١٩)", "عمود 3": "(١٣ ١١٩)"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "ايرادات تشغيل اخري", "numeric_data": {"عمود 2": "٧ ٦٨٠", "عمود 3": "٧١ ٠٠٠"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "ارباح العام قبل ضرائب الدخل", "numeric_data": {"عمود 2": "٣٢٢ ٤٦١", "عمود 3": "٦٢١ ٩٠٣"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "صافي ارباح العام", "numeric_data": {"عمود 2": "٣٣١ ٨٦٢", "عمود 3": "٠٧ ٦٨٦"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "نصيب السهم االساسي /المخفض", "numeric_data": null, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TABLE_BACKED", "sentence": "جنيه مصري", "numeric_data": {"عمود 1": "(٢١)", "عمود 2": "٥٧.٠", "عمود 3": "٠٤.٠"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 4, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 4, "type": "TEXT_ONLY", "sentence": "قائمة الدخل( االرباح او الخسائر) المستقلة - عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 4, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 4, "type": "TEXT_ONLY", "sentence": "ايضاح\t٤٢٠٢\t٣٢٠٢", "numeric_data": null}
+{"page": 4, "type": "TEXT_ONLY", "sentence": "االيضاحات المرفقة من(١) الي(٤١) متممة للقوائم المالية وتقرا معها", "numeric_data": null}
+{"page": 4, "type": "TEXT_ONLY", "sentence": "4", "numeric_data": null}
+{"page": 5, "type": "TABLE_BACKED", "sentence": "صافي التغير في القيمة العادلة الدوات حقوق الملكية", "numeric_data": {"عمود 3": "٨ ٨٣٠", "عمود 4": "٩ ٢٥٩"}, "column_headers": ["عمود 3", "عمود 4"]}
+{"page": 5, "type": "TABLE_BACKED", "sentence": "محول من احتياطي القيمة العادلة الي االرباح المحتجزة", "numeric_data": {"عمود 3": "(٩٠٧)", "عمود 4": "(١ ٩٨٤)"}, "column_headers": ["عمود 3", "عمود 4"]}
+{"page": 5, "type": "TABLE_BACKED", "sentence": "صافي التغيرفي الخسائراالئتمانية المتوقعة الدوات الدين", "numeric_data": {"عمود 3": "٠٨٣", "عمود 4": "٢ ٣٦٢"}, "column_headers": ["عمود 3", "عمود 4"]}
+{"page": 5, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 5, "type": "TEXT_ONLY", "sentence": "قائمة الدخل الشامل المستقلة - عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t( جميع المبالغ الواردة بالمليون جنيه)", "numeric_data": null}
+{"page": 5, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 5, "type": "TEXT_ONLY", "sentence": "٤٢٠٢\t٣٢٠٢", "numeric_data": null}
+{"page": 5, "type": "TEXT_ONLY", "sentence": "االيضاحات المرفقة من(١) الي(٤١) متممة للقوائم المالية وتقرا معها", "numeric_data": null}
+{"page": 5, "type": "TEXT_ONLY", "sentence": "5", "numeric_data": null}
+{"page": 6, "type": "TABLE_BACKED", "sentence": "صافي التدفقات النقدية الناتجة من انشطة التمويل", "numeric_data": {"عمود 4": "٩٧٤ ٥٦٧", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥": "٢٢ ٨٨٤"}, "column_headers": ["عمود 1", "عمود 2", "عمود 4", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥"]}
+{"page": 6, "type": "TABLE_BACKED", "sentence": "رصيد النقدية وما في حكمها في اول العام", "numeric_data": {"عمود 4": "٢٤٧ ٨١٠", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥": "٦٦٣ ٠٦٠"}, "column_headers": ["عمود 1", "عمود 2", "عمود 4", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥"]}
+{"page": 6, "type": "TABLE_BACKED", "sentence": "رصيد النقدية وما في حكمها في اخر العام", "numeric_data": {"عمود 4": "٧٤٥ ٥١٦", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥": "٢٤٧ ٨١٠"}, "column_headers": ["عمود 1", "عمود 2", "عمود 4", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥"]}
+{"page": 6, "type": "TABLE_BACKED", "sentence": "وتتمثل النقدية وما في حكمها فيما يلي-:", "numeric_data": null, "column_headers": ["عمود 1", "عمود 2", "عمود 4", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥"]}
+{"page": 6, "type": "TABLE_BACKED", "sentence": "نقدية وارصدة لدي البنك المركزي", "numeric_data": {"عمود 4": "٨٤٣ ٠٣٥", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥": "٣٧ ٧٣٨"}, "column_headers": ["عمود 1", "عمود 2", "عمود 4", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥"]}
+{"page": 6, "type": "TABLE_BACKED", "sentence": "ارصدة لدي البنوك", "numeric_data": {"عمود 4": "٣٩٨ ٢٩٤", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥": "٤٣٦ ٧٤٢"}, "column_headers": ["عمود 1", "عمود 2", "عمود 4", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥"]}
+{"page": 6, "type": "TABLE_BACKED", "sentence": "استثمارات مالية من خالل الدخل الشامل االخر(", "numeric_data": {"عمود 4": "اذون /وثائق خزانة)٢١٤ ٤٢٧", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥": "٢٨٥ ٦٥١"}, "column_headers": ["عمود 1", "عمود 2", "عمود 4", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥"]}
+{"page": 6, "type": "TABLE_BACKED", "sentence": "استثمارات مالية من خالل الدخل الشامل االخر(", "numeric_data": {"عمود 1": "اذون خزانة -", "عمود 2": "اكثر من ٣ شهور)", "عمود 4": "(٠٠٤ ٤٤١)", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥": "(٩٤٤ ٧٠٤)"}, "column_headers": ["عمود 1", "عمود 2", "عمود 4", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥"]}
+{"page": 6, "type": "TABLE_BACKED", "sentence": "اجمالي النقدية وما في حكمها", "numeric_data": {"عمود 4": "٧٤٥ ٥١٦", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥": "٢٤٧ ٨١٠"}, "column_headers": ["عمود 1", "عمود 2", "عمود 4", "صافي التدفقات النقدية(المستخدمة في) الناتجة من انشطة االستثمار(٩٦٤ ٠٤٧)١٤ ٤٤٥"]}
+{"page": 6, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 6, "type": "TEXT_ONLY", "sentence": "قائمة التدفقات النقدية المستقلة - عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 6, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 6, "type": "TEXT_ONLY", "sentence": "٤٢٠٢\t٣٢٠٢", "numeric_data": null}
+{"page": 6, "type": "TEXT_ONLY", "sentence": "االيضاحات المرفقة من(١) الي(٤١) متممة للقوائم المالية وتقرا معها", "numeric_data": null}
+{"page": 6, "type": "TEXT_ONLY", "sentence": "6", "numeric_data": null}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "الرصيد في اول  العام المالي ١  يناير ٣٢٠٢", "numeric_data": {"المال": "٠٥ ٠٠٠ ٥٢ ٠٠٠", "عمود 2": "١٣ ٨٢٥", "القيمة الحالية*": "٩٧ ٧٨٩", "فروع الخارج": "٠٨٨", "عمود 3": "٤٣ ٠٥٦", "عمود 4": "١ ٦٣٠ ٣٢٢ ١٨٠"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "صافي ارباح العام المالي المنتهي في ١٣  ديسمبر", "numeric_data": {"عمود 1": "٢٢٠٢   المحولة  لالرباح المحتجزة", "عمود 4": "(٤٣ ٠٥٦)٤٣ ٠٥٦-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "المحول الي االحتياطيات", "numeric_data": {"القيمة الحالية*": "-٦ ٧١٦-", "عمود 4": "(٦ ٧١٦)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "المحول الي االحتياطي التدعيمي - توزيعات مساهمين", "numeric_data": {"القيمة الحالية*": "-٤٢ ٦٨٠-", "عمود 4": "(٤٢ ٦٨٠)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "توزيعات ارباح المساهمين", "numeric_data": {"المال": "- -", "عمود 4": "(٦٤٥) (٦٤٥)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "توزيعات ارباح العاملين", "numeric_data": {"المال": "- -", "عمود 4": "(٤ ١٩٠) (٤ ١٩٠)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "المحول الي صندوق دعم و تطوير الجهاز المصرفي", "numeric_data": {"المال": "- -", "عمود 4": "(٦٤٣) (٦٤٣)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "المسدد تحت حساب راس المال اول العام", "numeric_data": {"المال": "٠٣ ٠٠٠-", "عمود 2": "(٠٣ ٠٠٠)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "زيادة راس المال", "numeric_data": {"المال": "(٥٢ ٠٠٠)", "عمود 4": "- -"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "فروق القيمة االسمية عن القيمة الحالية", "numeric_data": {"المال": "- -", "القيمة الحالية*": "(٣ ٣٤٩)", "عمود 4": "- (٣ ٣٤٩)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "صافي التغير في القيمة العادلة لبنود الدخل الشامل االخر", "numeric_data": {"القيمة الحالية*": "-٩ ٨٢٧-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "صافي التغير في الخسائر االئتمانية المتوقعة الدوات الدين", "numeric_data": {"القيمة الحالية*": "-٢ ٣٦٢-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "فروق ترجمة عمالت اجنبية فروع الخارج", "numeric_data": {"عمود 3": "-٤٧٣-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "صافي ارباح  العام", "numeric_data": {"المال": "- -", "عمود 3": "٠٧ ٦٨٦", "عمود 4": "- ٠٧ ٦٨٦"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "محول من احتياطي القيمة العادلة الي االرباح المحتجزة", "numeric_data": {"عمود 2": "(١ ٩٨٤)", "عمود 4": "-١ ٩٨٤-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "الرصيد في ١٣  ديسمبر ٣٢٠٢", "numeric_data": {"المال": "٢٤ ٣٣٧", "عمود 2": "٥٠١ ٠٠٠", "القيمة الحالية*": "٦٧ ٤٤٠", "فروع الخارج": "١ ٤٥٢", "عمود 3": "٠٧ ٦٨٦", "عمود 4": "١ ٩٨٤ ٧٩٢ ٦٠٢"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "الرصيد في اول  العام المالي ١  يناير ٤٢٠٢", "numeric_data": {"المال": "٢٤ ٣٣٧", "عمود 2": "٥٠١ ٠٠٠", "القيمة الحالية*": "٦٧ ٤٤٠", "فروع الخارج": "١ ٤٥٢", "عمود 3": "٠٧ ٦٨٦", "عمود 4": "١ ٩٨٤ ٧٩٢ ٦٠٢"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "صافي ارباح العام المالي المنتهي في ١٣  ديسمبر", "numeric_data": {"عمود 1": "٣٢٠٢   المحولة  لالرباح المحتجزة", "عمود 4": "(٠٧ ٦٨٦)٠٧ ٦٨٦-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "المحول الي االحتياطيات", "numeric_data": {"القيمة الحالية*": "-٣١ ٩٢٥-", "عمود 4": "(٣١ ٩٢٥)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "المحول الي االحتياطي التدعيمي - توزيعات مساهمين", "numeric_data": {"القيمة الحالية*": "-٠٥ ٣٧٦-", "عمود 4": "(٠٥ ٣٧٦)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "توزيعات ارباح المساهمين", "numeric_data": {"المال": "- -", "عمود 4": "(١٦٧) (١٦٧)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "توزيعات ارباح العاملين", "numeric_data": {"المال": "- -", "عمود 4": "(٦ ٦٠٥) (٦ ٦٠٥)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "المحول الي صندوق دعم و تطوير الجهاز المصرفي", "numeric_data": {"المال": "- -", "عمود 4": "(٦٠٧) (٦٠٧)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "المسدد تحت حساب راس المال اول العام", "numeric_data": {"عمود 2": "-٥٥ ٠٠٠(٥٥ ٠٠٠)"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "زيادة راس المال", "numeric_data": {"المال": "(٥٥ ٠٠٠)", "عمود 4": "- -"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "فروق القيمة االسمية عن القيمة الحالية", "numeric_data": {"فروع الخارج": "-٩٨ ٦٠٦-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "صافي التغير في القيمة العادلة لبنود الدخل الشامل االخر", "numeric_data": {"القيمة الحالية*": "-٠٢ ٠٢٢-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "صافي التغير في الخسائر االئتمانية المتوقعة الدوات الدين", "numeric_data": {"القيمة الحالية*": "-٠٨٣-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "فروق ترجمة عمالت اجنبية فروع الخارج", "numeric_data": {"عمود 3": "-٣٥٩-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "صافي ارباح  العام", "numeric_data": {"المال": "- -", "عمود 3": "٣٣١ ٨٦٢", "عمود 4": "- ٣٣١ ٨٦٢"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "محول من احتياطي القيمة العادلة الي االرباح المحتجزة", "numeric_data": {"عمود 2": "(٩٠٧)", "عمود 4": "-٩٠٧-"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TABLE_BACKED", "sentence": "الرصيد في ١٣  ديسمبر ٤٢٠٢", "numeric_data": {"المال": "١٧ ٦٢٨", "عمود 2": "٠٦١ ٠٠٠", "القيمة الحالية*": "٥٦١ ٠٥٦", "فروع الخارج": "٢ ٧٠٢", "عمود 3": "٣٣١ ٨٦٢", "عمود 4": "٩٠٧ ٣٣٥ ٠٦٦"}, "column_headers": ["عمود 1", "المال", "عمود 2", "القيمة الحالية*", "فروع الخارج", "عمود 3", "عمود 4"]}
+{"page": 7, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 7, "type": "TEXT_ONLY", "sentence": "قائمة التغير في حقوق الملكية المستقلة - عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 7, "type": "TEXT_ONLY", "sentence": "المسدد تحت\tفروق القيمة\tفروق ترجمة\tصافي ارباح", "numeric_data": null}
+{"page": 7, "type": "TEXT_ONLY", "sentence": "راس المال\tحساب راس\tاالحتياطيات\tاالسمية عن\tعمالت اجنبية\tالعام\tارباح محتجزة\tاالجمالي", "numeric_data": null}
+{"page": 7, "type": "TEXT_ONLY", "sentence": "*للقرض المساند من البنك المركزي", "numeric_data": null}
+{"page": 7, "type": "TEXT_ONLY", "sentence": "االيضاحات المرفقة من(١) الي(٤١) متممة للقوائم المالية وتقرا معها", "numeric_data": null}
+{"page": 7, "type": "TEXT_ONLY", "sentence": "7", "numeric_data": null}
+{"page": 8, "type": "TABLE_BACKED", "sentence": "االرباح المحتجزة", "numeric_data": {"عمود 2": "٩٠٧", "عمود 3": "1 4٩٨"}, "column_headers": ["عمود 2", "عمود 3"]}
+{"page": 8, "type": "TABLE_BACKED", "sentence": "التوزيعات:", "numeric_data": null, "column_headers": ["عمود 2", "عمود 3"]}
+{"page": 8, "type": "TABLE_BACKED", "sentence": "احتياطي قانوني", "numeric_data": {"عمود 2": "٣١ ٩٧٣", "عمود 3": "٧ ٦٥٠"}, "column_headers": ["عمود 2", "عمود 3"]}
+{"page": 8, "type": "TABLE_BACKED", "sentence": "احتياطي عام", "numeric_data": {"عمود 2": "٢١ ١٤٠", "عمود 3": "٦ ١٥٣"}, "column_headers": ["عمود 2", "عمود 3"]}
+{"page": 8, "type": "TABLE_BACKED", "sentence": "توزيعات لصندوق دعم وتطوير الجهاز المصرفي", "numeric_data": {"عمود 2": "١ ٨٣٣", "عمود 3": "٦٠٧"}, "column_headers": ["عمود 2", "عمود 3"]}
+{"page": 8, "type": "TABLE_BACKED", "sentence": "حصة العاملين", "numeric_data": {"عمود 2": "٣١ ٨٠٣", "عمود 3": "٦ ٦٠٥"}, "column_headers": ["عمود 2", "عمود 3"]}
+{"page": 8, "type": "TABLE_BACKED", "sentence": "توزيعات المساهمين*", "numeric_data": {"عمود 2": "٣٩ ٢٢٧", "عمود 3": "١٥ ٤٣٤"}, "column_headers": ["عمود 2", "عمود 3"]}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "قائمة التوزيعات المقترحة - عن العام المالي المنتهي في31 ديسمبر2024\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "ديسمبر31", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "2024\t2023", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "صافي ارباح العام133 2٨٦\t٧0 ٦٨٦", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "يخصم:", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "ارباح بيع اصول ثابتة محولة لالحتياطي الراسمالي طبقا ٠٤  من القانون", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "(1٩٨)\t(122)", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "٩٥١  لسنة ١٨٩١", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "االجمالي\t133 ٨٨٧\t٧2 0٥3", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "* تتمثل توزيعات المساهمين في االتي:", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "مليون جنيه قيمة المسدد للقرض المساند والذي تم استخدامه في زيادة راس مال البنك . -", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "٢   مليون جنيه قيمة المسدد للفائدة المستحقة للبنك عن حصيلة ال\t-", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "- مبلغ ٢٥٥٢٩   مليون جنيه والمقترح توجيهه لالحتياطي التدعيمي.", "numeric_data": null}
+{"page": 8, "type": "TEXT_ONLY", "sentence": "8", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في31 ديسمبر2024\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "1 -معلومات عامة", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "تاسس( البنك االهلي المصري) شركة مساهمة مصرية كبنك تجاري في25 يونيو1898 ويمارس نشاطه في ظل احكام قانون البنك المركزي والجهاز", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "المصرفي  رقم194 لسنة2020 في جمهورية مصر العربية ويقع المركز الرئيسي للبنك في محافظة القاهرة و يقدم البنك االهلي المصري خدمات", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "المؤسسات والتجزئة المصرفية واالستثمار في جمهورية مصر العربية والخارج من خالل مركزه الرئيسي بالقاهرة وعدد( ٧٦9\t) وحدات مصرفية", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "بالداخل ومكتب بكل من جوهانسبرج بجنوب افريقيا و دبي باالمارات العربية المتحدة  و اديس ابابا باثيوبيا و فرع بمدينة نيويورك بالواليات المتحدة", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "االمريكية و فرع بمدينة شنغهاي بالصين ويوظف288٣2 موظفا ٣1 ديسمبر2024 .", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "- تم اعتماد هذه القوائم المالية لالصدار من الجمعية العامة بتاريخ21 سبتمبر2025", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "2 - عرض القوائم المالية", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "وافقت الجمعية العامة بتاريخ1٣  اكتوبر2020 علي تعديل المادة( 25 ) من النظام االساسي  للبنك لتبدا السنة المالية من اول يناير و تنتهي في اخر", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "ديسمبر من كل سنة، وذلك بدء من1 يناير2022 .", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "3 -ملخص للسياسات المحاسبية الهامة", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "3 / 1 -اسس اعداد القوائم المالية المستقلة", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "يتم اعداد هذه القوائم المالية(المستقلة)\tلتعليمات  البنك المركزي المصري و المعتمدة من مجلس ادارته بتاريخ1٦  ديسمبر2008 وكذا وفقا", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "لمتطلبات المعيار الدولي للتقارير المالية( 9 )\tاالدوات المالية \" الصادرة من البنك المركزي  المصري بتاريخ2٦  فبراير", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "2019 , وقد قامت االدارة بتعديل بعض السياسات المحاسبية ويبين االيضاح التالي تفاصيل التغيرات في السياسات المحاسبية:", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "اعتبارا من اول يوليو2019 قام البنك بتطبيق المعيار الدولي للتقارير المالية رقم(\t) - االدوات المالية  الصادرة في يوليو2014 ، وتختلف متطلبات", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "وخاصة فيما يتعلق بالتبويب والقياس واالفصاح عن االصول المالية وبعض االلتزامات المالية.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "تصنيف االصول وااللتزامات المالية:", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "عند االعتراف االولي ، يتم تصنيف االصول المالية علي انها مصنفة  بالتكلفة المستهلكة ، او بالقيمة العادلة من خالل الدخل الشامل االخر او بالقيمة العادلة", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "من خالل االرباح اوالخسائر.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "•\tويتم تصنيف االصول المالية طبقا لنموذج االعمال الذي تدار به تلك االصول المالية وتدفقاتها النقدية التعاقدية.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "•\tويتم قياس االصل المالي بالتكلفة المستهلكة اذا استوفي الشرطين التاليين ولم يقاس بالقيمة العادلة من خالل االرباح اوالخسائر:", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "ا)\tيتم االحتفاظ باالصل ضمن نموذج اعمال يهدف الي االحتفاظ باالصول لتحصيل تدفقات نقدية تعاقدية.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "ب) ينشا عن الشروط التعاقدية لالصول المالية تدفقات نقدية في تواريخ محددة والتي تكون فقط مدفوعات اصل وفائدة علي المبلغ االصلي", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "مستحق السداد.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "•\tعند االعتراف االولي باالستثمار في االسهم غير المحتفظ بها للمتاجرة ، يجوز للبنك ان يختار بال رجعة قياس التغيرات الالحقة في القيمة العادلة", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "ضمن بنود الدخل الشامل االخر، و يتم اجراء هذا االختيار علي اساس  كل استثمار علي حده.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "•\tيتم تصنيف جميع االصول المالية االخري علي انها مصنفة بالقيمة العادلة من خالل االرباح اوالخسائر.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "باالضافة الي ذلك ، عند االعتراف االولي ، يمكن للبنك ان يحدد بال رجعه اصال ماليا", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "من خالل الدخل الشامل االخر ، علي انه بالقيمة العادلة من خالل االرباح والخسائر، في حال ان القيام بذلك سيلغي او يخفض بشكل كبير حالة عدم التطابق", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "المحاسبي التي قد تنشا خالفا", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "3 / 1 / 1 -تقييم نموذج االعمال", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "يقوم البنك باجراء تقييم هدف نموذج االعمال الذي يحتفظ فيه باالصل علي مستوي المحفظة الن هذا يعكس علي افضل وجه طريقة ادارة االعمال وتقديم", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "المعلومات الي االدارة و تشمل المعلومات التي يتم النظر فيها ما يلي:", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "ا) السياسات واالهداف المعلنة للمحفظة والية عمل تلك السياسات من الناحية العملية وخصوصا لمعرفة ما اذا كانت استراتيجية االدارة تركز علي", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "كسب ايرادات الفوائد التعاقدية او مطابقة مدة االصول المالية مع مدة االلتزامات المالية التي تمول تلك االصول او تحقيق التدفقات النقدية من خالل بيع", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "االصول.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "ب) كيفية تقييم اداء المحفظة ورفع تقرير بهذا الشان الي ادارة البنك.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "ج) المخاطر التي تؤثر علي اداء نموذج االعمال واالصول المالية المحتفظ بها في نموذج االعمال هذا وكيفية ادارة هذه المخاطر.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "د) عدد صفقات وحجم وتوقيت المبيعات في فترات سابقة، واسباب هذه المبيعات وتوقعاتها بشان نشاط المبيعات في المستقبل ومع ذلك ال يتم النظر في", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "من التقييم الشامل لكيفية تحقيق الهدف المعلن للبنك الدارة االصول المالية وكيفية", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "تحقيق التدفقات النقدية.", "numeric_data": null}
+{"page": 9, "type": "TEXT_ONLY", "sentence": "9", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "تقييم ما اذا كانت التدفقات النقدية التعاقدية هي مجرد دفعات للمبلغ االصلي والفائدة:", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "الغراض هذا التقييم ، يتم تعريف المبلغ االصلي علي انه القيمة العادلة لالصل المالي عند االعتراف االولي، و يتم تعريف الفائدة علي انها المقابل", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "المادي للقيمة الزمنية للنقود وللمخاطر االئتمانية المرتبطة بالمبلغ االصلي تحت السداد خالل فترة زمنية معينة ولمخاطر وتكاليف االقراض", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "االساسية االخري( مثل مخاطر السيولة والتكاليف االدارية) وكذلك هامش الربح.", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "في اطار التقييم ما اذا كانت  التدفقات النقدية التعاقدية هي مجرد مدفوعات للمبلغ االصلي والفائدة معا ، فان البنك ياخذ بعين االعتبار الشروط", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "التعاقدية لالداة وهذا يشمل التقييم اذا  كان االصل المالي يحتوي علي شروط تعاقدية قد تغير وقت ومبلغ التدفقات النقدية التعاقدية باعتبار ان ذلك لن", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "يستوفي هذا الشرط.", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "٣/ ١/ ٢ -اضمحالل قيمة االصول المالية", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "يستبدل المعيار الدولي للتقارير المالية رقم ٩ \" طبقا لتعليمات البنك المركزي الصادرة بتاريخ ٦٢  فبراير ٩١٠٢ \" نموذج الخسارة المحققة الوارد", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "بتعليمات  البنك المركزي الصادرة بتار يخ ٦١  ديسمبر ٨٠٠٢  بنموذج الخسارة االئتمانية المتوقعة كما ينطبق نموذج االضمحالل في القيمة الجديدة", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "علي كافة االصول المالية باالضافة الي بعض ارتباطات وتعهدات القروض وعقود الضمانات المالية و بموجب المعيار الدولي للتقارير المالية رقم", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "٩ ، ويتم االعتراف بخسائر االئتمان بصورة مبكرة اكثر مما كان الوضع عليه بموجب تعليمات البنك المركزي الصادرة بتاريخ ٦١  ديسمبر ٨٠٠٢.", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "يطبق البنك منهجا من ثالث مراحل لقياس الخسائر االئتمانية المتوقعة من االصول المالية المثبتة بالتكلفة المستهلكة وادوات الدين بالقيمة العادلة من", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "خالل الدخل الشامل االخر و تقوم االصول باالنتقال بين المراحل الثالث التالية استنادا", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "المرحلة االولي : خسارة االئتمان المتوقعة علي مدي ٢١ شهرا", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "تتضمن  المرحلة االولي االصول المالية عند االعتراف االولي والتي ال تنطوي علي زيادة جوهرية في مخاطر االئتمان منذ االعتراف االولي او", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "التي تنطوي علي مخاطر ائتمانية منخفضة نسبيا . بالنسبة لهذه االصول ، يتم االعتراف بخسائر ائتمانية متوقعة علي مدي\tوتحتسب الفائدة", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "علي اجمالي القيمة الدفترية لالصول( بدون خصم مخصص االئتمان) ، خسائر االئتمان المتوقعة علي مدي\tهي الخسائر االئتمانية", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "المتوقعة التي قد تنتج من حاالت اخفاق محتملة خالل\tمن تاريخ القوائم المالية.", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "المرحلة الثانية :خسارة االئتمان المتوقعة علي مدي الحياة  مع عدم اضمحالل قيمة االئتمان", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "تتضمن المرحلة الثانية االصول المالية التي بها زيادة جوهرية في مخاطر االئتمان منذ االعتراف االولي ولكن ال يوجد دليل موضوعي علي", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "اضمحالل القيمة، يتم االعتراف بخسائر ائتمان متوقعة علي مدي الحياة لتلك االصول ولكن يستمر احتساب الفائدة علي اجمالي القيمة الدفترية", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "لالصول، و تعتبر خسارة االئتمان المتوقعة علي مدي الحياة هي الخسائر االئتمانية المتوقعة الناتجة من جميع حاالت االخفاق الممكنة علي مدي", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "العمر المتوقع لالداة المالية.", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "المرحلة الثالثة : خسارة االئتمان المتوقعة علي مدي الحياة –اضمحالل قيمة االئتمان", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "تتضمن المرحلة الثالثة االصول المالية التي يوجد بها دليل موضوعي علي انخفاض القيمة في تاريخ القوائم المالية .", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "بالنسبة لهذه االصول يتم االعتراف بخسائر ائتمان متوقعة علي مدي الحياة و تهمش العوائد علي الحسابات المدرجة في هذة المرحلة ، ويستمر", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "التهميش طوال فترة بقاء الرصيد.", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "طبقا لتعليمات البنك المركزي المصري الصادرة في ٦٢  فبراير ٩١٠٢  فقد تم تطبيق المعيار الدولي للتقاريرIFRS ٩  ابتداء من اول يوليو", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "وقد قام البنك بقياس التاثير الناتج عن تطبيق المعيار علي النحو التالي وذلك طبقا ائتمان", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "واحتياطي المخاطر البنكية العام واحتياطي مخاطر معيار(٩) في احتياطي واحد باسم احتياطي المخاطر العام وبلغ رصيدة في ١٣  ديسمبر ٤٢٠٢", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "مبلغ ٣٩٧٣ مليون جنية.", "numeric_data": null}
+{"page": 10, "type": "TEXT_ONLY", "sentence": "10", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "٣/ ٢  - االصول المالية", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "٣/ ٢/ ١  - السياسات المالية", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "يقوم البنك بتبويب اصوله المالية بين المجموعات التالية : اصول مالية يتم قياسها بالتكلفة المستهلكة ، اصول مالية بالقيمة العادلة من خالل الدخل الشامل", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "االخر، اصول مالية بالقيمة العادلة من خالل االرباح اوالخسائر ويستند التصنيف بشكل عام الي نموذج االعمال الذي تدار به االصول المالية وتدفقاتها", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "النقدية التعاقدية.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "٣/ ٢/ ١/ ١  -االصول المالية  بالتكلفة المستهلكة", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "يحتفظ باالصل المالي ضمن نموذج االعمال لالصول المالية المحتفظ بها لتحصيل التدفقات النقدية التعاقدية.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "الهدف من نموذج االعمال هو االحتفاظ باالصول المالية لتحصيل التدفقات النقدية التعاقدية المتمثلة في اصل مبلغ االستثمار والعوائد ، البيع هو حدث", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "عرضي استثنائي بالنسبة لهدف هذا النموذج وبالشروط الواردة في المعيار والمتمثلة في:", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•وجود تدهور في القدرة االئتمانية لمصدر االداة المالية.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "• اقل مبيعات من حيث الدورية والقيمة.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•ان تتم عملية توثيق واضحة ومعتمدة لمبررات كل عملية بيع ومدي توافقها مع متطلبات المعيار.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "٣/ ٢/ ١/ ٢ -االصول المالية  بالقيمة العادلة من خالل الدخل الشامل االخر", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•\tيحتفظ باالصل المالي ضمن نموذج االعمال لالصول المالية المحتفظ بها لتحصيل التدفقات النقدية التعاقدية والبيع.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•\tمن تحصيل التدفقات النقدية التعاقدية والبيع يتكامالن لتحقيق هدف النموذج.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•مبيعات مرتفعة من حيث الدورية والقيمة بالمقارنة مع نموذج اعمال المحتفظ به لتحصيل التدفقات النقدية التعاقدية.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "٣/ ٢/ ١/ ٣  -االصول المالية  بالقيمة العادلة من خالل االرباح اوالخسائر", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•\tيحتفظ باالصل المالي ضمن نماذج اعمال اخري تتضمن المتاجرة ، ادارة االصول المالية علي اساس القيمة العادلة ، تعظيم التدفقات النقدية عن طريق", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•\tهدف نموذج االعمال ليس االحتفاظ باالصل المالي لتحصيل التدفقات النقدية التعاقدية او المحتفظ به لتحصيل التدفقات النقدية التعاقدية والبيع.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•تحصيل التدفقات النقدية التعاقدية حدث عرضي بالنسبة لهدف النموذج.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "وتتمثل خصائص نموذج االعمال فيما يلي:", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•\tهيكلة مجموعة من االنشطة مصممة الستخراج مخرجات محددة.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•\tكامل لنشاط محدد(مدخالت - انشطة - مخرجات).", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "•يمكن ان يتضمن نموذج االعمال الواحد نماذج اعمال فرعية.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "٣/ ٣ -المقاصة بين االدوات المالية", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "يتم اجراء المقاصة بين االصول وااللتزامات المالية اذا كان هناك حق قانوني قابل للنفاذ الجراء المقاصة بين المبالغ المعترف بها وكانت هناك النية", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "الجراء التسوية علي اساس صافي المبالغ، او الستالم االصل وتسوية االلتزام في ان واحد.", "numeric_data": null}
+{"page": 11, "type": "TEXT_ONLY", "sentence": "11", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في31 ديسمبر2024\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "3 / 4 -اضمحالل االصول المالية", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "3 / 4 / 1 - السياسة المالية", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "يقوم البنك بمراجعة لكافة اصوله المالية فيما عدا االصول المالية التي يتم قياسها بالقيمة العادلة من خالل االرباح او الخسائر لتقدير مدي وجود", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "اضمحالل في قيمتها كما هو موضح ادناه.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "يتم تصنيف االصول المالية في تاريخ القوائم المالية ضمن ثالث مراحل:", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tالمرحلة االولي:\tفي مخاطر االئتمان منذ تاريخ االعتراف االولي ، ويتم حساب الخسارة", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "االئتمانية المتوقعة لها لمدة ٢١  شهر من تاريخ القوائم المالية.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tالمرحلة الثانية :\tفي مخاطر االئتمان منذ االعتراف االولي او تاريخ قيد التوظيفات، ويتم", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "حساب الخسارة االئتمانية المتوقعة لها علي مدي حياة االصل.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tالمرحلة الثالثة :\tفي قيمتها والذي يستوجب حساب الخسارة االئتمانية المتوقعة لها علي مدي حياة", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "االصل.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "يتم قياس الخسائر االئتمانية وخسائر االضمحالل في القيمة المتعلقة باالدوات المالية علي النحو التالي:", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tيتم تصنيف االداة المالية منخفضة المخاطر عند االعتراف االولي في المرحلة االولي ويتم مراقبة مخاطر االئتمان بشكل مستمر من قبل", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "ادارة مخاطر االئتمان بالبنك.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tاذا تم تحديد ان هناك زيادة جوهرية في خطر االئتمان منذ االعتراف االولي ، يتم نقل االداة المالية الي المرحلة الثانية حيث ال يتم بعد", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "اعتبارها مضمحلة  في  هذه المرحلة.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tفي حالة وجود مؤشرات عن اضمحالل قيمة االداة المالية فيتم نقلها للمرحلة الثالثة.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tيتم تصنيف االصول المالية التي انشاها او اقتناها البنك وتتضمن معدل مرتفع من خطر االئتمان عن معدالت البنك لالصول المالية", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "منخفضة المخاطر عند االعتراف االولي بالمرحلة الثانية مباشرة، وبالتالي يتم قياس خسائراالئتمان المتوقعة بشانها علي اساس الخسائر", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "االئتمانية المتوقعة علي مدي حياة االصل.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "3 / 4 / 1 / 1 -الزيادة الجوهرية في مخاطر االئتمان", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "يعتبر البنك ان االداة المالية قد شهدت زيادة جوهرية في خطراالئتمان عند تحقق واحد او اكثر  من المعايير الكمية والنوعية وكذلك العوامل المتعلقة", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "بالتوقف عن السداد مثل: تخفيض التصنيف االئتماني للمقترض او يوجد تغيرات سلبية جوهرية في اداء وسلوك المقترض مثل التاخر عن سداد", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "االقساط او غيرها.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "الترقي بين المراحل( 3.2.1 )", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "الترقي من المرحلة الثانية الي المرحلة االولي:", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "ال يتم نقل االصل المالي من المرحلة الثانية الي المرحلة االولي اال بعد استيفاء كافة العناصر الكمية والنوعية الخاصة بالمرحلة االولي وسداد كامل", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "المتاخرات من االصل المالي والعوائد وبعد مرور فترة3 اشهر من االنتظام في السداد.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "الترقي من المرحلة الثالثة الي المرحلة الثانية:", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "ال يتم نقل االصل المالي من المرحلة الثالثة الي المرحلة الثانية بما في ذلك عمليات الجدولة اال بعد استيفاء كافة الشروط التالية:", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tاستيفاء كافة العناصر الكمية والنوعية الخاصة بالمرحلة الثانية.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tسداد ٥٢ % من ارصدة االصل المالي المستحقة  كحد ادني بما في ذلك العوائد المستحقة المجنبة /المهمشة.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tاالنتظام في سداد اصل مبلغ االصل المالي وعوائده المستحقة لمدة ٢١ شهرا  متصلة علي االقل.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "باالشارة الي خطاب البنك المركزي المصري الصادر في14 ديسمبر2021 والتعديالت الالحقة له", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tيتم ادراج العمالء ضمن المرحلة الثالثة في حالة عدم االلتزام بالشروط التعاقدية في حالة وجود مستحقات تساوي او تزيد عن ١80 يوم", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "متصلة( وذلك بدال من90 يوم وفقا والتعليمات الحالية)", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tبالنسبة للعمالء السابق ادراجهم بالمرحلة الثالثة لوجود مستحقات تساوي او تزيد عن90 يوم يتم ترقيتهم الي المرحلة الثانية اذا كانت", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "المستحقات تقل عن ١80 يوم ,مع استمرار االحتفاظ بالخسائر االئتمانية المتوقعة المحتسبة لهؤالء العمالء بالمرحلة الثالثة.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "•\tيتم ترقية العمالء من المرحلة الثالثة الي المرحلة الثانية في حالة استيفاء كافة العناصر الكمية والنوعية الخاصة بالمرحلة الثانية وسداد", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "العوائد المستحقة/ المهمشة(حسب االحوال) واالنتظام في السداد لمدة90 يوم.", "numeric_data": null}
+{"page": 12, "type": "TEXT_ONLY", "sentence": "12", "numeric_data": null}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "بطاقات ائتمان", "numeric_data": {"عمود 3": "٤٢ ٩٨٩", "عمود 4": "٧١ ٣٤٣"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "حسابات جارية مدينة", "numeric_data": {"عمود 3": "٠١ ١٩٢", "عمود 4": "٩ ٣١٩"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "قروض شخصية", "numeric_data": {"عمود 3": "٥٩٢ ٦٦٨", "عمود 4": "٠٤٢ ٥٥٤"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "قروض سيارات", "numeric_data": {"عمود 3": "٣ ٣٩١", "عمود 4": "٣ ٠٤٧"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "قروض عقارية", "numeric_data": {"عمود 3": "٢٢ ٩٦٥", "عمود 4": "٠٢ ٧٥٢"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "اجمالي", "numeric_data": {"عمود 1": "(١)", "عمود 3": "٦٥٣ ٨٠٩", "عمود 4": "١٩٢ ٨٠٧"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "حسابات جارية مدينة", "numeric_data": {"عمود 3": "٢ ٥٥١ ٤٠٥", "عمود 4": "١ ٥٢١ ٧١٨"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "قروض مباشرة", "numeric_data": {"عمود 3": "١ ١٤٠ ١٨٨", "عمود 4": "٣٦٦ ٨٣٩"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "قروض مشتركة", "numeric_data": {"عمود 3": "٧٨٣ ٢٢٤", "عمود 4": "٣٢٣ ٣٥٥"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "قروض بنوك", "numeric_data": {"عمود 3": "٦ ٠١٣", "عمود 4": "١ ٨٧٨"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "اجمالي", "numeric_data": {"عمود 1": "(٢)", "عمود 3": "٣ ١٩٥ ٧١١", "عمود 4": "٢ ٥١١ ٦٨١"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "ارصدة متداولة", "numeric_data": {"عمود 3": "٢٢٧ ٣٩٩", "عمود 4": "٩٦٤ ٨١٩"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "ارصدة غير متداولة", "numeric_data": {"عمود 3": "٣ ٩٩٠ ٩٤٢", "عمود 4": "١ ٥٤٨ ٧٩٣"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "مؤسسات وبنوك", "numeric_data": null, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "الرصيد في اول العام", "numeric_data": {"عمود 3": "٢٧ ٨٢٠", "عمود 4": "٤٥ ٩٦٧"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "عبء الخسائر االئتمانية المتوقعة", "numeric_data": {"عمود 3": "٩٢ ٧٣٨", "عمود 4": "٦١ ٢٦٩"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "فروق تقييم عمالت اجنبية( - / +", "numeric_data": {"عمود 3": ")٧ ٥١٠", "عمود 4": "١ ٦٣٩"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "الرصيد في اول العام", "numeric_data": {"عمود 3": "٤ ٠٦٤", "عمود 4": "١ ١٤٧"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TABLE_BACKED", "sentence": "عبء الخسائر االئتمانية المتوقعة", "numeric_data": {"عمود 3": "٩١٦", "عمود 4": "٣ ٩٢١"}, "column_headers": ["عمود 1", "عمود 3", "عمود 4"]}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "٩٢ يونيو", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "٤ - استثمارات مالية بالقيمة العادلة من خالل االرباح /الخسائر\t١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "٤٢٠٢\t٣٢٠٢", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "اسهم\t٩ ٧٣٨\t٥ ٢٤٣", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "وثائق صناديق استثمار\t٩٤١\t٣٢١", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "محافظ اخري\t٢ ٢٧٩\t٣ ٠٣٠", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "٢١ ٨٥٩\t٨ ٥٩٤", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "٥ - قروض وتسهيالت العمالء والبنوك(بالصافي)", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "٤٢٠٢\t٣٢٠٢", "numeric_data": null}
+{"page": 13, "type": "TEXT_ONLY", "sentence": "13", "numeric_data": null}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "قروض شخصية", "numeric_data": {"٢": "٥٤٩", "١": "١ ٢٥٣"}, "column_headers": ["٢", "١"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "قروض سيارات", "numeric_data": {"٢": "٣٨١", "١": "٥٥١"}, "column_headers": ["٢", "١"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "قروض عقارية", "numeric_data": {"٢": "٢ ٧٩٣", "١": "٢ ٠٢٦"}, "column_headers": ["٢", "١"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "حسابات جارية مدينة", "numeric_data": {"٢": "٢ ٧٥٢", "١": "٥٢ ٢٢١"}, "column_headers": ["٢", "١"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "قروض مباشرة", "numeric_data": {"٢": "٨٨ ٦٣٣", "١": "٥٣ ٠٧٦"}, "column_headers": ["٢", "١"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "قروض مشتركة", "numeric_data": {"٢": "٦١ ٢٢٠", "١": "١١ ٣١٢"}, "column_headers": ["٢", "١"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "قروض بنوك", "numeric_data": {"٢": "٤١٤", "١": "٣٢"}, "column_headers": ["٢", "١"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "اذون الخزانه", "numeric_data": {"٤٢٠٢": "٢١٤ ٤٢٧", "٣٢٠٢": "٢١٤ ٦٥١"}, "column_headers": ["عمود 1", "٤٢٠٢", "٣٢٠٢"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "اسهم", "numeric_data": {"٤٢٠٢": "٧٣ ٥٠٠", "٣٢٠٢": "٨٢ ٩٩٩"}, "column_headers": ["عمود 1", "٤٢٠٢", "٣٢٠٢"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "ادوات دين", "numeric_data": {"٤٢٠٢": "٠٥٦ ٤٦٧", "٣٢٠٢": "٧٢ ٥٣٦"}, "column_headers": ["عمود 1", "٤٢٠٢", "٣٢٠٢"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "وثائق خزانة", "numeric_data": {"٤٢٠٢": "٢٢٢ ٩٨٤", "٣٢٠٢": "٠٧١ ٠٠٠"}, "column_headers": ["عمود 1", "٤٢٠٢", "٣٢٠٢"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "٦/١ اذون خزانة", "numeric_data": {"٤٢٠٢": "٤٢٠٢", "٣٢٠٢": "٣٢٠٢"}, "column_headers": ["عمود 1", "٤٢٠٢", "٣٢٠٢"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "اذون الخزانة -", "numeric_data": {"عمود 1": "(١٩) يوم", "٤٢٠٢": "٢١ ٥٩٩", "٣٢٠٢": "٨١ ٧٥٧"}, "column_headers": ["عمود 1", "٤٢٠٢", "٣٢٠٢"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "اذون الخزانة -", "numeric_data": {"عمود 1": "(٢٨١) يوم", "٤٢٠٢": "٠٢ ٨٣٥", "٣٢٠٢": "٠٦ ٦٨٦"}, "column_headers": ["عمود 1", "٤٢٠٢", "٣٢٠٢"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "اذون الخزانة -", "numeric_data": {"عمود 1": "(٣٧٢) يوم", "٤٢٠٢": "٦٦ ٧١٧", "٣٢٠٢": "٤٥ ٢٩٣"}, "column_headers": ["عمود 1", "٤٢٠٢", "٣٢٠٢"]}
+{"page": 14, "type": "TABLE_BACKED", "sentence": "الصافي", "numeric_data": {"٤٢٠٢": "٢١٤ ٤٢٧", "٣٢٠٢": "٢١٤ ٦٥١"}, "column_headers": ["عمود 1", "٤٢٠٢", "٣٢٠٢"]}
+{"page": 14, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 14, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 14, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 14, "type": "TEXT_ONLY", "sentence": "٦ -استثمارات مالية بالقيمة العادلة من خالل  الدخل الشامل االخر", "numeric_data": null}
+{"page": 14, "type": "TEXT_ONLY", "sentence": "* تبلغ قيمة اذون الخزانة المرهونة مبلغ ١٤٢  مليار جنيه في ١٣  ديسمبر ٤٢٠٢ .", "numeric_data": null}
+{"page": 14, "type": "TEXT_ONLY", "sentence": "14", "numeric_data": null}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "اسهم مدرجة بالسوق", "numeric_data": {"٤٢٠٢": "٢١ ٨٣٣", "٣٢٠٢": "٩ ٤٦٤"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "اسهم غير مدرجة بالسوق", "numeric_data": {"٤٢٠٢": "٤٢ ٧٦٦", "٣٢٠٢": "٩١ ٥٣٥"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "وثائق صناديق استثمار -للبنك منشئ الصندوق", "numeric_data": {"٤٢٠٢": "٦٨٨", "٣٢٠٢": "٠٥٨"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "وثائق صناديق استثمار -شركات", "numeric_data": {"٤٢٠٢": "٨٤٦", "٣٢٠٢": "٨٨٣"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "سندات حكومية", "numeric_data": {"٤٢٠٢": "٦٢٦ ٩٠٥", "٣٢٠٢": "١ ٥٩٠"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "سندات شركات", "numeric_data": {"٤٢٠٢": "٣٢ ٩٣٧", "٣٢٠٢": "٥٢ ٨٣٥"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "صكوك", "numeric_data": {"٤٢٠٢": "٦٦٤", "٣٢٠٢": "٢٧٩"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "وثائق خزانة", "numeric_data": {"٤٢٠٢": "٢٢٢ ٩٨٤", "٣٢٠٢": "٠٧١ ٠٠٠"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "سندات بنوك", "numeric_data": {"٤٢٠٢": "٠٥", "٣٢٠٢": "٠٣"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "مدرجة في السوق", "numeric_data": {"٤٢٠٢": "٠٥٦ ٤٦٧", "٣٢٠٢": "٧٢ ٥٣٦"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "غير مدرجة في السوق", "numeric_data": {"٤٢٠٢": "٢٢٢ ٩٨٤", "٣٢٠٢": "٠٧١ ٠٠٠"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "سندات حكومية", "numeric_data": {"٤٢٠٢": "١ ١٢٤ ٩٤١", "٣٢٠٢": "١ ٩٨٣ ٩١٢"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "الصافي", "numeric_data": {"٤٢٠٢": "١ ٥٩٣ ٢٨٧", "٣٢٠٢": "١ ٣٧٣ ٥٤١"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "مدرجة في السوق", "numeric_data": {"٤٢٠٢": "٢٣٧ ٠٨١", "٣٢٠٢": "٦٢٨ ٨٠١"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_BACKED", "sentence": "غير مدرجة في السوق", "numeric_data": {"٤٢٠٢": "٨٨٦ ٩٦٩", "٣٢٠٢": "٣٦٥ ١١١"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 15, "type": "TABLE_ANNOTATION", "sentence": "٣٧٨ ٣٥٢\t٧٩١ ٥٣٦", "numeric_data": null, "annotation_for": "غير مدرجة في السوق"}
+{"page": 15, "type": "TABLE_ANNOTATION", "sentence": "١ ١٢٤ ٩٤١\t١ ٩٨٣ ٩١٢", "numeric_data": null, "annotation_for": "غير مدرجة في السوق"}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "٩٢ يونيو", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "٦/٢ ادوات حقوق الملكية:", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "٨٣ ٩٣٥\t٠٣ ٧٣٢", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "٦/٣   ادوات دين :", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "٧ - استثمارات مالية في ادوات دين بالتكلفة المستهلكة", "numeric_data": null}
+{"page": 15, "type": "TEXT_ONLY", "sentence": "15", "numeric_data": null}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ودائع عمالء -حسابات جارية", "numeric_data": {"٤٢٠٢": "١ ٧٦٢ ٨٩٩", "٣٢٠٢": "٠٩٧ ١٥٨"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ودائع توفير", "numeric_data": {"٤٢٠٢": "٨٥٣ ٩٤٩", "٣٢٠٢": "٤٣٣ ٤٥١"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ودائع الجل وباخطار", "numeric_data": {"٤٢٠٢": "٠١٤ ٧٨٠", "٣٢٠٢": "٦٦٢ ٤٥٦"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "شهادات ادخار وايداع", "numeric_data": {"٤٢٠٢": "٢ ٤٢٩ ٢٩٧", "٣٢٠٢": "٢ ٠٤٣ ٥٧٩"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ودائع اخري", "numeric_data": {"٤٢٠٢": "٠١٩", "٣٢٠٢": "٩٦٥"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ودائع مؤسسات", "numeric_data": {"٤٢٠٢": "١ ٣٦٦ ٥٠٩", "٣٢٠٢": "١ ٨٨١ ٧٥٩"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ودائع افراد", "numeric_data": {"٤٢٠٢": "٣ ٨٩٢ ١٣٨", "٣٢٠٢": "٢ ٤٤٥ ٦٤٢"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ارصدة بدون عائد", "numeric_data": {"٤٢٠٢": "١ ١١١ ٣٦٢", "٣٢٠٢": "٣١٧ ٩٥٣"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ارصدة ذات عائد متغير", "numeric_data": {"٤٢٠٢": "٤١ ٩٤٤", "٣٢٠٢": "١ ٨٧٦"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ارصدة ذات عائد ثابت", "numeric_data": {"٤٢٠٢": "٣ ٧٣٨ ٤٢٠", "٣٢٠٢": "٣ ٨١٠ ٦٦١"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ارصدة متداولة", "numeric_data": {"٤٢٠٢": "٢ ٥٩٦ ٨٥٧", "٣٢٠٢": "١ ٩٥٦ ٠٢٠"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ارصدة غير متداولة", "numeric_data": {"٤٢٠٢": "٢ ٦٦٢ ٨٧٩", "٣٢٠٢": "٢ ٤٧٠ ٣٨١"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "الشرق االوسط", "numeric_data": {"٤٢٠٢": "٦٥٥ ٤٦٢", "٣٢٠٢": "٧٠٢ ٢٨٠"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "اوروبا", "numeric_data": {"٤٢٠٢": "٠٦١ ٩٩٩", "٣٢٠٢": "٩٢١ ٠١٩"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "اسيا", "numeric_data": {"٤٢٠٢": "٤٥ ٦٦٢", "٣٢٠٢": "٥٣ ١٨٩"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "امريكا الشمالية", "numeric_data": {"٤٢٠٢": "١ ٥٢٥", "٣٢٠٢": "١ ٥٤٥"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "االجمالي", "numeric_data": {"٤٢٠٢": "٣٧٧ ٤٥٠", "٣٢٠٢": "٤٧٣ ٨١٥"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ارصدة متداولة", "numeric_data": {"٤٢٠٢": "٣٦٣ ٣٦٧", "٣٢٠٢": "٢١٢ ٩٣٧"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TABLE_BACKED", "sentence": "ارصدة غير متداولة", "numeric_data": {"٤٢٠٢": "٩٠٤ ١٩٢", "٣٢٠٢": "١٦١ ٩٧٧"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 16, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 16, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 16, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 16, "type": "TEXT_ONLY", "sentence": "٨ -ودائع العمالء", "numeric_data": null}
+{"page": 16, "type": "TEXT_ONLY", "sentence": "٤ ٢٦٩ ٦٣٧\t٣ ٣٣٧ ٣٠٢", "numeric_data": null}
+{"page": 16, "type": "TEXT_ONLY", "sentence": "٣٧٧ ٤٥٠\t٤٧٣ ٨١٥", "numeric_data": null}
+{"page": 16, "type": "TEXT_ONLY", "sentence": "* تبلغ قيمة اذون الخزانة المرهونة مبلغ ١٤٢  مليار جنيه في ١٣  ديسمبر ٤٢٠٢ .", "numeric_data": null}
+{"page": 16, "type": "TEXT_ONLY", "sentence": "16", "numeric_data": null}
+{"page": 17, "type": "TABLE_BACKED", "sentence": "احتياطي قانوني", "numeric_data": {"٤٢٠٢": "٢٢ ٥٠٧", "٣٢٠٢": "٥١ ٩٤٦"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 17, "type": "TABLE_BACKED", "sentence": "احتياطي عام", "numeric_data": {"٤٢٠٢": "٢ ٣٨٧", "٣٢٠٢": "٩٥٧"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 17, "type": "TABLE_BACKED", "sentence": "احتياطي راسمالي", "numeric_data": {"٤٢٠٢": "٩٧٣", "٣٢٠٢": "٧٥٢"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 17, "type": "TABLE_BACKED", "sentence": "احتياطي خاص", "numeric_data": {"٤٢٠٢": "٧٠١", "٣٢٠٢": "٧٠١"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 17, "type": "TABLE_BACKED", "sentence": "احتياطي مخاطر بنكية عام", "numeric_data": {"٤٢٠٢": "٢ ٩٢٠", "٣٢٠٢": "٢ ٩٢٠"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 17, "type": "TABLE_BACKED", "sentence": "احتياطي مخاطر عام", "numeric_data": {"٤٢٠٢": "٣ ٣٩٧", "٣٢٠٢": "٣ ٣٩٧"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 17, "type": "TABLE_BACKED", "sentence": "فروق ترجمة عمالت اجنبية  فروع الخارج", "numeric_data": {"٤٢٠٢": "٢ ٧٠٢", "٣٢٠٢": "١ ٤٥٢"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 17, "type": "TABLE_BACKED", "sentence": "اجمالي االحتياطيات", "numeric_data": {"٤٢٠٢": "٤٣ ٣٠٠", "٣٢٠٢": "٣٢ ٨٤٨"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 17, "type": "TABLE_BACKED", "sentence": "احتياطيات القيمة العادلة  من خالل الدخل الشامل االخر*", "numeric_data": {"٤٢٠٢": "٠٤ ٠٣٠", "٣٢٠٢": "٠٢ ٩٣١"}, "column_headers": ["٤٢٠٢", "٣٢٠٢"]}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في ١٣  ديسمبر ٤٢٠٢\t(جميع المبالغ الواردة بالمليون جنيه )", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "٠١ - راس المال  المدفوع", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "تمت موافقة الجمعية العامة غير العادية بتاريخ ٥٢  ديسمبر ٤١٠٢  علي زيادة راس المال المصرح به ليصبح ٠٠٠ ٠٣  مليون جنيه وزيادة راس المال المدفوع", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "بمبلغ ٢٥٧ ٥  مليون جنيه تحويال ٠٠٠ ٥١  مليون جنيه موزع علي ٠٠٠ ٥١   مليون سهم قيمة السهم االسمية واحد جنيه مصري مسددة", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "بالكامل . وكذا تعديل النظام االساسي بهذه الزيادة ، كما تم النشر في جريدة الوقائع المصرية في ٩١  يناير ٥١٠٢  و التاشير في سجل البنوك في ٠٢  يناير ٥١٠٢.", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "كما تمت موافقة الجمعية العامة غير العادية بتاريخ ٦٢  فبراير ٧١٠٢  علي زيادة راس المال المصرح به ليصبح ٠٠٠ ٠٥  مليون جنيه و زيادة راس المال المدفوع", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "بمبلغ ٠٥٦ ٣١  مليون جنيه تحويال من االحتياطيات ليصبح ٠٥٦ ٨٢    مليون جنيه موزع ٠٥٦ ٨٢   مليون سهم قيمة السهم االسمية واحد جنيه مصري مسددة", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "بالكامل وكذا تعديل النظام االساسي بهذه الزيادة،  كما تم النشر في جريدة الوقائع المصرية في ٨١  ابريل ٧١٠٢  والتاشير في السجل التجاري للبنك  في ٠٢  ابريل", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "٧١٠٢ بزيادة راس المال.", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "كما تمت موافقة الجمعية العامة غير العادية بتاريخ ٣١  فبراير ٨١٠٢  علي زيادة راس المال المصدر والمدفوع بمبلغ ٠٥٣ ٦  مليون جنيه تحويال", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "التدعيمي ليصبح ٠٠٠ ٥٣  مليون جنيه وكذا تعديل النظام االساسي بهذه الزيادة  ، كما تم النشر في جريدة الوقائع المصرية في ١  ابريل ٨١٠٢   والتاشير في السجل", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "التجاري للبنك في ٤  ابريل ٨١٠٢.", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "كما تمت موافقة الجمعية العامة غير العادية بتاريخ ٦١  ابريل ٠٢٠٢  علي زيادة راس المال المصدر والمدفوع بمبلغ ٠٠٠ ٥١  مليون جنيه تحويال", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "العام والتدعيمي ليصبح ٠٠٠ ٠٥  مليون جنيه وكذا تعديل النظام االساسي بهذه الزيادة  ، كما تم النشر في جريدة الوقائع المصرية في ٥٢  يونيو ٠٢٠٢   والتاشير", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "في السجل التجاري للبنك في ٠٣  يونيو ٠٢٠٢.", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "كما تمت موافقة الجمعية العامة غير العادية بتاريخ ٧٢  يوليو ٢٢٠٢  علي زيادة راس المال المصدر والمدفوع بمبلغ ٠٠٠ ٥٢  مليون جنيه تحويال", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "العام والتدعيمي ليصبح ٠٠٠ ٥٧  مليون جنيه وكذا تعديل النظام االساسي بهذه الزيادة  ، كما تم النشر في جريدة الوقائع المصرية في ٢٢  اغسطس ٢٢٠٢  والتاشير", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "في سجل البنوك لدي البنك المركزي المصري  في ٠٣  اغسطس ٢٢٠٢ وكذا التاشير في السجل التجاري للبنك في ١٣  مايو ٣٢٠٢.", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "كما تمت موافقة الجمعية العامة  بتاريخ ٢٢  اغسطس ٣٢٠٢  علي زيادة راس المال المصرح بة ليصبح ٠٠٠٠٠٢   مليون جنيه وزيادة راس المال المدفوع بمبلغ", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "من االحتياطي العام والتدعيمي ليصبح ٠٠٠ ٥٠١  مليون جنيه وكذا تعديل النظام االساسي بهذه الزيادة  ، والتاشير في سجل البنوك", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "لدي البنك المركزي المصري  في ٤٠  اكتوبر ٣٢٠٢   كما تم النشر في جريدة الوقائع المصرية في ٩١  اكتوبر ٣٢٠٢  وكذا التاشير في السجل التجاري للبنك في", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "٥٢  ديسمبر ٣٢٠٢.", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "كما تمت موافقة الجمعية العامة  بتاريخ ٩١   سبتمبر ٤٢٠٢  علي زيادة راس المال المصرح به  ليصبح ٠٠٠٠٠٣   مليون وزيادة راس المال المدفوع بمبلغ", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "من االحتياطي العام والتدعيمي ليصبح ٠٠٠ ٠٦١  مليون جنيه وكذا تعديل النظام االساسي بهذه الزيادة كما تم النشر في جريدة الوقائع", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "المصرية في ٣  نوفمبر ٤٢٠٢  وكذا التاشير في السجل التجاري للبنك في ٧١  نوفمبر ٤٢٠٢.", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "١١ - احتياطيات", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "١٣ ديسمبر\t١٣ ديسمبر", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "* تتضمن مبلغ ١٤٥٣ مليون جنية خسائر ائتمانية متوقعة الدوات الدين من خالل الدخل الشامل االخر.", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "رصيد اول العام\t٣ ١٦١", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "حركة خالل العام\t٠٨٣", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "رصيد اخر العام\t٣ ١٤٥", "numeric_data": null}
+{"page": 17, "type": "TEXT_ONLY", "sentence": "17", "numeric_data": null}
+{"page": 18, "type": "TABLE_BACKED", "sentence": "صافي الربح القابل للتوزيع علي مساهمي البنك (١)", "numeric_data": {"عمود 3": "11٩ ٦٩0٦4 1٨0"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 18, "type": "TABLE_BACKED", "sentence": "المتوسط المرجح لالسهم العادية المصدرة (٢)", "numeric_data": {"عمود 2": "*٠٦١ ٠٠٠"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 18, "type": "TABLE_BACKED", "sentence": "المخفض1/2", "numeric_data": {"عمود 1": "نصيب السهم االساسي /"}, "column_headers": ["عمود 1", "عمود 2", "عمود 3"]}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "البنك االهلي المصري(شركة مساهمة مصرية)", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "االيضاحات المتممة للقوائم المالية المستقلة – عن العام المالي المنتهي في31 ديسمبر2024\t( جميع المبالغ الواردة بالمليون جنيه)", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "12 - نصيب السهم االساسي /المخفض", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "يحسب نصيب السهم في الربح بقسمة صافي االرباح الخاصة بمساهمي البنك علي المتوسط المرجح لالسهم العادية المصدرة خالل العام المالي بعد", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "استبعاد متوسط االسهم التي اعاد البنك شرائها ويحتفظ بها ضمن اسهم الخزينة.", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "31 ديسمبر31 ديسمبر", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "2024\t2023", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "* تم تعديل ارقام المقارنة طبقا\tلمعيار المحاسبة المصري(٢٢) حيث ان الزيادة غير نقدية ومحولة من احتياطيات البنك.", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "13 -احداث هامة", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "قررت لجنه السياسة النقدية بالبنك المركزي المصري في اجتماعها  بتاريخ ٦  مارس ٢٠٢4 رفع سعري عائد االيداع واالقراض لليلة واحدة", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "وسعر العملية الرئيسية للبنك المركزي بواقع ٠٠٦  نقطة اساس ليصل الي ٥٢.٧٢ %\t٥٢.٨٢ %\t٥٧.٧٢ %علي الترتيب . كما تم رفع سعر", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "االئتمان والخصم بواقع ٠٠٦  نقطة اساس ليصل الي ٥٧.٧٢ %مما قد يؤثر علي سياسات البنك في تسعير المنتجات المصرفية الحالية والمستقبلية.", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "بناء علي التغير في سعر صرف الدوالر خالل عام ٢٠٢4 من .٠٣9٠  جنيه للدوالر الي ٨,٠٥4 جنيه للدوالر فقد تاثرت قيم االصول وااللتزامات", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "ذات الطبيعة النقدية بالعمالت االجنبية وكذلك قائمة الدخل بنتائج تقييم مراكز العملة القائمة في تاريخ المركز المالي.", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "14 -ارقام المقارنة", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "قام البنك بتعديل ارقام المقارنة لتتماشي مع العرض الحالي للقوائم المالية.", "numeric_data": null}
+{"page": 18, "type": "TEXT_ONLY", "sentence": "18", "numeric_data": null}
