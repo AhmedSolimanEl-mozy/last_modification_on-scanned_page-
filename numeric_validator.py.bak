@@ -1,0 +1,386 @@
+#!/usr/bin/env python3
+"""
+numeric_validator.py — Visual Validation for Numeric OCR
+=========================================================
+
+For every reconstructed numeric value:
+  1. Re-render the predicted digits as an image (using the same
+     font style & size as the original).
+  2. Overlay / compare against the original PDF crop.
+  3. Compute SSIM (structural similarity) and pixel overlap.
+  4. If similarity < threshold → mark UNTRUSTED.
+  5. Store diff image for QA review.
+
+Primary rule: a number is TRUSTED only if its visual rendering
+matches the original PDF crop within tolerance.
+
+Usage:
+    from numeric_validator import validate_numeric_token, ValidationResult
+"""
+
+from __future__ import annotations
+
+import cv2
+import numpy as np
+from dataclasses import dataclass, field
+from typing import List, Optional, Tuple
+
+from digit_ocr import TrustStatus, FailureReason
+
+
+# ────────────────────────────────────────────────────────────────────
+#  Configuration
+# ────────────────────────────────────────────────────────────────────
+SSIM_THRESHOLD      = 0.40     # SSIM below this → UNTRUSTED
+PIXEL_OVERLAP_THR   = 0.35     # pixel overlap below this → UNTRUSTED
+VALIDATION_DPI      = 600      # DPI for validation crops
+RENDER_FONT_SCALE   = 1.0      # Font scale for rendered digits
+
+
+# ────────────────────────────────────────────────────────────────────
+#  Data Model
+# ────────────────────────────────────────────────────────────────────
+@dataclass
+class ValidationResult:
+    """Result of visual validation for a numeric token."""
+    token_text: str             # predicted digits
+    ssim_score: float = 0.0     # structural similarity (0–1)
+    pixel_overlap: float = 0.0  # fraction of overlapping foreground pixels
+    passed: bool = False
+    trust_status: TrustStatus = TrustStatus.UNTRUSTED
+    failure_reason: FailureReason = FailureReason.NONE
+    # Visual artifacts for QA
+    original_crop: np.ndarray = field(default=None, repr=False)
+    rendered_crop: np.ndarray = field(default=None, repr=False)
+    diff_image: np.ndarray = field(default=None, repr=False)
+
+
+# ────────────────────────────────────────────────────────────────────
+#  SSIM Computation
+# ────────────────────────────────────────────────────────────────────
+def _compute_ssim(img1: np.ndarray, img2: np.ndarray) -> float:
+    """Compute SSIM between two grayscale images.
+
+    Uses scikit-image if available, falls back to OpenCV-based
+    approximation.
+    """
+    # Ensure same size
+    h = min(img1.shape[0], img2.shape[0])
+    w = min(img1.shape[1], img2.shape[1])
+    if h < 7 or w < 7:  # SSIM needs minimum window size
+        return _pixel_similarity(img1, img2)
+
+    a = cv2.resize(img1, (w, h))
+    b = cv2.resize(img2, (w, h))
+
+    try:
+        from skimage.metrics import structural_similarity
+        score, _ = structural_similarity(a, b, full=True)
+        return float(score)
+    except ImportError:
+        pass
+
+    # Fallback: manual SSIM computation
+    return _manual_ssim(a, b)
+
+
+def _manual_ssim(img1: np.ndarray, img2: np.ndarray) -> float:
+    """Manual SSIM computation using OpenCV operations."""
+    C1 = (0.01 * 255) ** 2
+    C2 = (0.03 * 255) ** 2
+
+    img1 = img1.astype(np.float64)
+    img2 = img2.astype(np.float64)
+
+    mu1 = cv2.GaussianBlur(img1, (11, 11), 1.5)
+    mu2 = cv2.GaussianBlur(img2, (11, 11), 1.5)
+
+    mu1_sq = mu1 ** 2
+    mu2_sq = mu2 ** 2
+    mu1_mu2 = mu1 * mu2
+
+    sigma1_sq = cv2.GaussianBlur(img1 ** 2, (11, 11), 1.5) - mu1_sq
+    sigma2_sq = cv2.GaussianBlur(img2 ** 2, (11, 11), 1.5) - mu2_sq
+    sigma12 = cv2.GaussianBlur(img1 * img2, (11, 11), 1.5) - mu1_mu2
+
+    numerator = (2 * mu1_mu2 + C1) * (2 * sigma12 + C2)
+    denominator = (mu1_sq + mu2_sq + C1) * (sigma1_sq + sigma2_sq + C2)
+
+    ssim_map = numerator / (denominator + 1e-10)
+    return float(np.mean(ssim_map))
+
+
+def _pixel_similarity(img1: np.ndarray, img2: np.ndarray) -> float:
+    """Simple pixel-level similarity for very small images."""
+    h = min(img1.shape[0], img2.shape[0])
+    w = min(img1.shape[1], img2.shape[1])
+    if h == 0 or w == 0:
+        return 0.0
+
+    a = cv2.resize(img1, (w, h))
+    b = cv2.resize(img2, (w, h))
+
+    diff = np.abs(a.astype(float) - b.astype(float))
+    return float(1.0 - np.mean(diff) / 255.0)
+
+
+# ────────────────────────────────────────────────────────────────────
+#  Pixel Overlap Computation
+# ────────────────────────────────────────────────────────────────────
+def _compute_pixel_overlap(img1: np.ndarray, img2: np.ndarray) -> float:
+    """Compute fraction of overlapping foreground pixels.
+
+    Both images are binarized (Otsu), then IoU of foreground is computed.
+    """
+    h = min(img1.shape[0], img2.shape[0])
+    w = min(img1.shape[1], img2.shape[1])
+    if h == 0 or w == 0:
+        return 0.0
+
+    a = cv2.resize(img1, (w, h))
+    b = cv2.resize(img2, (w, h))
+
+    _, bin_a = cv2.threshold(a, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    _, bin_b = cv2.threshold(b, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+
+    intersection = np.logical_and(bin_a > 0, bin_b > 0).sum()
+    union = np.logical_or(bin_a > 0, bin_b > 0).sum()
+
+    if union == 0:
+        return 1.0  # both empty
+    return float(intersection / union)
+
+
+# ────────────────────────────────────────────────────────────────────
+#  Digit Rendering
+# ────────────────────────────────────────────────────────────────────
+def _render_digits_image(
+    text: str,
+    target_height: int,
+    target_width: int,
+) -> np.ndarray:
+    """Render Arabic-Indic digit text as a grayscale image.
+
+    Uses OpenCV's putText with Hershey font (approximate match).
+    For more accurate rendering, Pillow with Arabic font could be used.
+    """
+    # Create white canvas
+    img = np.ones((target_height, target_width), dtype=np.uint8) * 255
+
+    # Calculate font scale to fit the target height
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = target_height / 40.0 * RENDER_FONT_SCALE
+    thickness = max(1, int(font_scale * 1.5))
+
+    # Get text size
+    (tw, th), baseline = cv2.getTextSize(text, font, font_scale, thickness)
+
+    # Center the text
+    x = max(0, (target_width - tw) // 2)
+    y = max(th, (target_height + th) // 2)
+
+    cv2.putText(img, text, (x, y), font, font_scale, (0,), thickness)
+
+    return img
+
+
+def _render_digits_pil(
+    text: str,
+    target_height: int,
+    target_width: int,
+) -> np.ndarray:
+    """Render Arabic-Indic digits using Pillow for proper Unicode support."""
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+
+        # Create white canvas
+        img = Image.new('L', (target_width, target_height), 255)
+        draw = ImageDraw.Draw(img)
+
+        # Try to find an Arabic font
+        font_size = max(12, int(target_height * 0.7))
+        font = None
+        for font_path in [
+            '/usr/share/fonts/truetype/noto/NotoNaskhArabic-Regular.ttf',
+            '/usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf',
+            '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+            '/usr/share/fonts/truetype/freefont/FreeSans.ttf',
+        ]:
+            try:
+                font = ImageFont.truetype(font_path, font_size)
+                break
+            except (OSError, IOError):
+                continue
+
+        if font is None:
+            font = ImageFont.load_default()
+
+        # Get text bbox
+        bbox = draw.textbbox((0, 0), text, font=font)
+        tw = bbox[2] - bbox[0]
+        th = bbox[3] - bbox[1]
+
+        # Center
+        x = max(0, (target_width - tw) // 2)
+        y = max(0, (target_height - th) // 2)
+
+        draw.text((x, y), text, fill=0, font=font)
+        return np.array(img)
+
+    except ImportError:
+        return _render_digits_image(text, target_height, target_width)
+
+
+# ────────────────────────────────────────────────────────────────────
+#  Diff Image Generation
+# ────────────────────────────────────────────────────────────────────
+def _create_diff_image(
+    original: np.ndarray,
+    rendered: np.ndarray,
+) -> np.ndarray:
+    """Create a visual diff image highlighting differences.
+
+    Returns a color image:
+      - Green channel: original
+      - Red channel: rendered
+      - Yellow where they overlap
+    """
+    h = min(original.shape[0], rendered.shape[0])
+    w = min(original.shape[1], rendered.shape[1])
+    if h == 0 or w == 0:
+        return np.zeros((1, 1, 3), dtype=np.uint8)
+
+    a = cv2.resize(original, (w, h))
+    b = cv2.resize(rendered, (w, h))
+
+    # Invert so foreground is white
+    _, bin_a = cv2.threshold(a, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    _, bin_b = cv2.threshold(b, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+
+    # Create color diff
+    diff = np.zeros((h, w, 3), dtype=np.uint8)
+    diff[:, :, 1] = bin_a  # Green = original
+    diff[:, :, 2] = bin_b  # Red = rendered
+    # Where both overlap → yellow (G+R)
+
+    return diff
+
+
+# ────────────────────────────────────────────────────────────────────
+#  Public API
+# ────────────────────────────────────────────────────────────────────
+def validate_numeric_token(
+    predicted_text: str,
+    original_crop: np.ndarray,
+    ssim_threshold: float = SSIM_THRESHOLD,
+    overlap_threshold: float = PIXEL_OVERLAP_THR,
+) -> ValidationResult:
+    """Validate a predicted numeric token against its original crop.
+
+    Steps:
+      1. Re-render predicted digits as image.
+      2. Compare with original crop via SSIM and pixel overlap.
+      3. Determine TRUSTED/UNTRUSTED based on thresholds.
+
+    Args:
+        predicted_text: The predicted Arabic-Indic digit string.
+        original_crop: Grayscale crop of the original token region.
+        ssim_threshold: Minimum SSIM for TRUSTED.
+        overlap_threshold: Minimum pixel overlap for TRUSTED.
+
+    Returns:
+        ValidationResult with scores and visual artifacts.
+    """
+    result = ValidationResult(token_text=predicted_text)
+
+    if original_crop is None or original_crop.size == 0:
+        result.failure_reason = FailureReason.SEGMENTATION_FAILURE
+        return result
+
+    # Convert to grayscale if needed
+    if original_crop.ndim == 3:
+        gray_orig = cv2.cvtColor(original_crop, cv2.COLOR_BGR2GRAY)
+    else:
+        gray_orig = original_crop
+
+    result.original_crop = gray_orig
+
+    # Render predicted text
+    h, w = gray_orig.shape[:2]
+    rendered = _render_digits_pil(predicted_text, h, w)
+    result.rendered_crop = rendered
+
+    # Compute SSIM
+    result.ssim_score = round(_compute_ssim(gray_orig, rendered), 4)
+
+    # Compute pixel overlap
+    result.pixel_overlap = round(_compute_pixel_overlap(gray_orig, rendered), 4)
+
+    # Create diff image
+    result.diff_image = _create_diff_image(gray_orig, rendered)
+
+    # Determine trust
+    ssim_ok = result.ssim_score >= ssim_threshold
+    overlap_ok = result.pixel_overlap >= overlap_threshold
+
+    if ssim_ok or overlap_ok:
+        result.passed = True
+        result.trust_status = TrustStatus.TRUSTED
+        result.failure_reason = FailureReason.NONE
+    else:
+        result.passed = False
+        result.trust_status = TrustStatus.UNTRUSTED
+        result.failure_reason = FailureReason.VISUAL_MISMATCH
+
+    return result
+
+
+def validate_page_numerics(
+    token_ocr_results,  # List[TokenOCRResult]
+    full_page_image: np.ndarray,
+    page_width: float,
+    page_height: float,
+) -> List[ValidationResult]:
+    """Run visual validation on all numeric tokens for a page.
+
+    Args:
+        token_ocr_results: OCR results from digit_ocr.
+        full_page_image: Full page at high DPI.
+        page_width: Page width in points.
+        page_height: Page height in points.
+
+    Returns:
+        List of ValidationResult, one per token.
+    """
+    img_h, img_w = full_page_image.shape[:2]
+    scale_x = img_w / page_width
+    scale_y = img_h / page_height
+
+    results = []
+
+    for ocr_result in token_ocr_results:
+        bbox = ocr_result.bbox
+        if not bbox or len(bbox) < 4:
+            results.append(ValidationResult(
+                token_text=ocr_result.validated_text,
+                trust_status=TrustStatus.UNTRUSTED,
+                failure_reason=FailureReason.SEGMENTATION_FAILURE,
+            ))
+            continue
+
+        # Crop from full page
+        pad = 8
+        x0 = max(0, int(bbox[0] * scale_x) - pad)
+        y0 = max(0, int(bbox[1] * scale_y) - pad)
+        x1 = min(img_w, int(bbox[2] * scale_x) + pad)
+        y1 = min(img_h, int(bbox[3] * scale_y) + pad)
+
+        crop = full_page_image[y0:y1, x0:x1]
+
+        vr = validate_numeric_token(
+            predicted_text=ocr_result.validated_text,
+            original_crop=crop,
+        )
+        results.append(vr)
+
+    return results

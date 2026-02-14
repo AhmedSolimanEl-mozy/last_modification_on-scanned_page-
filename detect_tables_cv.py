@@ -50,10 +50,10 @@ PX_TO_PT           = 72.0 / DPI    # pixel → PDF-point conversion factor
 PT_TO_PX           = DPI / 72.0    # PDF-point → pixel conversion factor
 
 # ── Layer 1: morphological line detection ────────────────────────────
-HORIZ_KERNEL_DIV   = 40            # horizontal kernel = (width / DIV, 1)
-VERT_KERNEL_DIV    = 40            # vertical kernel   = (1, height / DIV)
-MIN_CONTOUR_W_PX   = 200           # ignore contours narrower  (px)
-MIN_CONTOUR_H_PX   = 100           # ignore contours shorter   (px)
+HORIZ_KERNEL_DIV   = 50            # horizontal kernel = (width / DIV, 1)  (was 40, loosened for faded lines)
+VERT_KERNEL_DIV    = 50            # vertical kernel   = (1, height / DIV)  (was 40, loosened for faded lines)
+MIN_CONTOUR_W_PX   = 150           # ignore contours narrower  (px)  (was 200, loosened for partial borders)
+MIN_CONTOUR_H_PX   = 80            # ignore contours shorter   (px)  (was 100, loosened for partial borders)
 
 # ── Layer 2: native-text band analysis (PyMuPDF) ────────────────────
 BAND_PT            = 6             # row-band height in PDF points
@@ -67,13 +67,13 @@ FIN_NUM_RE         = re.compile(r'[\d,\.\(\)٠-٩]{2,}')
 # ── Layer 3: OpenCV band analysis (scanned pages) ───────────────────
 CV_BAND_PX         = 40            # Y-band height in pixels
 CV_WORD_KERNEL     = (25, 3)       # dilation to merge chars → word frags
-CV_MIN_FRAG_W      = 20            # ignore tiny noise fragments (px)
-CV_BIG_GAP_PX      = 80            # gap qualifying as "big" (px)
-CV_MAX_GAP_PX      = 200           # min max-gap for table band (px)
-CV_SPREAD_RATIO    = 0.20          # fragments must span > 20% page width
-CV_RUN_GAP_TOL     = 3             # max band-index gap within a run
-CV_MIN_RUN_LEN     = 5             # minimum bands in a valid run
-CV_MULTI_COL_RATIO = 0.40          # ≥40% of bands must have ≥2 big gaps
+CV_MIN_FRAG_W      = 15            # ignore tiny noise fragments (px)  (was 20, loosened)
+CV_BIG_GAP_PX      = 50            # gap qualifying as "big" (px)  (was 80, loosened for tighter scanned tables)
+CV_MAX_GAP_PX      = 120           # min max-gap for table band (px)  (was 200, loosened for tighter columns)
+CV_SPREAD_RATIO    = 0.15          # fragments must span > 15% page width  (was 0.20, loosened)
+CV_RUN_GAP_TOL     = 4             # max band-index gap within a run  (was 3, allow more scan noise)
+CV_MIN_RUN_LEN     = 3             # minimum bands in a valid run  (was 5, loosened for smaller tables)
+CV_MULTI_COL_RATIO = 0.30          # ≥30% of bands must have ≥2 big gaps  (was 0.40, loosened)
 
 # ── Rendering ────────────────────────────────────────────────────────
 MASK_COLOR_BGR     = (255, 0, 0)   # semi-transparent blue overlay

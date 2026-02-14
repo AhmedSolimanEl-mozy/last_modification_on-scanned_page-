@@ -1,0 +1,264 @@
+{
+  "pipeline": "smart_pipeline.py",
+  "input": "el-bankalahly .pdf",
+  "output": "smart_output.pdf",
+  "total_pages": 18,
+  "native_pages": 15,
+  "scanned_pages": 3,
+  "total_time_s": 313.1,
+  "quality_ok": true,
+  "decisions": [
+    {
+      "page": 1,
+      "type": "IMAGE_ONLY",
+      "action": "ocr_reconstruct",
+      "meaningful_chars": 112,
+      "text_blocks": 5,
+      "text_area_pct": 1.4,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 19.8,
+      "notes": "6 lines, 154 chars, 0 corrections"
+    },
+    {
+      "page": 2,
+      "type": "IMAGE_ONLY",
+      "action": "ocr_reconstruct",
+      "meaningful_chars": 0,
+      "text_blocks": 0,
+      "text_area_pct": 0.0,
+      "original_dims": [
+        595.2,
+        841.68
+      ],
+      "processing_time_s": 145.9,
+      "notes": "32 lines, 1470 chars, 0 corrections"
+    },
+    {
+      "page": 3,
+      "type": "IMAGE_ONLY",
+      "action": "ocr_reconstruct",
+      "meaningful_chars": 0,
+      "text_blocks": 0,
+      "text_area_pct": 0.0,
+      "original_dims": [
+        595.2,
+        841.68
+      ],
+      "processing_time_s": 147.2,
+      "notes": "119 lines, 1826 chars, 0 corrections"
+    },
+    {
+      "page": 4,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 710,
+      "text_blocks": 27,
+      "text_area_pct": 18.1,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 5,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 538,
+      "text_blocks": 15,
+      "text_area_pct": 9.5,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 6,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 888,
+      "text_blocks": 21,
+      "text_area_pct": 17.9,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 7,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1739,
+      "text_blocks": 44,
+      "text_area_pct": 34.2,
+      "original_dims": [
+        841.92,
+        595.32
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 8,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 721,
+      "text_blocks": 24,
+      "text_area_pct": 16.8,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 9,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 3402,
+      "text_blocks": 40,
+      "text_area_pct": 43.6,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 10,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 2934,
+      "text_blocks": 27,
+      "text_area_pct": 36.6,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 11,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1878,
+      "text_blocks": 27,
+      "text_area_pct": 23.9,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 12,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 2874,
+      "text_blocks": 40,
+      "text_area_pct": 42.5,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 13,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1211,
+      "text_blocks": 43,
+      "text_area_pct": 49.7,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 14,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1089,
+      "text_blocks": 38,
+      "text_area_pct": 40.2,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 15,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 715,
+      "text_blocks": 32,
+      "text_area_pct": 24.1,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 16,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 795,
+      "text_blocks": 33,
+      "text_area_pct": 26.3,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 17,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 2781,
+      "text_blocks": 43,
+      "text_area_pct": 40.4,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 18,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1212,
+      "text_blocks": 22,
+      "text_area_pct": 19.7,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    }
+  ]
+}

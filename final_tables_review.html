@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Table Extraction — QA Review</title>
+<style>
+body {
+  font-family: Arial, 'Noto Sans Arabic', sans-serif;
+  background: #f5f5f5;
+  padding: 20px;
+  direction: ltr;
+}
+h2 { color: #333; margin-top: 30px; }
+.table-grid {
+  display: grid;
+  gap: 0;
+  border: 2px solid #333;
+  background: #fff;
+  margin: 10px 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.cell {
+  border: 1px solid #ddd;
+  padding: 4px 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 20px;
+}
+.cell.hdr {
+  background: #e8eef3;
+  font-weight: bold;
+  border-bottom: 2px solid #999;
+}
+.cell.num {
+  direction: ltr;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.cell.rtl {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+.cell.low-conf {
+  border: 2px solid #ff4444 !important;
+  background: #fff8f8;
+}
+.cell.anomaly {
+  background: #fff0f0 !important;
+}
+.qa-section {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+.qa-table {
+  border-collapse: collapse;
+  margin: 5px 0;
+}
+.qa-table th, .qa-table td {
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  text-align: right;
+}
+.qa-table th { background: #eee; }
+hr { margin: 30px 0; border: 1px solid #ddd; }
+</style>
+</head>
+<body>
+<h1>📋 Table Extraction — QA Review</h1>
+<p>Cells with <span style="border:2px solid #ff4444; padding:2px;">red borders</span>
+have low OCR confidence.
+Cells with <span style="background:#fff0f0; padding:2px;">pink background</span>
+are numeric anomalies.</p>
+
+<h2>Table 1 — Page 2 (30×1, conf=0.99)</h2>
+<div class="table-grid" style="grid-template-columns:88px; grid-template-rows:repeat(30, auto);">
+  <div class="cell" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.86 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.99 TXT">سامح سامی محمد کمالB وDO خالدشركاه</div>
+  <div class="cell" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 TXT">جلمرللمحاسباتالهاز اكزي محنواسبونقانونيو مستشارون </div>
+  <div class="cell" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:6; grid-column:1;" title="[5,0] conf=0.98 TXT">ت حساباتقرير قيالمراب</div>
+  <div class="cell" style="grid-row:7; grid-column:1;" title="[6,0] conf=0.98 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 TXT">نولمخاع لقائ لايةاللصة مستقلة في ٣١ ديسمبر ٢٠٢٤امام ل</div>
+  <div class="cell" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:10; grid-column:1;" title="[9,0] conf=0.99 TXT">إ ل سلنل المصري &quot;شركة مساهمة مصرية&quot;هلىاسادة/ ماي بك اأهليما</div>
+  <div class="cell" style="grid-row:11; grid-column:1;" title="[10,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:12; grid-column:1;" title="[11,0] conf=0.99 TXT"> راقلا قلأل لص&quot;شةوةلم اجعن لائم امليالستلةلبكهىارير ساهممصرية&quot; &quot;البنك&quot; عن السنة المالية امةام كن</div>
+  <div class="cell" style="grid-row:13; grid-column:1;" title="[12,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 TXT">ممله ٤رهقا لي اا ف١ئةمتةي٣ديمر٠٢ ات اتجماالوااةلمستقا ب٢وتل لملخصة المرفقة، وذلكني سليسخ ن ل</div>
+  <div class="cell" style="grid-row:15; grid-column:1;" title="[14,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:16; grid-column:1;" title="[15,0] conf=1.00 TXT">اعيلوحايسنراطبالميرلمالرفواقان اائ لصةلارية. وحسبما هو واردًمة يء ق عاي رةاصي  لوولمج وض</div>
+  <div class="cell" style="grid-row:17; grid-column:1;" title="[16,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:18; grid-column:1;" title="[17,0] conf=0.99 TXT">يغىتاخييتف  وئ  بيرنالمر ١ونو ٢ ق نا ًير محظعلالقاماملية المستقلة الكاملة للبنك عنق٢فرارؤ ٥دأيأا ل٠بد</div>
+  <div class="cell" style="grid-row:19; grid-column:1;" title="[18,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:20; grid-column:1;" title="[19,0] conf=1.00 TXT">ا الن لمل م ٢اسرج يسةااةالنهةفي١يسبر٢ ولت تختمنهالوائم المالية المستقلة الملخصةي٣ ات دم ٠٤يق</div>
+  <div class="cell" style="grid-row:21; grid-column:1;" title="[20,0] conf=0.98 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:22; grid-column:1;" title="[21,0] conf=1.00 TXT">المرفقة.</div>
+  <div class="cell" style="grid-row:23; grid-column:1;" title="[22,0] conf=0.98 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:24; grid-column:1;" title="[23,0] conf=0.99 TXT">ن ائم ةف–فكا لن السنة المالية المنتهية في ٣١ ديسمبر ٢٠٢٤.مكامامم ا االاستةلخق يلبااة م القو اية سةلونأاالةارقت   جوه علامتلاكاللبنعن–املهلق  لمفل ريوممقمةلقئل ل لص  تناة</div>
+  <div class="cell" style="grid-row:25; grid-column:1;" title="[24,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:26; grid-column:1;" title="[25,0] conf=0.99 TXT">بو اصوعتفممامقلكفبن لرمأجلحل لى همأشللرزلمل ت ل  ١ دسم ٠٢٤ ونتائج أعماله لي٣٢ل كايالسني </div>
+  <div class="cell" style="grid-row:27; grid-column:1;" title="[26,0] conf=0.98 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:28; grid-column:1;" title="[27,0] conf=0.99 TXT">النني سةلمترخكط ام اةاا ليذكعقلعمت لاننقأعمال مراجعتنا، يقتضى الأمر  يوسةهف أالانل ذ ةيت ل</div>
+  <div class="cell" style="grid-row:29; grid-column:1;" title="[28,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:30; grid-column:1;" title="[29,0] conf=1.00 TXT">وعلىئاةسكبلةلله الرج إ قوم اللي التقلةلةلن ن ساماي متاامماةنيالالم لكعانلة في ٣١ ديسمبر ٢٠٢٤ </div>
+</div>
+<hr>
+<h2>Table 2 — Page 2 (17×1, conf=0.98)</h2>
+<div class="table-grid" style="grid-template-columns:40px; grid-template-rows:repeat(17, auto);">
+  <div class="cell" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.99 TXT">راب لحساباتمقاا</div>
+  <div class="cell" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.99 TXT">اسام سمي محمد كمازحهمند طه خالد</div>
+  <div class="cell" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 TXT">لرم للمحاسباتااج لكيهآززسزميلمجع المحابين القانونيين بإنجلترا م</div>
+  <div class="cell" style="grid-row:7; grid-column:1;" title="[6,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:8; grid-column:1;" title="[7,0] conf=0.99 TXT">ملمسي  ان والمراجعين المصريةزجمحايبعةلي</div>
+  <div class="cell" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 TXT">يزملمعة الضرائب المصريةي ج</div>
+  <div class="cell" style="grid-row:11; grid-column:1;" title="[10,0] conf=0.97 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:12; grid-column:1;" title="[11,0] conf=1.00 TXT">سسل امابين والمراجعين رقم ٢٢٤٤جلح</div>
+  <div class="cell" style="grid-row:13; grid-column:1;" title="[12,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 TXT">س اعلقبةمجلهيئة المة لرا الالية رقم ٣٧٥لا</div>
+  <div class="cell" style="grid-row:15; grid-column:1;" title="[14,0] conf=0.88 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:16; grid-column:1;" title="[15,0] conf=0.97 TXT">BDخالد وشركاهO</div>
+  <div class="cell hdr" style="grid-row:17; grid-column:1;" title="[16,0] conf=0.87 TXT">· · · · · ·        ········ · · · · · </div>
+</div>
+<hr>
+<h2>Table 3 — Page 3 (6×1, conf=0.97)</h2>
+<div class="table-grid" style="grid-template-columns:44px; grid-template-rows:repeat(6, auto);">
+  <div class="cell" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.98 TXT">ل لربكاأهل مالياصي (شركة مساهمة مصرية)ن</div>
+  <div class="cell" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.99 TXT">خ يماترخقا م-ة من القوائم المالية الكاملة للبنكصولالسماة جلئمال ل</div>
+  <div class="cell" style="grid-row:5; grid-column:1;" title="[4,0] conf=0.98 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:6; grid-column:1;" title="[5,0] conf=0.94 TXT">اا(ميع لمبل لوردة بالمليون جنيه)جااغم  ةقنةارك اماىالمتل- في ٣١ ديسمبر ٢٠٢٤الزللسق م</div>
+</div>
+<hr>
+<h2>Table 4 — Page 3 (13×4, conf=0.80)</h2>
+<div class="table-grid" style="grid-template-columns:50px 179px 150px 85px; grid-template-rows:repeat(13, auto);">
+  <div class="cell hdr" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.90 TXT">YT ATY</div>
+  <div class="cell hdr low-conf" style="grid-row:1; grid-column:2;" title="[0,1] conf=0.66 TXT">ETN OT.</div>
+  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:1; grid-column:4;" title="[0,3] conf=1.00 TXT">ي  امكيينقدةوأرصدة لدى البنكلرز ف إطار نسبة الاحتياطي</div>
+  <div class="cell hdr num low-conf" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.38 NUM">775 757</div>
+  <div class="cell hdr low-conf" style="grid-row:2; grid-column:2;" title="[1,1] conf=0.62 TXT">APT EPT</div>
+  <div class="cell hdr" style="grid-row:2; grid-column:3;" title="[1,2] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:2; grid-column:4;" title="[1,3] conf=0.99 TXT">ردة دلبنوك(بالصافي)أصلى ا </div>
+  <div class="cell hdr num" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.74 NUM">1 690</div>
+  <div class="cell hdr low-conf" style="grid-row:3; grid-column:2;" title="[2,1] conf=0.59 TXT">NOP YI(٤)</div>
+  <div class="cell hdr" style="grid-row:3; grid-column:3;" title="[2,2] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:3; grid-column:4;" title="[2,3] conf=0.99 TXT">دعإاالمستثل بلقمةخلال الأرباح او الخسائرمرت ماياي الة نا ة</div>
+  <div class="cell hdr num" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.83 NUM">710 7170</div>
+  <div class="cell hdr" style="grid-row:4; grid-column:2;" title="[3,1] conf=0.81 TXT">77777 73 (°)</div>
+  <div class="cell hdr" style="grid-row:4; grid-column:3;" title="[3,2] conf=0.96 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:4; grid-column:4;" title="[3,3] conf=1.00 TXT">سماقوض هلت علءوالبنوك (بالصافي)روتياال </div>
+  <div class="cell hdr num low-conf" style="grid-row:5; grid-column:1;" title="[4,0] conf=0.38 NUM">5 777</div>
+  <div class="cell hdr" style="grid-row:5; grid-column:2;" title="[4,1] conf=0.81 TXT">Y . 9Y</div>
+  <div class="cell hdr" style="grid-row:5; grid-column:3;" title="[4,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:5; grid-column:4;" title="[4,3] conf=1.00 TXT">مشتقات مالية</div>
+  <div class="cell" style="grid-row:6; grid-column:1;" title="[5,0] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:6; grid-column:2;" title="[5,1] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:6; grid-column:3;" title="[5,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:6; grid-column:4;" title="[5,3] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell hdr" style="grid-row:7; grid-column:1;" title="[6,0] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell hdr" style="grid-row:7; grid-column:2;" title="[6,1] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell hdr" style="grid-row:7; grid-column:3;" title="[6,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:7; grid-column:4;" title="[6,3] conf=0.97 TXT">اسمراتماليةتثا </div>
+  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=0.81 NUM">.7. 715</div>
+  <div class="cell num low-conf" style="grid-row:8; grid-column:2;" title="[7,1] conf=0.63 NUM">1 478 017(7)</div>
+  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=0.99 TXT">ايةاستمرتملةبلقم العادلة من خلال الدخل الشامل الآخرثا ي اا</div>
+  <div class="cell" style="grid-row:8; grid-column:4;" title="[7,3] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:9; grid-column:1;" title="[8,0] conf=0.90 TXT">1Y 1 20TT </div>
+  <div class="cell low-conf" style="grid-row:9; grid-column:2;" title="[8,1] conf=0.61 TXT">1 440 441(Y)</div>
+  <div class="cell" style="grid-row:9; grid-column:3;" title="[8,2] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:9; grid-column:4;" title="[8,3] conf=0.99 TXT">إت ديتلة المستهلكةستمر اية فأوتنبلكفثااملي دا ا</div>
+  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=0.86 NUM">17 ...</div>
+  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=0.93 NUM">07811</div>
+  <div class="cell" style="grid-row:10; grid-column:3;" title="[9,2] conf=0.98 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:10; grid-column:4;" title="[9,3] conf=0.98 TXT">إاة ركات تابعة وشقيقةستثارت مالي فيشم</div>
+  <div class="cell num low-conf" style="grid-row:11; grid-column:1;" title="[10,0] conf=0.61 NUM">81777</div>
+  <div class="cell num low-conf" style="grid-row:11; grid-column:2;" title="[10,1] conf=0.69 NUM">.14 . 9</div>
+  <div class="cell" style="grid-row:11; grid-column:3;" title="[10,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:11; grid-column:4;" title="[10,3] conf=0.98 TXT">صوابة بالصافي)أل ثت(</div>
+  <div class="cell low-conf" style="grid-row:12; grid-column:1;" title="[11,0] conf=0.65 TXT">YAA YOL</div>
+  <div class="cell" style="grid-row:12; grid-column:2;" title="[11,1] conf=0.82 TXT">7997.£</div>
+  <div class="cell" style="grid-row:12; grid-column:3;" title="[11,2] conf=0.98 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:12; grid-column:4;" title="[11,3] conf=0.98 TXT">أصو أخ  اتثمارات عقاريةلرىوس</div>
+  <div class="cell num low-conf" style="grid-row:13; grid-column:1;" title="[12,0] conf=0.54 NUM">0 744 904</div>
+  <div class="cell low-conf" style="grid-row:13; grid-column:2;" title="[12,1] conf=0.56 TXT">T T9 £1 1Y </div>
+  <div class="cell" style="grid-row:13; grid-column:3;" title="[12,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:13; grid-column:4;" title="[12,3] conf=0.94 TXT">احمالي الأصول</div>
+</div>
+<div class="qa-section">
+<h3>📊 Column Sums</h3><table class="qa-table">
+<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
+<tr><td>Col 0</td><td>81,777.00</td><td>1</td></tr>
+<tr><td>Col 1</td><td>7,811.00</td><td>1</td></tr>
+</table>
+<h3>⚠️ Low Confidence (12 cells)</h3>
+<ul>
+<li>Row 0, Col 1: "ETN OT." (conf=0.66)</li>
+<li>Row 1, Col 0: "775 757" (conf=0.38)</li>
+<li>Row 1, Col 1: "APT EPT" (conf=0.62)</li>
+<li>Row 2, Col 1: "NOP YI(٤)" (conf=0.59)</li>
+<li>Row 4, Col 0: "5 777" (conf=0.38)</li>
+<li>Row 7, Col 1: "1 478 017(7)" (conf=0.63)</li>
+<li>Row 8, Col 1: "1 440 441(Y)" (conf=0.61)</li>
+<li>Row 10, Col 0: "81777" (conf=0.61)</li>
+<li>Row 10, Col 1: ".14 . 9" (conf=0.69)</li>
+<li>Row 11, Col 0: "YAA YOL" (conf=0.65)</li>
+<li>Row 12, Col 0: "0 744 904" (conf=0.54)</li>
+<li>Row 12, Col 1: "T T9 £1 1Y " (conf=0.56)</li>
+</ul>
+</div>
+<hr>
+<h2>Table 5 — Page 3 (27×4, conf=0.82)</h2>
+<div class="table-grid" style="grid-template-columns:50px 174px 147px 96px; grid-template-rows:repeat(27, auto);">
+  <div class="cell hdr" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell hdr" style="grid-row:1; grid-column:2;" title="[0,1] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell hdr rtl" style="grid-row:1; grid-column:4;" title="[0,3] conf=0.93 TXT">تزاماتالإل</div>
+  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.90 NUM">17.070</div>
+  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=0.75 NUM">481 17 4.</div>
+  <div class="cell" style="grid-row:2; grid-column:3;" title="[1,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:2; grid-column:4;" title="[1,3] conf=1.00 TXT">أرصدة مستحقة للبنوك</div>
+  <div class="cell low-conf" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.59 TXT">Y . 9 2 .</div>
+  <div class="cell num low-conf" style="grid-row:3; grid-column:2;" title="[2,1] conf=0.56 NUM">7.077</div>
+  <div class="cell" style="grid-row:3; grid-column:3;" title="[2,2] conf=0.99 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:3; grid-column:4;" title="[2,3] conf=1.00 TXT">ية لمتبي ذ اعزنعاتهد بإعادة الشراءع عوال أنخم</div>
+  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.79 NUM">77 7.7 77</div>
+  <div class="cell low-conf" style="grid-row:4; grid-column:2;" title="[3,1] conf=0.69 TXT">£ 977 VT7(y)</div>
+  <div class="cell" style="grid-row:4; grid-column:3;" title="[3,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:4; grid-column:4;" title="[3,3] conf=0.99 TXT">ودانع العملاء</div>
+  <div class="cell low-conf" style="grid-row:5; grid-column:1;" title="[4,0] conf=0.58 TXT">410 3 YT</div>
+  <div class="cell" style="grid-row:5; grid-column:2;" title="[4,1] conf=0.76 TXT">YT.  0 £Y(9)</div>
+  <div class="cell" style="grid-row:5; grid-column:3;" title="[4,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:5; grid-column:4;" title="[4,3] conf=0.97 TXT">قروض أخرى</div>
+  <div class="cell num low-conf" style="grid-row:6; grid-column:1;" title="[5,0] conf=0.38 NUM">7 2 2 . 19</div>
+  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=0.83 NUM">.4.707</div>
+  <div class="cell" style="grid-row:6; grid-column:3;" title="[5,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:6; grid-column:4;" title="[5,3] conf=0.97 TXT">التزامات أخرى</div>
+  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=0.74 NUM">.  . ..1</div>
+  <div class="cell num anomaly" style="grid-row:7; grid-column:2;" title="[6,1] conf=0.84 NUM">77010</div>
+  <div class="cell" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:7; grid-column:4;" title="[6,3] conf=0.99 TXT">التزامات ضرانب الدخل الجارية</div>
+  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=0.81 NUM">14 511</div>
+  <div class="cell low-conf" style="grid-row:8; grid-column:2;" title="[7,1] conf=0.61 TXT">T AT. 9</div>
+  <div class="cell" style="grid-row:8; grid-column:3;" title="[7,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:8; grid-column:4;" title="[7,3] conf=1.00 TXT">مخصصات أخرى</div>
+  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=0.83 NUM">00.1</div>
+  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=0.70 NUM">.497</div>
+  <div class="cell" style="grid-row:9; grid-column:3;" title="[8,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:9; grid-column:4;" title="[8,3] conf=1.00 TXT">تالتزاما مزايا التقاعد</div>
+  <div class="cell" style="grid-row:10; grid-column:1;" title="[9,0] conf=0.74 TXT">97£ 7 V£7</div>
+  <div class="cell low-conf" style="grid-row:10; grid-column:2;" title="[9,1] conf=0.49 TXT">V 7. 7 VYE</div>
+  <div class="cell" style="grid-row:10; grid-column:3;" title="[9,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:10; grid-column:4;" title="[9,3] conf=1.00 TXT">الي الالتزاماتإجم</div>
+  <div class="cell" style="grid-row:11; grid-column:1;" title="[10,0] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:11; grid-column:2;" title="[10,1] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:11; grid-column:3;" title="[10,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:11; grid-column:4;" title="[10,3] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:12; grid-column:1;" title="[11,0] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:12; grid-column:2;" title="[11,1] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:12; grid-column:3;" title="[11,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:12; grid-column:4;" title="[11,3] conf=1.00 TXT">قوقح الملكية</div>
+  <div class="cell num" style="grid-row:13; grid-column:1;" title="[12,0] conf=0.95 NUM">.10 ...</div>
+  <div class="cell" style="grid-row:13; grid-column:2;" title="[12,1] conf=0.81 TXT">17. ...&lt;math&gt;&lt;/math&gt;(,),</div>
+  <div class="cell" style="grid-row:13; grid-column:3;" title="[12,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:13; grid-column:4;" title="[12,3] conf=0.99 TXT">امرأس لال المدفوع</div>
+  <div class="cell low-conf" style="grid-row:14; grid-column:1;" title="[13,0] conf=0.58 TXT">TY NEN</div>
+  <div class="cell num low-conf" style="grid-row:14; grid-column:2;" title="[13,1] conf=0.69 NUM">75 ...(11)</div>
+  <div class="cell" style="grid-row:14; grid-column:3;" title="[13,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:14; grid-column:4;" title="[13,3] conf=0.99 TXT">اطياتإحتي</div>
+  <div class="cell" style="grid-row:15; grid-column:1;" title="[14,0] conf=0.80 TXT">V . 2 £7</div>
+  <div class="cell num anomaly" style="grid-row:15; grid-column:2;" title="[14,1] conf=0.75 NUM">17070.</div>
+  <div class="cell rtl" style="grid-row:15; grid-column:3;" title="[14,2] conf=1.00 TXT">ةاحةر قةليعل رق الم ليم الضمساند من البنك المركزييقاواةقيا نلللفاسم </div>
+  <div class="cell" style="grid-row:15; grid-column:4;" title="[14,3] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell num" style="grid-row:16; grid-column:1;" title="[15,0] conf=0.83 NUM">7. 179</div>
+  <div class="cell num low-conf" style="grid-row:16; grid-column:2;" title="[15,1] conf=0.58 NUM">٤٠ .٣.</div>
+  <div class="cell" style="grid-row:16; grid-column:3;" title="[15,2] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:16; grid-column:4;" title="[15,3] conf=1.00 TXT">إط نخاحييات ايم عدةم لل الدخل الشامل الآخرتالقةالال</div>
+  <div class="cell num" style="grid-row:17; grid-column:1;" title="[16,0] conf=0.76 NUM">٧. ٦٨٦</div>
+  <div class="cell num" style="grid-row:17; grid-column:2;" title="[16,1] conf=0.71 NUM">177 771</div>
+  <div class="cell" style="grid-row:17; grid-column:3;" title="[16,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:17; grid-column:4;" title="[16,3] conf=0.98 TXT">صفىأباحالعاما ر </div>
+  <div class="cell num anomaly" style="grid-row:18; grid-column:1;" title="[17,0] conf=0.92 NUM">8191</div>
+  <div class="cell num low-conf" style="grid-row:18; grid-column:2;" title="[17,1] conf=0.58 NUM">4.9</div>
+  <div class="cell" style="grid-row:18; grid-column:3;" title="[17,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:18; grid-column:4;" title="[17,3] conf=1.00 TXT">أرباح محتجزة</div>
+  <div class="cell low-conf" style="grid-row:19; grid-column:1;" title="[18,0] conf=0.63 TXT">7. 7VPY</div>
+  <div class="cell num" style="grid-row:19; grid-column:2;" title="[18,1] conf=0.77 NUM">٥٣٣ ٦٦.</div>
+  <div class="cell" style="grid-row:19; grid-column:3;" title="[18,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:19; grid-column:4;" title="[18,3] conf=0.98 TXT">إجمالي حقوق الملكية</div>
+  <div class="cell num low-conf" style="grid-row:20; grid-column:1;" title="[19,0] conf=0.56 NUM">0 744 404</div>
+  <div class="cell low-conf" style="grid-row:20; grid-column:2;" title="[19,1] conf=0.58 TXT">1  Y T9 £1T</div>
+  <div class="cell" style="grid-row:20; grid-column:3;" title="[19,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:20; grid-column:4;" title="[19,3] conf=0.98 TXT">للتاإجلات وحقوق الملكيةماي اازم</div>
+  <div class="cell" style="grid-row:21; grid-column:1;" title="[20,0] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:21; grid-column:2;" title="[20,1] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:21; grid-column:3;" title="[20,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:21; grid-column:4;" title="[20,3] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:22; grid-column:1;" title="[21,0] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:22; grid-column:2;" title="[21,1] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:22; grid-column:3;" title="[21,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:22; grid-column:4;" title="[21,3] conf=1.00 TXT">لزمتعري وارتباطاتاتاا ضة</div>
+  <div class="cell" style="grid-row:23; grid-column:1;" title="[22,0] conf=0.74 TXT">109 TAA</div>
+  <div class="cell num low-conf" style="grid-row:23; grid-column:2;" title="[22,1] conf=0.61 NUM">.4 1941</div>
+  <div class="cell rtl" style="grid-row:23; grid-column:3;" title="[22,2] conf=0.99 TXT">إاموعتماتمب ت ض إتاات مستندية وإرتباطات أخرىلز الخطاباانمدق</div>
+  <div class="cell" style="grid-row:23; grid-column:4;" title="[22,3] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:24; grid-column:1;" title="[23,0] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:24; grid-column:2;" title="[23,1] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:24; grid-column:3;" title="[23,2] conf=0.98 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:24; grid-column:4;" title="[23,3] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:25; grid-column:1;" title="[24,0] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:25; grid-column:2;" title="[24,1] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell" style="grid-row:25; grid-column:3;" title="[24,2] conf=0.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:25; grid-column:4;" title="[24,3] conf=0.99 TXT">لرااا ل(٤إتمق نإ ضح الفم(١)ى١) متممة للقوائم المالية وتقرأ معهاي ة</div>
+  <div class="cell" style="grid-row:26; grid-column:1;" title="[25,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:26; grid-column:2;" title="[25,1] conf=0.95 TXT">سئري مجلس الإدارة</div>
+  <div class="cell low-conf" style="grid-row:26; grid-column:3;" title="[25,2] conf=0.43 TXT">IGHTM</div>
+  <div class="cell rtl" style="grid-row:26; grid-column:4;" title="[25,3] conf=0.98 TXT">الرئيس التنفيذي المالى</div>
+  <div class="cell" style="grid-row:27; grid-column:1;" title="[26,0] conf=1.00 TXT">&nbsp;</div>
+  <div class="cell rtl" style="grid-row:27; grid-column:2;" title="[26,1] conf=0.99 TXT">محمد كمال الدين يركات</div>
+  <div class="cell rtl" style="grid-row:27; grid-column:3;" title="[26,2] conf=1.00 TXT">محمد محمواد الأتربى</div>
+  <div class="cell rtl" style="grid-row:27; grid-column:4;" title="[26,3] conf=0.95 TXT">وائلابو علی </div>
+</div>
+<div class="qa-section">
+<h3>📊 Column Sums</h3><table class="qa-table">
+<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
+<tr><td>Col 0</td><td>8,208.17</td><td>3</td></tr>
+<tr><td>Col 1</td><td>94,092.47</td><td>5</td></tr>
+</table>
+<h3>⚠️ Low Confidence (16 cells)</h3>
+<ul>
+<li>Row 2, Col 0: "Y . 9 2 ." (conf=0.59)</li>
+<li>Row 2, Col 1: "7.077" (conf=0.56)</li>
+<li>Row 3, Col 1: "£ 977 VT7(y)" (conf=0.69)</li>
+<li>Row 4, Col 0: "410 3 YT" (conf=0.58)</li>
+<li>Row 5, Col 0: "7 2 2 . 19" (conf=0.38)</li>
+<li>Row 7, Col 1: "T AT. 9" (conf=0.61)</li>
+<li>Row 9, Col 1: "V 7. 7 VYE" (conf=0.49)</li>
+<li>Row 13, Col 0: "TY NEN" (conf=0.58)</li>
+<li>Row 13, Col 1: "75 ...(11)" (conf=0.69)</li>
+<li>Row 15, Col 1: "٤٠ .٣." (conf=0.58)</li>
+<li>Row 17, Col 1: "4.9" (conf=0.58)</li>
+<li>Row 18, Col 0: "7. 7VPY" (conf=0.63)</li>
+<li>Row 19, Col 0: "0 744 404" (conf=0.56)</li>
+<li>Row 19, Col 1: "1  Y T9 £1T" (conf=0.58)</li>
+<li>Row 22, Col 1: ".4 1941" (conf=0.61)</li>
+<li>Row 25, Col 2: "IGHTM" (conf=0.43)</li>
+</ul>
+<h3>🔴 Numeric Anomalies (3)</h3>
+<ul>
+<li>Row 17, Col 0: "8191" — Value 8191.00 is 479.8× column median 17.07</li>
+<li>Row 6, Col 1: "77010" — Value 77010.00 is 10881.7× column median 7.08</li>
+<li>Row 14, Col 1: "17070." — Value 17070.00 is 2412.0× column median 7.08</li>
+</ul>
+</div>
+<hr>
+
+</body>
+</html>

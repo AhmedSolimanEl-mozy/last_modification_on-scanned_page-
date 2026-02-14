@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Numeric Column QA Review</title>
+<style>
+body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; }
+h1 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 8px; }
+h2 { color: #555; margin-top: 30px; }
+.page-section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd;
+                  border-radius: 8px; background: #fafafa; }
+.columns-list { margin: 10px 0; }
+.col-info { padding: 4px 8px; margin: 2px 0; background: #e8f4f8;
+             border-left: 3px solid #007bff; font-family: monospace; font-size: 13px; }
+.anomaly-list { margin: 10px 0; }
+.anomaly { padding: 6px 10px; margin: 3px 0; border-radius: 4px; font-size: 13px; }
+.anomaly.outlier { background: #fff3cd; border-left: 3px solid #ffc107; }
+.anomaly.low-conf { background: #f8d7da; border-left: 3px solid #dc3545; }
+</style>
+</head>
+<body>
+<h1>Numeric Column QA Review</h1>
+<div class="page-section"><h2>Page 3</h2><p>4 numeric columns, 63 numeric tokens, 34 anomalies</p><div class="columns-list"><div class="col-info">Col 0: x_right=70, 32 tokens — ٨٧٢, ٧٧٨, ٧٨٧, ٤٩٠, ٧١٠...</div><div class="col-info">Col 1: x_right=127, 25 tokens — ٧٣٨, ٤٠٤, ٧٣٧٧٧٨٧, ٤٤٦, ٠١١...</div><div class="col-info">Col 2: x_right=167, 4 tokens — (٤), (٥), (٧), (٢)</div><div class="col-info">Col 3: x_right=427, 2 tokens — (١), (١٤)</div></div><div class="anomaly-list"><div class="anomaly low-conf">⚠ Col 0: "٧٧٨" (value=778.0, median=762.0, conf=0.65) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٧٨٧" (value=787.0, median=762.0, conf=0.65) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٧٧٧" (value=777.0, median=762.0, conf=0.51) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٧٧٧" (value=777.0, median=762.0, conf=0.63) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٧٧٧" (value=777.0, median=762.0, conf=0.35) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٩٠٧" (value=907.0, median=762.0, conf=0.35) — low_confidence</div><div class="anomaly outlier">⚠ Col 0: "١٧٠٠٧٠" (value=170070.0, median=762.0, conf=0.82) — outlier</div><div class="anomaly low-conf">⚠ Col 0: "٧٧٧" (value=777.0, median=762.0, conf=0.62) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٧٠٧" (value=707.0, median=762.0, conf=0.62) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٣٣٢" (value=332.0, median=762.0, conf=0.66) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٢٧٧" (value=277.0, median=762.0, conf=0.56) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "١٧٩" (value=179.0, median=762.0, conf=0.58) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٧٧٧" (value=777.0, median=762.0, conf=0.65) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٩٠٧" (value=907.0, median=762.0, conf=0.65) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٤٤٧" (value=447.0, median=762.0, conf=0.46) — low_confidence</div><div class="anomaly low-conf">⚠ Col 0: "٩٥٣" (value=953.0, median=762.0, conf=0.46) — low_confidence</div><div class="anomaly outlier">⚠ Col 1: "٧٣٧٧٧٨٧" (value=7377787.0, median=709.0, conf=0.64) — outlier</div><div class="anomaly low-conf">⚠ Col 1: "٧٣٧٧٧٨٧" (value=7377787.0, median=709.0, conf=0.64) — low_confidence</div><div class="anomaly low-conf">⚠ Col 1: "٤٤٦" (value=446.0, median=709.0, conf=0.57) — low_confidence</div><div class="anomaly low-conf">⚠ Col 1: "٠١١" (value=11.0, median=709.0, conf=0.57) — low_confidence</div><div class="anomaly low-conf">⚠ Col 1: "٧٨٧" (value=787.0, median=709.0, conf=0.44) — low_confidence</div><div class="anomaly outlier">⚠ Col 1: "١٠١٧٨" (value=10178.0, median=709.0, conf=0.88) — outlier</div><div class="anomaly low-conf">⚠ Col 1: "٣٠٧" (value=307.0, median=709.0, conf=0.54) — low_confidence</div><div class="anomaly low-conf">⚠ Col 1: "٩٩٧" (value=997.0, median=709.0, conf=0.54) — low_confidence</div><div class="anomaly low-conf">⚠ Col 1: "١٧٤" (value=174.0, median=709.0, conf=0.66) — low_confidence</div><div class="anomaly outlier">⚠ Col 1: "٧٠٠٧٧" (value=70077.0, median=709.0, conf=0.62) — outlier</div><div class="anomaly low-conf">⚠ Col 1: "٧٠٠٧٧" (value=70077.0, median=709.0, conf=0.62) — low_confidence</div><div class="anomaly outlier">⚠ Col 1: "٧٠٤٠٧٠" (value=704070.0, median=709.0, conf=0.71) — outlier</div><div class="anomaly low-conf">⚠ Col 1: "٧٠٩" (value=709.0, median=709.0, conf=0.55) — low_confidence</div><div class="anomaly low-conf">⚠ Col 1: "٢٧٣" (value=273.0, median=709.0, conf=0.68) — low_confidence</div><div class="anomaly low-conf">⚠ Col 1: "٧٠٩" (value=709.0, median=709.0, conf=0.62) — low_confidence</div><div class="anomaly low-conf">⚠ Col 1: ".٧٧" (value=0.77, median=709.0, conf=0.68) — low_confidence</div><div class="anomaly low-conf">⚠ Col 2: "(٤)" (value=-4.0, median=-4.5, conf=0.54) — low_confidence</div><div class="anomaly low-conf">⚠ Col 2: "(٥)" (value=-5.0, median=-4.5, conf=0.68) — low_confidence</div></div></div>
+</body>
+</html>

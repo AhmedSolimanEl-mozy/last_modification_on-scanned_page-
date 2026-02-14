@@ -1,0 +1,364 @@
+{
+  "pipeline": "final_pipeline.py (Surya-only, discrete trust)",
+  "input": "el-bankalahly .pdf",
+  "output": "surya_discrete_trust_output.pdf",
+  "total_pages": 18,
+  "native_pages": 15,
+  "scanned_pages": 3,
+  "total_time_s": 165429.6,
+  "quality_ok": true,
+  "architecture": {
+    "ocr_engine": "Surya (full-page, normalized input)",
+    "tesseract": "REMOVED",
+    "input_normalization": "2240px width + 2x2 dilation",
+    "trust_model": "discrete (LOCKED/SURYA_VALID/CNN_CONFIRMED/UNTRUSTED)",
+    "validation": "line-level stability + column boosting",
+    "removed": [
+      "SSIM",
+      "pixel_overlap",
+      "dual_OCR_voting",
+      "Latin_to_Arabic_mapping",
+      "digit_repair_heuristics"
+    ]
+  },
+  "qa": {
+    "total_numeric_columns": 117,
+    "total_anomalies": 52
+  },
+  "numeric_trust": {
+    "total_numeric_tokens": 184,
+    "locked": 33,
+    "surya_valid": 83,
+    "cnn_confirmed": 0,
+    "trusted": 116,
+    "untrusted": 68,
+    "trust_pct": 63.0,
+    "has_partial_failure": true
+  },
+  "decisions": [
+    {
+      "page": 1,
+      "type": "IMAGE_ONLY",
+      "action": "ocr_reconstruct",
+      "meaningful_chars": 112,
+      "text_blocks": 5,
+      "token_count": 23,
+      "numeric_tokens": 5,
+      "text_tokens": 18,
+      "numeric_columns": 0,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 19.9,
+      "notes": "23 tokens, 6 lines | trust: 100.0% (0 untrusted, 2 locked)"
+    },
+    {
+      "page": 2,
+      "type": "IMAGE_ONLY",
+      "action": "ocr_reconstruct",
+      "meaningful_chars": 0,
+      "text_blocks": 0,
+      "token_count": 241,
+      "numeric_tokens": 24,
+      "text_tokens": 217,
+      "numeric_columns": 2,
+      "anomalies": 0,
+      "original_dims": [
+        595.2,
+        841.68
+      ],
+      "processing_time_s": 165309.0,
+      "notes": "241 tokens, 33 lines | trust: 70.8% (7 untrusted, 17 locked)"
+    },
+    {
+      "page": 3,
+      "type": "IMAGE_ONLY",
+      "action": "ocr_reconstruct",
+      "meaningful_chars": 0,
+      "text_blocks": 0,
+      "token_count": 353,
+      "numeric_tokens": 155,
+      "text_tokens": 198,
+      "numeric_columns": 8,
+      "anomalies": 48,
+      "original_dims": [
+        595.2,
+        841.68
+      ],
+      "processing_time_s": 99.4,
+      "notes": "353 tokens, 116 lines | trust: 60.6% (61 untrusted, 14 locked)"
+    },
+    {
+      "page": 4,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 710,
+      "text_blocks": 27,
+      "token_count": 157,
+      "numeric_tokens": 65,
+      "text_tokens": 92,
+      "numeric_columns": 6,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 5,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 538,
+      "text_blocks": 15,
+      "token_count": 117,
+      "numeric_tokens": 33,
+      "text_tokens": 84,
+      "numeric_columns": 3,
+      "anomalies": 1,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 6,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 888,
+      "text_blocks": 21,
+      "token_count": 196,
+      "numeric_tokens": 56,
+      "text_tokens": 140,
+      "numeric_columns": 6,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 7,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1739,
+      "text_blocks": 44,
+      "token_count": 532,
+      "numeric_tokens": 286,
+      "text_tokens": 246,
+      "numeric_columns": 26,
+      "anomalies": 2,
+      "original_dims": [
+        841.92,
+        595.32
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 8,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 721,
+      "text_blocks": 24,
+      "token_count": 161,
+      "numeric_tokens": 55,
+      "text_tokens": 106,
+      "numeric_columns": 3,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 9,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 3402,
+      "text_blocks": 40,
+      "token_count": 687,
+      "numeric_tokens": 37,
+      "text_tokens": 650,
+      "numeric_columns": 2,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 10,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 2934,
+      "text_blocks": 27,
+      "token_count": 577,
+      "numeric_tokens": 35,
+      "text_tokens": 542,
+      "numeric_columns": 1,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 11,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1878,
+      "text_blocks": 27,
+      "token_count": 372,
+      "numeric_tokens": 32,
+      "text_tokens": 340,
+      "numeric_columns": 2,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 12,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 2874,
+      "text_blocks": 40,
+      "token_count": 584,
+      "numeric_tokens": 29,
+      "text_tokens": 555,
+      "numeric_columns": 1,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 13,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1211,
+      "text_blocks": 43,
+      "token_count": 296,
+      "numeric_tokens": 152,
+      "text_tokens": 144,
+      "numeric_columns": 13,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 14,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1089,
+      "text_blocks": 38,
+      "token_count": 261,
+      "numeric_tokens": 123,
+      "text_tokens": 138,
+      "numeric_columns": 12,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 15,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 715,
+      "text_blocks": 32,
+      "token_count": 186,
+      "numeric_tokens": 99,
+      "text_tokens": 87,
+      "numeric_columns": 10,
+      "anomalies": 1,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 16,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 795,
+      "text_blocks": 33,
+      "token_count": 221,
+      "numeric_tokens": 135,
+      "text_tokens": 86,
+      "numeric_columns": 10,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 17,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 2781,
+      "text_blocks": 43,
+      "token_count": 636,
+      "numeric_tokens": 144,
+      "text_tokens": 492,
+      "numeric_columns": 6,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    },
+    {
+      "page": 18,
+      "type": "NATIVE_TEXT",
+      "action": "copy_original",
+      "meaningful_chars": 1212,
+      "text_blocks": 22,
+      "token_count": 252,
+      "numeric_tokens": 39,
+      "text_tokens": 213,
+      "numeric_columns": 6,
+      "anomalies": 0,
+      "original_dims": [
+        595.32,
+        841.92
+      ],
+      "processing_time_s": 0.0,
+      "notes": ""
+    }
+  ]
+}

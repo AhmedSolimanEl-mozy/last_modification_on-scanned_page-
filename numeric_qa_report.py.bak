@@ -1,0 +1,451 @@
+#!/usr/bin/env python3
+"""
+numeric_qa_report.py — Financial-Grade Numeric QA Report
+=========================================================
+
+Generates a comprehensive QA report (HTML) containing:
+  1. Digit-level audit log for every numeric token
+  2. Per-page numeric trust heatmap
+  3. Side-by-side visual diff for failed (UNTRUSTED) numbers
+  4. Summary statistics:
+     - % trusted numbers
+     - % rejected (UNTRUSTED) numbers
+     - Zero silent failures guarantee
+
+If ANY digit is UNTRUSTED → pipeline reports partial failure.
+
+Usage:
+    from numeric_qa_report import generate_qa_report, PageNumericAudit
+"""
+
+from __future__ import annotations
+
+import base64
+import html as html_mod
+import json
+from dataclasses import dataclass, field
+from io import BytesIO
+from typing import List, Optional
+
+import cv2
+import numpy as np
+
+from digit_ocr import TrustStatus, FailureReason, TokenOCRResult
+from numeric_validator import ValidationResult
+from numeric_reconstructor import NumericValue, page_trust_summary
+
+
+# ────────────────────────────────────────────────────────────────────
+#  Data Model
+# ────────────────────────────────────────────────────────────────────
+@dataclass
+class PageNumericAudit:
+    """Audit data for all numeric tokens on a single page."""
+    page_number: int             # 1-based
+    numeric_values: List[NumericValue] = field(default_factory=list)
+    ocr_results: List[TokenOCRResult] = field(default_factory=list)
+    validations: List[ValidationResult] = field(default_factory=list)
+    trust_summary: dict = field(default_factory=dict)
+
+    def compute_summary(self):
+        self.trust_summary = page_trust_summary(self.numeric_values)
+
+
+@dataclass
+class PipelineNumericAudit:
+    """Full pipeline audit for all pages."""
+    pages: List[PageNumericAudit] = field(default_factory=list)
+    total_numeric_tokens: int = 0
+    total_trusted: int = 0
+    total_untrusted: int = 0
+    overall_trust_pct: float = 0.0
+    has_partial_failure: bool = False
+
+    def compute_overall(self):
+        self.total_numeric_tokens = sum(
+            len(p.numeric_values) for p in self.pages)
+        self.total_trusted = sum(
+            sum(1 for v in p.numeric_values
+                if v.status == TrustStatus.TRUSTED)
+            for p in self.pages)
+        self.total_untrusted = self.total_numeric_tokens - self.total_trusted
+        self.overall_trust_pct = (
+            round(self.total_trusted / self.total_numeric_tokens * 100, 1)
+            if self.total_numeric_tokens > 0 else 100.0)
+        self.has_partial_failure = self.total_untrusted > 0
+
+
+# ────────────────────────────────────────────────────────────────────
+#  Image Encoding
+# ────────────────────────────────────────────────────────────────────
+def _img_to_base64(img: np.ndarray) -> str:
+    """Encode a numpy image to base64 PNG data URI."""
+    if img is None or img.size == 0:
+        return ""
+    _, buf = cv2.imencode('.png', img)
+    b64 = base64.b64encode(buf).decode('utf-8')
+    return f"data:image/png;base64,{b64}"
+
+
+# ────────────────────────────────────────────────────────────────────
+#  Trust Heatmap (simple bar-based)
+# ────────────────────────────────────────────────────────────────────
+def _trust_heatmap_html(values: List[NumericValue]) -> str:
+    """Generate a visual trust heatmap as HTML bars."""
+    if not values:
+        return '<p>No numeric tokens</p>'
+
+    bars = []
+    for i, v in enumerate(values):
+        color = _trust_color(v.trust_score, v.status)
+        width = max(2, int(v.trust_score * 30))
+        tooltip = (f'"{v.digits}" trust={v.trust_score:.2f} '
+                   f'{v.status.value}')
+        bars.append(
+            f'<div class="hm-bar" style="width:{width}px;'
+            f'background:{color};" title="{html_mod.escape(tooltip)}">'
+            f'</div>'
+        )
+
+    return '<div class="heatmap">' + ''.join(bars) + '</div>'
+
+
+def _trust_color(score: float, status: TrustStatus) -> str:
+    """Map trust score to CSS color."""
+    if status == TrustStatus.TRUSTED:
+        return '#22c55e'  # green
+    if score >= 0.7:
+        return '#f59e0b'  # amber
+    if score >= 0.4:
+        return '#f97316'  # orange
+    return '#ef4444'       # red
+
+
+# ────────────────────────────────────────────────────────────────────
+#  HTML Report Generation
+# ────────────────────────────────────────────────────────────────────
+def generate_qa_report(audit: PipelineNumericAudit) -> str:
+    """Generate comprehensive numeric QA report as HTML.
+
+    Contents:
+      1. Overall summary dashboard
+      2. Per-page trust heatmaps
+      3. Digit-level audit table
+      4. Side-by-side visual diffs for UNTRUSTED numbers
+    """
+    audit.compute_overall()
+
+    # Status badge
+    if audit.has_partial_failure:
+        status_badge = ('<span class="badge badge-warn">'
+                        '⚠ PARTIAL FAILURE — UNTRUSTED numbers detected</span>')
+    else:
+        status_badge = ('<span class="badge badge-ok">'
+                        '✓ ALL NUMBERS TRUSTED</span>')
+
+    # Build per-page sections
+    page_sections = []
+    for pa in audit.pages:
+        pa.compute_summary()
+        section = _render_page_section(pa)
+        page_sections.append(section)
+
+    pages_html = '\n'.join(page_sections)
+
+    # Failure summary
+    failure_summary = _render_failure_summary(audit)
+
+    return f"""<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Numeric QA Report — Financial-Grade Audit</title>
+<style>
+{_css()}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🔒 Numeric QA Report — Financial-Grade Audit</h1>
+
+<div class="summary-box">
+  <h2>Overall Summary</h2>
+  {status_badge}
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-val">{audit.total_numeric_tokens}</span>
+      <span class="stat-label">Total Numeric Tokens</span>
+    </div>
+    <div class="stat trusted">
+      <span class="stat-val">{audit.total_trusted}</span>
+      <span class="stat-label">Trusted ({audit.overall_trust_pct}%)</span>
+    </div>
+    <div class="stat untrusted">
+      <span class="stat-val">{audit.total_untrusted}</span>
+      <span class="stat-label">Untrusted ({100-audit.overall_trust_pct:.1f}%)</span>
+    </div>
+  </div>
+</div>
+
+{failure_summary}
+
+{pages_html}
+
+<footer>
+  <p>Generated by financial-grade numeric OCR pipeline.<br>
+  Zero silent failures guarantee: every UNTRUSTED digit is listed above.</p>
+</footer>
+
+</div>
+</body>
+</html>"""
+
+
+def _render_page_section(pa: PageNumericAudit) -> str:
+    """Render a single page's audit section."""
+    s = pa.trust_summary
+    status_cls = 'page-ok' if not s.get('partial_failure') else 'page-warn'
+
+    # Trust heatmap
+    heatmap = _trust_heatmap_html(pa.numeric_values)
+
+    # Audit table rows
+    rows = []
+    for i, nv in enumerate(pa.numeric_values):
+        vr = pa.validations[i] if i < len(pa.validations) else None
+
+        status_cls_row = 'trusted' if nv.status == TrustStatus.TRUSTED else 'untrusted'
+        reasons = ', '.join(r.value for r in nv.failure_reasons) if nv.failure_reasons else '—'
+
+        # Visual diff (only for UNTRUSTED)
+        diff_cell = ''
+        if nv.status == TrustStatus.UNTRUSTED and vr:
+            orig_b64 = _img_to_base64(vr.original_crop) if vr.original_crop is not None else ''
+            rendered_b64 = _img_to_base64(vr.rendered_crop) if vr.rendered_crop is not None else ''
+            diff_b64 = _img_to_base64(vr.diff_image) if vr.diff_image is not None else ''
+
+            if orig_b64:
+                diff_cell += f'<img src="{orig_b64}" class="crop-img" title="Original">'
+            if rendered_b64:
+                diff_cell += f'<img src="{rendered_b64}" class="crop-img" title="Rendered">'
+            if diff_b64:
+                diff_cell += f'<img src="{diff_b64}" class="crop-img" title="Diff">'
+
+        rows.append(f'''<tr class="{status_cls_row}">
+  <td class="digit-cell">{html_mod.escape(nv.digits)}</td>
+  <td>{html_mod.escape(nv.original_text)}</td>
+  <td class="score">{nv.trust_score:.3f}</td>
+  <td class="status-cell">{nv.status.value}</td>
+  <td class="score">{nv.ocr_confidence:.3f}</td>
+  <td class="score">{nv.visual_ssim:.3f}</td>
+  <td class="score">{nv.visual_overlap:.3f}</td>
+  <td>{'✓' if nv.dual_ocr_agreed else '✗'}</td>
+  <td class="reason">{reasons}</td>
+  <td class="diff-cell">{diff_cell}</td>
+</tr>''')
+
+    rows_html = '\n'.join(rows)
+
+    return f'''
+<div class="page-section {status_cls}">
+  <h2>Page {pa.page_number}
+    <span class="page-stats">
+      {s.get("total", 0)} tokens |
+      {s.get("trusted", 0)} trusted ({s.get("pct_trusted", 0)}%) |
+      {s.get("untrusted", 0)} untrusted
+    </span>
+  </h2>
+
+  <h3>Trust Heatmap</h3>
+  {heatmap}
+
+  <h3>Digit-Level Audit</h3>
+  <table class="audit-table">
+    <thead>
+      <tr>
+        <th>Digits</th>
+        <th>Original OCR</th>
+        <th>Trust Score</th>
+        <th>Status</th>
+        <th>OCR Conf</th>
+        <th>SSIM</th>
+        <th>Px Overlap</th>
+        <th>Dual Agree</th>
+        <th>Failure Reason</th>
+        <th>Visual Diff</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows_html}
+    </tbody>
+  </table>
+</div>'''
+
+
+def _render_failure_summary(audit: PipelineNumericAudit) -> str:
+    """Render summary of all failures across pages."""
+    if not audit.has_partial_failure:
+        return '<div class="no-failures"><p>✓ No numeric failures detected.</p></div>'
+
+    failures = []
+    for pa in audit.pages:
+        for nv in pa.numeric_values:
+            if nv.status == TrustStatus.UNTRUSTED:
+                reasons = ', '.join(r.value for r in nv.failure_reasons)
+                failures.append(
+                    f'<li>P{pa.page_number}: '
+                    f'<span class="digit-cell">{html_mod.escape(nv.digits)}</span> '
+                    f'(trust={nv.trust_score:.3f}) — {reasons}</li>')
+
+    return f'''
+<div class="failure-summary">
+  <h2>⚠ Failure Summary ({len(failures)} UNTRUSTED numbers)</h2>
+  <ul>{''.join(failures)}</ul>
+</div>'''
+
+
+def _css() -> str:
+    return """
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 2rem;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #f8fafc;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 0.5rem;
+}
+h2 { font-size: 1.3rem; margin: 1rem 0 0.5rem; color: #f1f5f9; }
+h3 { font-size: 1rem; margin: 0.8rem 0 0.4rem; color: #94a3b8; }
+
+.summary-box {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.stats { display: flex; gap: 2rem; margin-top: 1rem; flex-wrap: wrap; }
+.stat {
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    background: #0f172a;
+    border-radius: 6px;
+    min-width: 120px;
+}
+.stat-val { display: block; font-size: 2rem; font-weight: bold; }
+.stat-label { font-size: 0.8rem; color: #94a3b8; }
+.stat.trusted .stat-val { color: #22c55e; }
+.stat.untrusted .stat-val { color: #ef4444; }
+
+.badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.badge-ok { background: #14532d; color: #22c55e; border: 1px solid #22c55e; }
+.badge-warn { background: #7f1d1d; color: #fca5a5; border: 1px solid #ef4444; }
+
+.page-section {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.page-warn { border-color: #f59e0b; }
+.page-ok { border-color: #22c55e; }
+.page-stats { font-size: 0.8rem; color: #94a3b8; font-weight: normal; }
+
+.heatmap { display: flex; gap: 2px; flex-wrap: wrap; align-items: flex-end; }
+.hm-bar {
+    height: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    min-width: 4px;
+}
+
+.audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+.audit-table th {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 2px solid #334155;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+.audit-table td {
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid #1e293b;
+}
+.audit-table tr.trusted td { background: rgba(34, 197, 94, 0.05); }
+.audit-table tr.untrusted td { background: rgba(239, 68, 68, 0.08); }
+.audit-table tr.untrusted td.status-cell { color: #ef4444; font-weight: bold; }
+.audit-table tr.trusted td.status-cell { color: #22c55e; }
+
+.digit-cell {
+    font-family: 'Noto Naskh Arabic', 'Arial', serif;
+    font-size: 1.1rem;
+    direction: rtl;
+}
+.score { font-family: monospace; text-align: right; }
+.reason { font-size: 0.75rem; color: #f59e0b; max-width: 200px; }
+.diff-cell { min-width: 200px; }
+.crop-img {
+    height: 24px;
+    margin: 0 2px;
+    border: 1px solid #475569;
+    border-radius: 2px;
+    vertical-align: middle;
+    image-rendering: pixelated;
+}
+
+.failure-summary {
+    background: #1e0000;
+    border: 1px solid #ef4444;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.failure-summary ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+.failure-summary li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #2d0000;
+    font-size: 0.85rem;
+}
+.no-failures {
+    background: #002200;
+    border: 1px solid #22c55e;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    color: #22c55e;
+}
+footer {
+    text-align: center;
+    color: #475569;
+    font-size: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #1e293b;
+}
+"""

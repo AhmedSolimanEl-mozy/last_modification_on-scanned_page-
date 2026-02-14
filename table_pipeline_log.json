@@ -1,0 +1,330 @@
+{
+  "pipeline": "table_pipeline.py",
+  "input": "el-bankalahly .pdf",
+  "total_pages_processed": 18,
+  "total_time_s": 557.9,
+  "use_surya_layout": false,
+  "qa": {
+    "total_tables": 20,
+    "total_cells": 907,
+    "numeric_cells": 608,
+    "low_confidence_cells": 28,
+    "numeric_anomalies": 5,
+    "column_sums": [
+      {
+        "page": 3,
+        "col": 1,
+        "sum": 7811.0,
+        "count": 1
+      },
+      {
+        "page": 3,
+        "col": 0,
+        "sum": 81777.0,
+        "count": 1
+      },
+      {
+        "page": 3,
+        "col": 0,
+        "sum": 8208.17,
+        "count": 3
+      },
+      {
+        "page": 3,
+        "col": 1,
+        "sum": 94092.47,
+        "count": 5
+      },
+      {
+        "page": 4,
+        "col": 0,
+        "sum": -317.6,
+        "count": 3
+      },
+      {
+        "page": 5,
+        "col": 1,
+        "sum": -329.0,
+        "count": 2
+      },
+      {
+        "page": 5,
+        "col": 0,
+        "sum": -224.0,
+        "count": 1
+      },
+      {
+        "page": 7,
+        "col": 3,
+        "sum": 2207.0,
+        "count": 3
+      },
+      {
+        "page": 7,
+        "col": 0,
+        "sum": -652.0,
+        "count": 7
+      },
+      {
+        "page": 7,
+        "col": 1,
+        "sum": -941.0,
+        "count": 6
+      },
+      {
+        "page": 7,
+        "col": 5,
+        "sum": -329.0,
+        "count": 2
+      },
+      {
+        "page": 8,
+        "col": 1,
+        "sum": 709.0,
+        "count": 1
+      },
+      {
+        "page": 8,
+        "col": 0,
+        "sum": 706.0,
+        "count": 1
+      },
+      {
+        "page": 13,
+        "col": 1,
+        "sum": 259.0,
+        "count": 2
+      },
+      {
+        "page": 13,
+        "col": 0,
+        "sum": -410.0,
+        "count": 1
+      },
+      {
+        "page": 14,
+        "col": 0,
+        "sum": 511.0,
+        "count": 4
+      },
+      {
+        "page": 14,
+        "col": 1,
+        "sum": 1544.0,
+        "count": 4
+      },
+      {
+        "page": 14,
+        "col": 1,
+        "sum": -746.0,
+        "count": 1
+      },
+      {
+        "page": 15,
+        "col": 0,
+        "sum": 1238.0,
+        "count": 2
+      },
+      {
+        "page": 15,
+        "col": 1,
+        "sum": 1534.0,
+        "count": 2
+      },
+      {
+        "page": 15,
+        "col": 0,
+        "sum": 1002.0,
+        "count": 2
+      },
+      {
+        "page": 15,
+        "col": 1,
+        "sum": 516.0,
+        "count": 2
+      },
+      {
+        "page": 16,
+        "col": 0,
+        "sum": 569.0,
+        "count": 1
+      },
+      {
+        "page": 16,
+        "col": 1,
+        "sum": 910.0,
+        "count": 1
+      },
+      {
+        "page": 17,
+        "col": 0,
+        "sum": 1123.0,
+        "count": 3
+      },
+      {
+        "page": 17,
+        "col": 1,
+        "sum": 486.0,
+        "count": 2
+      },
+      {
+        "page": 18,
+        "col": 0,
+        "sum": 0.4,
+        "count": 1
+      },
+      {
+        "page": 18,
+        "col": 1,
+        "sum": 0.75,
+        "count": 1
+      }
+    ]
+  },
+  "per_page": [
+    {
+      "page": 1,
+      "method": "surya_ocr",
+      "text_lines": 6,
+      "text_chars": 154,
+      "table_count": 0,
+      "processing_time": 19.6
+    },
+    {
+      "page": 2,
+      "method": "surya_ocr",
+      "text_lines": 18,
+      "text_chars": 116,
+      "table_count": 2,
+      "processing_time": 285.2
+    },
+    {
+      "page": 3,
+      "method": "surya_ocr",
+      "text_lines": 15,
+      "text_chars": 199,
+      "table_count": 3,
+      "processing_time": 252.0
+    },
+    {
+      "page": 4,
+      "method": "native",
+      "text_lines": 21,
+      "text_chars": 276,
+      "table_count": 1,
+      "processing_time": 0.1
+    },
+    {
+      "page": 5,
+      "method": "native",
+      "text_lines": 20,
+      "text_chars": 252,
+      "table_count": 1,
+      "processing_time": 0.1
+    },
+    {
+      "page": 6,
+      "method": "native",
+      "text_lines": 19,
+      "text_chars": 261,
+      "table_count": 1,
+      "processing_time": 0.1
+    },
+    {
+      "page": 7,
+      "method": "native",
+      "text_lines": 25,
+      "text_chars": 414,
+      "table_count": 1,
+      "processing_time": 0.1
+    },
+    {
+      "page": 8,
+      "method": "native",
+      "text_lines": 36,
+      "text_chars": 613,
+      "table_count": 1,
+      "processing_time": 0.0
+    },
+    {
+      "page": 9,
+      "method": "native",
+      "text_lines": 103,
+      "text_chars": 4147,
+      "table_count": 0,
+      "processing_time": 0.1
+    },
+    {
+      "page": 10,
+      "method": "native",
+      "text_lines": 67,
+      "text_chars": 3536,
+      "table_count": 0,
+      "processing_time": 0.0
+    },
+    {
+      "page": 11,
+      "method": "native",
+      "text_lines": 45,
+      "text_chars": 2294,
+      "table_count": 0,
+      "processing_time": 0.0
+    },
+    {
+      "page": 12,
+      "method": "native",
+      "text_lines": 95,
+      "text_chars": 3495,
+      "table_count": 0,
+      "processing_time": 0.1
+    },
+    {
+      "page": 13,
+      "method": "native",
+      "text_lines": 37,
+      "text_chars": 409,
+      "table_count": 1,
+      "processing_time": 0.1
+    },
+    {
+      "page": 14,
+      "method": "native",
+      "text_lines": 27,
+      "text_chars": 444,
+      "table_count": 2,
+      "processing_time": 0.1
+    },
+    {
+      "page": 15,
+      "method": "native",
+      "text_lines": 46,
+      "text_chars": 457,
+      "table_count": 3,
+      "processing_time": 0.1
+    },
+    {
+      "page": 16,
+      "method": "native",
+      "text_lines": 33,
+      "text_chars": 342,
+      "table_count": 2,
+      "processing_time": 0.1
+    },
+    {
+      "page": 17,
+      "method": "native",
+      "text_lines": 115,
+      "text_chars": 3107,
+      "table_count": 1,
+      "processing_time": 0.1
+    },
+    {
+      "page": 18,
+      "method": "native",
+      "text_lines": 47,
+      "text_chars": 1260,
+      "table_count": 1,
+      "processing_time": 0.0
+    }
+  ]
+}

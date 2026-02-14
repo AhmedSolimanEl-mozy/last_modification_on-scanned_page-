@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Numeric QA Report — Financial-Grade Audit</title>
+<style>
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 2rem;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #f8fafc;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 0.5rem;
+}
+.architecture-note {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+h2 { font-size: 1.3rem; margin: 1rem 0 0.5rem; color: #f1f5f9; }
+h3 { font-size: 1rem; margin: 0.8rem 0 0.4rem; color: #94a3b8; }
+
+.summary-box {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.stats { display: flex; gap: 1.2rem; margin-top: 1rem; flex-wrap: wrap; }
+.stat {
+    text-align: center;
+    padding: 0.6rem 1rem;
+    background: #0f172a;
+    border-radius: 6px;
+    min-width: 100px;
+}
+.stat-val { display: block; font-size: 1.8rem; font-weight: bold; }
+.stat-label { font-size: 0.75rem; color: #94a3b8; }
+.stat.locked .stat-val { color: #3b82f6; }
+.stat.surya .stat-val { color: #22c55e; }
+.stat.cnn .stat-val { color: #a78bfa; }
+.stat.untrusted .stat-val { color: #ef4444; }
+.stat.revalidated .stat-val { color: #f59e0b; }
+
+.badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.badge-ok { background: #14532d; color: #22c55e; border: 1px solid #22c55e; }
+.badge-warn { background: #7f1d1d; color: #fca5a5; border: 1px solid #ef4444; }
+
+.page-section {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.page-warn { border-color: #f59e0b; }
+.page-ok { border-color: #22c55e; }
+.page-stats { font-size: 0.8rem; color: #94a3b8; font-weight: normal; }
+
+.heatmap { display: flex; gap: 3px; flex-wrap: wrap; align-items: center; }
+.hm-bar {
+    width: 28px;
+    height: 24px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+}
+
+.audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+.audit-table th {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 2px solid #334155;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+.audit-table td {
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid #1e293b;
+}
+.audit-table tr.locked td { background: rgba(59, 130, 246, 0.08); }
+.audit-table tr.trusted td { background: rgba(34, 197, 94, 0.05); }
+.audit-table tr.cnn td { background: rgba(167, 139, 250, 0.08); }
+.audit-table tr.untrusted td { background: rgba(239, 68, 68, 0.08); }
+.audit-table tr.untrusted td.status-cell { font-weight: bold; }
+
+.stability-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+.stability-table th {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 0.4rem;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+}
+.stability-table td { padding: 0.3rem 0.4rem; }
+.stability-table tr.unstable td { background: rgba(239, 68, 68, 0.1); }
+
+.digit-cell {
+    font-family: 'Noto Naskh Arabic', 'Arial', serif;
+    font-size: 1.1rem;
+    direction: rtl;
+}
+.score { font-family: monospace; text-align: right; }
+.reason { font-size: 0.75rem; color: #f59e0b; max-width: 200px; }
+
+.failure-summary {
+    background: #1e0000;
+    border: 1px solid #ef4444;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.failure-summary ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+.failure-summary li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #2d0000;
+    font-size: 0.85rem;
+}
+.failure-note {
+    font-size: 0.8rem;
+    color: #fca5a5;
+    font-style: italic;
+    margin-top: 0.3rem;
+}
+.no-failures {
+    background: #002200;
+    border: 1px solid #22c55e;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    color: #22c55e;
+}
+footer {
+    text-align: center;
+    color: #475569;
+    font-size: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #1e293b;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🔒 Numeric QA Report — Financial-Grade Audit</h1>
+<p class="architecture-note">Architecture: Surya-only OCR | Discrete Trust |
+No Tesseract | No SSIM | No Dual-OCR</p>
+
+<div class="summary-box">
+  <h2>Overall Summary</h2>
+  <span class="badge badge-warn">⚠ PARTIAL FAILURE — UNTRUSTED numbers detected</span>
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-val">137</span>
+      <span class="stat-label">Total Numeric Tokens</span>
+    </div>
+    <div class="stat locked">
+      <span class="stat-val">10</span>
+      <span class="stat-label">🔒 LOCKED</span>
+    </div>
+    <div class="stat surya">
+      <span class="stat-val">123</span>
+      <span class="stat-label">✓ SURYA_VALID</span>
+    </div>
+    <div class="stat cnn">
+      <span class="stat-val">0</span>
+      <span class="stat-label">🧠 CNN_CONFIRMED</span>
+    </div>
+    <div class="stat untrusted">
+      <span class="stat-val">4</span>
+      <span class="stat-label">⚠ UNTRUSTED</span>
+    </div>
+    <div class="stat revalidated">
+      <span class="stat-val">2</span>
+      <span class="stat-label">🔄 Re-validated</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="failure-summary">
+  <h2>⚠ UNTRUSTED Tokens (4 numbers)</h2>
+  <p class="failure-note">These tokens could not be verified.
+  Digits are preserved as-is from Surya OCR — no corrections applied.</p>
+  <ul><li>P3: <span class="digit-cell">٧٠٧٤</span> (Surya conf=0.381) — LOW_CONFIDENCE</li><li>P3: <span class="digit-cell">٧٨٧</span> (Surya conf=0.436) — LOW_CONFIDENCE</li><li>P3: <span class="digit-cell">٧٧٧</span> (Surya conf=0.347) — LOW_CONFIDENCE</li><li>P3: <span class="digit-cell">٩٠٧</span> (Surya conf=0.347) — LOW_CONFIDENCE</li></ul>
+</div>
+
+
+<div class="page-section page-warn">
+  <h2>Page 3
+    <span class="page-stats">
+      137 tokens |
+      🔒 10 locked |
+      ✓ 123 valid |
+      🧠 0 cnn |
+      ⚠ 4 untrusted
+    </span>
+  </h2>
+
+  <h3>Trust Heatmap</h3>
+  <div class="heatmap"><div class="hm-bar" style="background:#3b82f6;" title="&quot;٨٨٧١٥٨٨٦&quot; LOCKED (Surya conf=0.99)">🔒</div><div class="hm-bar" style="background:#3b82f6;" title="&quot;٨٨٨٤&quot; LOCKED (Surya conf=0.99)">🔒</div><div class="hm-bar" style="background:#3b82f6;" title="&quot;٨٨٨٤&quot; LOCKED (Surya conf=1.00)">🔒</div><div class="hm-bar" style="background:#3b82f6;" title="&quot;٨٨٨٤&quot; LOCKED (Surya conf=1.00)">🔒</div><div class="hm-bar" style="background:#3b82f6;" title="&quot;٣١&quot; LOCKED (Surya conf=0.96)">🔒</div><div class="hm-bar" style="background:#3b82f6;" title="&quot;٣١&quot; LOCKED (Surya conf=0.99)">🔒</div><div class="hm-bar" style="background:#3b82f6;" title="&quot;۳۱&quot; LOCKED (Surya conf=0.96)">🔒</div><div class="hm-bar" style="background:#3b82f6;" title="&quot;۳۱&quot; LOCKED (Surya conf=0.95)">🔒</div><div class="hm-bar" style="background:#ef4444;" title="&quot;٧٠٧٤&quot; UNTRUSTED (Surya conf=0.38)">⚠</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢&quot; SURYA_VALID (Surya conf=0.59)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢&quot; SURYA_VALID (Surya conf=0.59)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤&quot; SURYA_VALID (Surya conf=0.59)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢٧&quot; SURYA_VALID (Surya conf=0.85)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٨٧٢&quot; SURYA_VALID (Surya conf=0.85)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٣٨&quot; SURYA_VALID (Surya conf=0.87)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٥٧&quot; SURYA_VALID (Surya conf=0.87)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧٨&quot; SURYA_VALID (Surya conf=0.65)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٨٧&quot; SURYA_VALID (Surya conf=0.65)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٤&quot; SURYA_VALID (Surya conf=0.77)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤٠٤&quot; SURYA_VALID (Surya conf=0.77)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٨&quot; SURYA_VALID (Surya conf=0.75)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤٩٠&quot; SURYA_VALID (Surya conf=0.75)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;(٤)&quot; SURYA_VALID (Surya conf=0.54)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٣٧٧٧٨٧&quot; SURYA_VALID (Surya conf=0.64)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧&quot; SURYA_VALID (Surya conf=0.82)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧١٠&quot; SURYA_VALID (Surya conf=0.82)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧١٠&quot; SURYA_VALID (Surya conf=0.82)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;(٥)&quot; SURYA_VALID (Surya conf=0.68)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢&quot; SURYA_VALID (Surya conf=0.79)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٩٢&quot; SURYA_VALID (Surya conf=0.79)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤&quot; SURYA_VALID (Surya conf=0.73)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧٧&quot; SURYA_VALID (Surya conf=0.51)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٨&quot; SURYA_VALID (Surya conf=0.65)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢٨&quot; SURYA_VALID (Surya conf=0.65)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١&quot; SURYA_VALID (Surya conf=0.57)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤٤٦&quot; SURYA_VALID (Surya conf=0.57)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٠١١&quot; SURYA_VALID (Surya conf=0.57)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;(٧)&quot; SURYA_VALID (Surya conf=0.77)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١&quot; SURYA_VALID (Surya conf=0.87)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧٧&quot; SURYA_VALID (Surya conf=0.87)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧٧&quot; SURYA_VALID (Surya conf=0.77)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١&quot; SURYA_VALID (Surya conf=0.86)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٩٠&quot; SURYA_VALID (Surya conf=0.78)">✓</div><div class="hm-bar" style="background:#ef4444;" title="&quot;٧٨٧&quot; UNTRUSTED (Surya conf=0.44)">⚠</div><div class="hm-bar" style="background:#22c55e;" title="&quot;(٢)&quot; SURYA_VALID (Surya conf=0.89)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٧&quot; SURYA_VALID (Surya conf=0.84)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٠١٧٨&quot; SURYA_VALID (Surya conf=0.88)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٨&quot; SURYA_VALID (Surya conf=0.63)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧٧&quot; SURYA_VALID (Surya conf=0.63)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٤&quot; SURYA_VALID (Surya conf=0.75)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٣٠٧&quot; SURYA_VALID (Surya conf=0.54)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٩٩٧&quot; SURYA_VALID (Surya conf=0.54)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢٨٨&quot; SURYA_VALID (Surya conf=0.75)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢٥٧&quot; SURYA_VALID (Surya conf=0.75)">✓</div><div class="hm-bar" style="background:#ef4444;" title="&quot;٧٧٧&quot; UNTRUSTED (Surya conf=0.35)">⚠</div><div class="hm-bar" style="background:#ef4444;" title="&quot;٩٠٧&quot; UNTRUSTED (Surya conf=0.35)">⚠</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٨&quot; SURYA_VALID (Surya conf=0.80)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٤٤&quot; SURYA_VALID (Surya conf=0.80)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤٤&quot; SURYA_VALID (Surya conf=0.80)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤&quot; SURYA_VALID (Surya conf=0.80)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٧٠٠٧٠&quot; SURYA_VALID (Surya conf=0.82)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١&quot; SURYA_VALID (Surya conf=0.66)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٧٤&quot; SURYA_VALID (Surya conf=0.66)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٦٤&quot; SURYA_VALID (Surya conf=0.66)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢&quot; SURYA_VALID (Surya conf=0.83)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٩&quot; SURYA_VALID (Surya conf=0.83)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٣&quot; SURYA_VALID (Surya conf=0.83)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٠٠٧٧&quot; SURYA_VALID (Surya conf=0.62)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧&quot; SURYA_VALID (Surya conf=0.62)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧٧&quot; SURYA_VALID (Surya conf=0.62)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٠٧&quot; SURYA_VALID (Surya conf=0.62)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤&quot; SURYA_VALID (Surya conf=0.80)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٩٧٧&quot; SURYA_VALID (Surya conf=0.80)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٩٧٧&quot; SURYA_VALID (Surya conf=0.81)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٣٠&quot; SURYA_VALID (Surya conf=0.74)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧٧&quot; SURYA_VALID (Surya conf=0.74)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٢٣&quot; SURYA_VALID (Surya conf=0.91)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٥١٨&quot; SURYA_VALID (Surya conf=0.91)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;(٩)&quot; SURYA_VALID (Surya conf=0.59)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٩٨&quot; SURYA_VALID (Surya conf=0.66)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٣٣٢&quot; SURYA_VALID (Surya conf=0.66)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٠٤٠٧٠&quot; SURYA_VALID (Surya conf=0.71)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١&quot; SURYA_VALID (Surya conf=0.70)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧&quot; SURYA_VALID (Surya conf=0.85)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٠١٠&quot; SURYA_VALID (Surya conf=0.85)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٧&quot; SURYA_VALID (Surya conf=0.56)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢٧٧&quot; SURYA_VALID (Surya conf=0.56)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧&quot; SURYA_VALID (Surya conf=0.55)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٠٩&quot; SURYA_VALID (Surya conf=0.55)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧&quot; SURYA_VALID (Surya conf=0.79)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٩&quot; SURYA_VALID (Surya conf=0.79)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٠٠٠٤&quot; SURYA_VALID (Surya conf=0.74)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢&quot; SURYA_VALID (Surya conf=0.68)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧&quot; SURYA_VALID (Surya conf=0.68)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧&quot; SURYA_VALID (Surya conf=0.68)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢٧٣&quot; SURYA_VALID (Surya conf=0.68)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤&quot; SURYA_VALID (Surya conf=0.72)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٩٧٧&quot; SURYA_VALID (Surya conf=0.72)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٢٧&quot; SURYA_VALID (Surya conf=0.72)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٠٠&quot; SURYA_VALID (Surya conf=0.81)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٧&quot; SURYA_VALID (Surya conf=0.86)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;۲۳&quot; SURYA_VALID (Surya conf=0.62)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤٨&quot; SURYA_VALID (Surya conf=0.62)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٣&quot; SURYA_VALID (Surya conf=0.77)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;(١١)&quot; SURYA_VALID (Surya conf=0.72)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢٧&quot; SURYA_VALID (Surya conf=0.73)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤&quot; SURYA_VALID (Surya conf=0.73)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤&quot; SURYA_VALID (Surya conf=0.73)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٧٠&quot; SURYA_VALID (Surya conf=0.79)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٠&quot; SURYA_VALID (Surya conf=0.79)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧&quot; SURYA_VALID (Surya conf=0.58)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٧٩&quot; SURYA_VALID (Surya conf=0.58)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤&quot; SURYA_VALID (Surya conf=0.77)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧&quot; SURYA_VALID (Surya conf=0.77)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٢&quot; SURYA_VALID (Surya conf=0.58)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧&quot; SURYA_VALID (Surya conf=0.58)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٧٧&quot; SURYA_VALID (Surya conf=0.77)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧&quot; SURYA_VALID (Surya conf=0.77)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١&quot; SURYA_VALID (Surya conf=0.90)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٨٤٩&quot; SURYA_VALID (Surya conf=0.90)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٠٩&quot; SURYA_VALID (Surya conf=0.62)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;.٧٧&quot; SURYA_VALID (Surya conf=0.68)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧&quot; SURYA_VALID (Surya conf=0.68)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٤٧&quot; SURYA_VALID (Surya conf=0.76)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٠٧&quot; SURYA_VALID (Surya conf=0.76)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٠&quot; SURYA_VALID (Surya conf=0.65)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٧٧٧&quot; SURYA_VALID (Surya conf=0.65)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٩٠٧&quot; SURYA_VALID (Surya conf=0.65)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٨&quot; SURYA_VALID (Surya conf=0.83)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;١٤٤&quot; SURYA_VALID (Surya conf=0.83)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤٤&quot; SURYA_VALID (Surya conf=0.83)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤&quot; SURYA_VALID (Surya conf=0.83)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٤٤٧&quot; SURYA_VALID (Surya conf=0.46)">✓</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٩٥٣&quot; SURYA_VALID (Surya conf=0.46)">✓</div><div class="hm-bar" style="background:#3b82f6;" title="&quot;(١)&quot; LOCKED (Surya conf=0.99)">🔒</div><div class="hm-bar" style="background:#3b82f6;" title="&quot;(١٤)&quot; LOCKED (Surya conf=0.99)">🔒</div><div class="hm-bar" style="background:#22c55e;" title="&quot;٣&quot; SURYA_VALID (Surya conf=0.80)">✓</div></div>
+
+  <h3>Token Audit (Discrete Trust)</h3>
+  <table class="audit-table">
+    <thead>
+      <tr>
+        <th>Digits</th>
+        <th>Original OCR</th>
+        <th>Surya Conf</th>
+        <th>Status</th>
+        <th>Trust</th>
+        <th>Locked</th>
+        <th>CNN</th>
+        <th>Re-val</th>
+        <th>Failure Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="locked">
+  <td class="digit-cell">٨٨٧١٥٨٨٦</td>
+  <td>٨٨٧١٥٨٨٦</td>
+  <td class="score">0.992</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="locked">
+  <td class="digit-cell">٨٨٨٤</td>
+  <td>٨٨٨٤</td>
+  <td class="score">0.992</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="locked">
+  <td class="digit-cell">٨٨٨٤</td>
+  <td>٨٨٨٤</td>
+  <td class="score">0.997</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="locked">
+  <td class="digit-cell">٨٨٨٤</td>
+  <td>٨٨٨٤</td>
+  <td class="score">0.997</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="locked">
+  <td class="digit-cell">٣١</td>
+  <td>٣١</td>
+  <td class="score">0.964</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="locked">
+  <td class="digit-cell">٣١</td>
+  <td>٣١</td>
+  <td class="score">0.989</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="locked">
+  <td class="digit-cell">۳۱</td>
+  <td>۳۱</td>
+  <td class="score">0.964</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="locked">
+  <td class="digit-cell">۳۱</td>
+  <td>۳۱</td>
+  <td class="score">0.955</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="untrusted">
+  <td class="digit-cell">٧٠٧٤</td>
+  <td>٧٠٧٤</td>
+  <td class="score">0.381</td>
+  <td class="status-cell" style="color:#ef4444">⚠ UNTRUSTED</td>
+  <td class="score">0.00</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">LOW_CONFIDENCE</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢</td>
+  <td>٢</td>
+  <td class="score">0.593</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢</td>
+  <td>٢</td>
+  <td class="score">0.593</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤</td>
+  <td>٤</td>
+  <td class="score">0.593</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢٧</td>
+  <td>٢٧</td>
+  <td class="score">0.853</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٨٧٢</td>
+  <td>٨٧٢</td>
+  <td class="score">0.853</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٣٨</td>
+  <td>٧٣٨</td>
+  <td class="score">0.873</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٥٧</td>
+  <td>٥٧</td>
+  <td class="score">0.873</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧٨</td>
+  <td>٧٧٨</td>
+  <td class="score">0.654</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٨٧</td>
+  <td>٧٨٧</td>
+  <td class="score">0.654</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٤</td>
+  <td>١٤</td>
+  <td class="score">0.767</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤٠٤</td>
+  <td>٤٠٤</td>
+  <td class="score">0.767</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٨</td>
+  <td>٨</td>
+  <td class="score">0.748</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤٩٠</td>
+  <td>٤٩٠</td>
+  <td class="score">0.748</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">(٤)</td>
+  <td>(٤)</td>
+  <td class="score">0.538</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٣٧٧٧٨٧</td>
+  <td>٧٣٧٧٧٨٧</td>
+  <td class="score">0.635</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧</td>
+  <td>٧</td>
+  <td class="score">0.823</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧١٠</td>
+  <td>٧١٠</td>
+  <td class="score">0.823</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧١٠</td>
+  <td>٧١٠</td>
+  <td class="score">0.823</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">(٥)</td>
+  <td>(٥)</td>
+  <td class="score">0.681</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢</td>
+  <td>٢</td>
+  <td class="score">0.787</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٩٢</td>
+  <td>٩٢</td>
+  <td class="score">0.787</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤</td>
+  <td>٤</td>
+  <td class="score">0.735</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧٧</td>
+  <td>٧٧٧</td>
+  <td class="score">0.510</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٨</td>
+  <td>٧٨</td>
+  <td class="score">0.647</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢٨</td>
+  <td>٢٨</td>
+  <td class="score">0.647</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١</td>
+  <td>١</td>
+  <td class="score">0.568</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤٤٦</td>
+  <td>٤٤٦</td>
+  <td class="score">0.568</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٠١١</td>
+  <td>٠١١</td>
+  <td class="score">0.568</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">(٧)</td>
+  <td>(٧)</td>
+  <td class="score">0.769</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١</td>
+  <td>١</td>
+  <td class="score">0.870</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧٧</td>
+  <td>٧٧٧</td>
+  <td class="score">0.870</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧٧</td>
+  <td>٧٧٧</td>
+  <td class="score">0.774</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١</td>
+  <td>١</td>
+  <td class="score">0.865</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٩٠</td>
+  <td>٧٩٠</td>
+  <td class="score">0.778</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="untrusted">
+  <td class="digit-cell">٧٨٧</td>
+  <td>٧٨٧</td>
+  <td class="score">0.436</td>
+  <td class="status-cell" style="color:#ef4444">⚠ UNTRUSTED</td>
+  <td class="score">0.00</td>
+  <td>—</td>
+  <td>—</td>
+  <td>🔄</td>
+  <td class="reason">LOW_CONFIDENCE</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">(٢)</td>
+  <td>(٢)</td>
+  <td class="score">0.894</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٧</td>
+  <td>١٧</td>
+  <td class="score">0.836</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٠١٧٨</td>
+  <td>١٠١٧٨</td>
+  <td class="score">0.878</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٨</td>
+  <td>١٨</td>
+  <td class="score">0.627</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧٧</td>
+  <td>٧٧٧</td>
+  <td class="score">0.627</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٤</td>
+  <td>١٤</td>
+  <td class="score">0.751</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٣٠٧</td>
+  <td>٣٠٧</td>
+  <td class="score">0.539</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٩٩٧</td>
+  <td>٩٩٧</td>
+  <td class="score">0.539</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢٨٨</td>
+  <td>٢٨٨</td>
+  <td class="score">0.752</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢٥٧</td>
+  <td>٢٥٧</td>
+  <td class="score">0.752</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="untrusted">
+  <td class="digit-cell">٧٧٧</td>
+  <td>٧٧٧</td>
+  <td class="score">0.347</td>
+  <td class="status-cell" style="color:#ef4444">⚠ UNTRUSTED</td>
+  <td class="score">0.00</td>
+  <td>—</td>
+  <td>—</td>
+  <td>🔄</td>
+  <td class="reason">LOW_CONFIDENCE</td>
+</tr>
+<tr class="untrusted">
+  <td class="digit-cell">٩٠٧</td>
+  <td>٩٠٧</td>
+  <td class="score">0.347</td>
+  <td class="status-cell" style="color:#ef4444">⚠ UNTRUSTED</td>
+  <td class="score">0.00</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">LOW_CONFIDENCE</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٨</td>
+  <td>٨</td>
+  <td class="score">0.802</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٤٤</td>
+  <td>١٤٤</td>
+  <td class="score">0.802</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤٤</td>
+  <td>٤٤</td>
+  <td class="score">0.802</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤</td>
+  <td>٤</td>
+  <td class="score">0.802</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٧٠٠٧٠</td>
+  <td>١٧٠٠٧٠</td>
+  <td class="score">0.824</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١</td>
+  <td>١</td>
+  <td class="score">0.660</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٧٤</td>
+  <td>١٧٤</td>
+  <td class="score">0.660</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٦٤</td>
+  <td>٦٤</td>
+  <td class="score">0.660</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢</td>
+  <td>٢</td>
+  <td class="score">0.827</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٩</td>
+  <td>٩</td>
+  <td class="score">0.827</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٣</td>
+  <td>٣</td>
+  <td class="score">0.827</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٠٠٧٧</td>
+  <td>٧٠٠٧٧</td>
+  <td class="score">0.624</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧</td>
+  <td>٧</td>
+  <td class="score">0.617</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧٧</td>
+  <td>٧٧٧</td>
+  <td class="score">0.617</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٠٧</td>
+  <td>٧٠٧</td>
+  <td class="score">0.617</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤</td>
+  <td>٤</td>
+  <td class="score">0.800</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٩٧٧</td>
+  <td>٩٧٧</td>
+  <td class="score">0.800</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٩٧٧</td>
+  <td>٩٧٧</td>
+  <td class="score">0.810</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٣٠</td>
+  <td>٣٠</td>
+  <td class="score">0.740</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧٧</td>
+  <td>٧٧٧</td>
+  <td class="score">0.740</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٢٣</td>
+  <td>٧٢٣</td>
+  <td class="score">0.910</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٥١٨</td>
+  <td>٥١٨</td>
+  <td class="score">0.910</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">(٩)</td>
+  <td>(٩)</td>
+  <td class="score">0.588</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٩٨</td>
+  <td>٩٨</td>
+  <td class="score">0.656</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٣٣٢</td>
+  <td>٣٣٢</td>
+  <td class="score">0.656</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٠٤٠٧٠</td>
+  <td>٧٠٤٠٧٠</td>
+  <td class="score">0.708</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١</td>
+  <td>١</td>
+  <td class="score">0.697</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧</td>
+  <td>٧٧</td>
+  <td class="score">0.848</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٠١٠</td>
+  <td>٠١٠</td>
+  <td class="score">0.848</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٧</td>
+  <td>١٧</td>
+  <td class="score">0.561</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢٧٧</td>
+  <td>٢٧٧</td>
+  <td class="score">0.561</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧</td>
+  <td>٧٧</td>
+  <td class="score">0.553</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٠٩</td>
+  <td>٧٠٩</td>
+  <td class="score">0.553</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧</td>
+  <td>٧</td>
+  <td class="score">0.793</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٩</td>
+  <td>٧٩</td>
+  <td class="score">0.793</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٠٠٠٤</td>
+  <td>٠٠٠٤</td>
+  <td class="score">0.739</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢</td>
+  <td>٢</td>
+  <td class="score">0.683</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧</td>
+  <td>٧</td>
+  <td class="score">0.683</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧</td>
+  <td>٧</td>
+  <td class="score">0.683</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢٧٣</td>
+  <td>٢٧٣</td>
+  <td class="score">0.683</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤</td>
+  <td>٤</td>
+  <td class="score">0.725</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٩٧٧</td>
+  <td>٩٧٧</td>
+  <td class="score">0.725</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٢٧</td>
+  <td>٧٢٧</td>
+  <td class="score">0.725</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٠٠</td>
+  <td>١٠٠</td>
+  <td class="score">0.814</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٧</td>
+  <td>١٧</td>
+  <td class="score">0.857</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">۲۳</td>
+  <td>۲۳</td>
+  <td class="score">0.624</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤٨</td>
+  <td>٤٨</td>
+  <td class="score">0.624</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٣</td>
+  <td>٧٣</td>
+  <td class="score">0.771</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">(١١)</td>
+  <td>(١١)</td>
+  <td class="score">0.720</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢٧</td>
+  <td>٢٧</td>
+  <td class="score">0.726</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤</td>
+  <td>٤</td>
+  <td class="score">0.726</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤</td>
+  <td>٤</td>
+  <td class="score">0.726</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٧٠</td>
+  <td>١٧٠</td>
+  <td class="score">0.792</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٠</td>
+  <td>٧٠</td>
+  <td class="score">0.792</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧</td>
+  <td>٧</td>
+  <td class="score">0.584</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٧٩</td>
+  <td>١٧٩</td>
+  <td class="score">0.584</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤</td>
+  <td>٤</td>
+  <td class="score">0.767</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧</td>
+  <td>٧</td>
+  <td class="score">0.767</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٢</td>
+  <td>٢</td>
+  <td class="score">0.578</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧</td>
+  <td>٧</td>
+  <td class="score">0.578</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٧٧</td>
+  <td>١٧٧</td>
+  <td class="score">0.770</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧</td>
+  <td>٧٧</td>
+  <td class="score">0.770</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١</td>
+  <td>١</td>
+  <td class="score">0.904</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٨٤٩</td>
+  <td>٨٤٩</td>
+  <td class="score">0.904</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٠٩</td>
+  <td>٧٠٩</td>
+  <td class="score">0.619</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">.٧٧</td>
+  <td>.٧٧</td>
+  <td class="score">0.683</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧</td>
+  <td>٧٧</td>
+  <td class="score">0.683</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٤٧</td>
+  <td>٧٤٧</td>
+  <td class="score">0.756</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٠٧</td>
+  <td>٧٠٧</td>
+  <td class="score">0.756</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٠</td>
+  <td>٠</td>
+  <td class="score">0.649</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٧٧٧</td>
+  <td>٧٧٧</td>
+  <td class="score">0.649</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٩٠٧</td>
+  <td>٩٠٧</td>
+  <td class="score">0.649</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٨</td>
+  <td>٨</td>
+  <td class="score">0.831</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">١٤٤</td>
+  <td>١٤٤</td>
+  <td class="score">0.831</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤٤</td>
+  <td>٤٤</td>
+  <td class="score">0.831</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤</td>
+  <td>٤</td>
+  <td class="score">0.831</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٤٤٧</td>
+  <td>٤٤٧</td>
+  <td class="score">0.457</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٩٥٣</td>
+  <td>٩٥٣</td>
+  <td class="score">0.457</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="locked">
+  <td class="digit-cell">(١)</td>
+  <td>(١)</td>
+  <td class="score">0.995</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="locked">
+  <td class="digit-cell">(١٤)</td>
+  <td>(١٤)</td>
+  <td class="score">0.995</td>
+  <td class="status-cell" style="color:#3b82f6">🔒 LOCKED</td>
+  <td class="score">1.00</td>
+  <td>🔒</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+<tr class="trusted">
+  <td class="digit-cell">٣</td>
+  <td>٣</td>
+  <td class="score">0.800</td>
+  <td class="status-cell" style="color:#22c55e">✓ SURYA_VALID</td>
+  <td class="score">0.85</td>
+  <td>—</td>
+  <td>—</td>
+  <td></td>
+  <td class="reason">—</td>
+</tr>
+    </tbody>
+  </table>
+  
+</div>
+
+<footer>
+  <p>Generated by financial-grade numeric OCR pipeline (Surya-only).<br>
+  Discrete trust model — no weighted averages, no silent corrections.<br>
+  Every UNTRUSTED digit is listed. Uncertainty is exposed, never hidden.</p>
+</footer>
+
+</div>
+</body>
+</html>
