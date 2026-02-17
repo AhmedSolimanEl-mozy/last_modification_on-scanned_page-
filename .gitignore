@@ -9,9 +9,18 @@ share/
 pyvenv.cfg
 __pycache__/
 *.pyc
+*.py[cod]
+*$py.class
+
+# Environment variables (IMPORTANT: Contains API keys)
+.env
+*.env
+!.env.example
 
 # Large model files
 publaynet_model/
+models/
+.cache/
 
 # Generated image/extraction dirs (reproducible from scripts)
 table_extraction/
@@ -23,7 +32,35 @@ table_images/
 # Temp/log files
 *.log
 nohup.out
+*.tmp
+
+# Test outputs
+test_results_*.json
+test_report_*.md
+api_test_results_*.json
+api_test_report_*.md
+query_results_*.txt
 
 # OS files
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+.vscode/
+
+# Database data (persistent in Docker volumes)
+database/pgdata/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Gemini artifacts (conversation-specific)
+.gemini/
+
+# Keep important files
+!final_json_18_pages.json
+!.env.example

@@ -1,1353 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="ltr">
-<head>
-<meta charset="utf-8">
-<title>Table Extraction — QA Review</title>
-<style>
-body {
-  font-family: Arial, 'Noto Sans Arabic', sans-serif;
-  background: #f5f5f5;
-  padding: 20px;
-  direction: ltr;
-}
-h2 { color: #333; margin-top: 30px; }
-.table-grid {
-  display: grid;
-  gap: 0;
-  border: 2px solid #333;
-  background: #fff;
-  margin: 10px 0;
-  max-width: 100%;
-  overflow-x: auto;
-}
-.cell {
-  border: 1px solid #ddd;
-  padding: 4px 6px;
-  font-size: 13px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-height: 20px;
-}
-.cell.hdr {
-  background: #e8eef3;
-  font-weight: bold;
-  border-bottom: 2px solid #999;
-}
-.cell.num {
-  direction: ltr;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-.cell.rtl {
-  direction: rtl;
-  text-align: right;
-  unicode-bidi: plaintext;
-}
-.cell.low-conf {
-  border: 2px solid #ff4444 !important;
-  background: #fff8f8;
-}
-.cell.anomaly {
-  background: #fff0f0 !important;
-}
-.qa-section {
-  background: #fafafa;
-  border: 1px solid #ddd;
-  padding: 10px 15px;
-  margin: 10px 0;
-  border-radius: 4px;
-}
-.qa-table {
-  border-collapse: collapse;
-  margin: 5px 0;
-}
-.qa-table th, .qa-table td {
-  border: 1px solid #ccc;
-  padding: 4px 8px;
-  text-align: right;
-}
-.qa-table th { background: #eee; }
-hr { margin: 30px 0; border: 1px solid #ddd; }
-</style>
-</head>
-<body>
-<h1>📋 Table Extraction — QA Review</h1>
-<p>Cells with <span style="border:2px solid #ff4444; padding:2px;">red borders</span>
-have low OCR confidence.
-Cells with <span style="background:#fff0f0; padding:2px;">pink background</span>
-are numeric anomalies.</p>
-
-<h2>Table 1 — Page 2 (30×1, conf=0.99)</h2>
-<div class="table-grid" style="grid-template-columns:88px; grid-template-rows:repeat(30, auto);">
-  <div class="cell" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.86 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.99 TXT">سامح سامی محمد کمالB وDO خالدشركاه</div>
-  <div class="cell" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 TXT">جلمرللمحاسباتالهاز اكزي محنواسبونقانونيو مستشارون </div>
-  <div class="cell" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:6; grid-column:1;" title="[5,0] conf=0.98 TXT">ت حساباتقرير قيالمراب</div>
-  <div class="cell" style="grid-row:7; grid-column:1;" title="[6,0] conf=0.98 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 TXT">نولمخاع لقائ لايةاللصة مستقلة في ٣١ ديسمبر ٢٠٢٤امام ل</div>
-  <div class="cell" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:10; grid-column:1;" title="[9,0] conf=0.99 TXT">إ ل سلنل المصري &quot;شركة مساهمة مصرية&quot;هلىاسادة/ ماي بك اأهليما</div>
-  <div class="cell" style="grid-row:11; grid-column:1;" title="[10,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:12; grid-column:1;" title="[11,0] conf=0.99 TXT"> راقلا قلأل لص&quot;شةوةلم اجعن لائم امليالستلةلبكهىارير ساهممصرية&quot; &quot;البنك&quot; عن السنة المالية امةام كن</div>
-  <div class="cell" style="grid-row:13; grid-column:1;" title="[12,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 TXT">ممله ٤رهقا لي اا ف١ئةمتةي٣ديمر٠٢ ات اتجماالوااةلمستقا ب٢وتل لملخصة المرفقة، وذلكني سليسخ ن ل</div>
-  <div class="cell" style="grid-row:15; grid-column:1;" title="[14,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:16; grid-column:1;" title="[15,0] conf=1.00 TXT">اعيلوحايسنراطبالميرلمالرفواقان اائ لصةلارية. وحسبما هو واردًمة يء ق عاي رةاصي  لوولمج وض</div>
-  <div class="cell" style="grid-row:17; grid-column:1;" title="[16,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:18; grid-column:1;" title="[17,0] conf=0.99 TXT">يغىتاخييتف  وئ  بيرنالمر ١ونو ٢ ق نا ًير محظعلالقاماملية المستقلة الكاملة للبنك عنق٢فرارؤ ٥دأيأا ل٠بد</div>
-  <div class="cell" style="grid-row:19; grid-column:1;" title="[18,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:20; grid-column:1;" title="[19,0] conf=1.00 TXT">ا الن لمل م ٢اسرج يسةااةالنهةفي١يسبر٢ ولت تختمنهالوائم المالية المستقلة الملخصةي٣ ات دم ٠٤يق</div>
-  <div class="cell" style="grid-row:21; grid-column:1;" title="[20,0] conf=0.98 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:22; grid-column:1;" title="[21,0] conf=1.00 TXT">المرفقة.</div>
-  <div class="cell" style="grid-row:23; grid-column:1;" title="[22,0] conf=0.98 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:24; grid-column:1;" title="[23,0] conf=0.99 TXT">ن ائم ةف–فكا لن السنة المالية المنتهية في ٣١ ديسمبر ٢٠٢٤.مكامامم ا االاستةلخق يلبااة م القو اية سةلونأاالةارقت   جوه علامتلاكاللبنعن–املهلق  لمفل ريوممقمةلقئل ل لص  تناة</div>
-  <div class="cell" style="grid-row:25; grid-column:1;" title="[24,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:26; grid-column:1;" title="[25,0] conf=0.99 TXT">بو اصوعتفممامقلكفبن لرمأجلحل لى همأشللرزلمل ت ل  ١ دسم ٠٢٤ ونتائج أعماله لي٣٢ل كايالسني </div>
-  <div class="cell" style="grid-row:27; grid-column:1;" title="[26,0] conf=0.98 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:28; grid-column:1;" title="[27,0] conf=0.99 TXT">النني سةلمترخكط ام اةاا ليذكعقلعمت لاننقأعمال مراجعتنا، يقتضى الأمر  يوسةهف أالانل ذ ةيت ل</div>
-  <div class="cell" style="grid-row:29; grid-column:1;" title="[28,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:30; grid-column:1;" title="[29,0] conf=1.00 TXT">وعلىئاةسكبلةلله الرج إ قوم اللي التقلةلةلن ن ساماي متاامماةنيالالم لكعانلة في ٣١ ديسمبر ٢٠٢٤ </div>
-</div>
-<hr>
-<h2>Table 2 — Page 2 (17×1, conf=0.98)</h2>
-<div class="table-grid" style="grid-template-columns:40px; grid-template-rows:repeat(17, auto);">
-  <div class="cell" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.99 TXT">راب لحساباتمقاا</div>
-  <div class="cell" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.99 TXT">اسام سمي محمد كمازحهمند طه خالد</div>
-  <div class="cell" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 TXT">لرم للمحاسباتااج لكيهآززسزميلمجع المحابين القانونيين بإنجلترا م</div>
-  <div class="cell" style="grid-row:7; grid-column:1;" title="[6,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:8; grid-column:1;" title="[7,0] conf=0.99 TXT">ملمسي  ان والمراجعين المصريةزجمحايبعةلي</div>
-  <div class="cell" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 TXT">يزملمعة الضرائب المصريةي ج</div>
-  <div class="cell" style="grid-row:11; grid-column:1;" title="[10,0] conf=0.97 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:12; grid-column:1;" title="[11,0] conf=1.00 TXT">سسل امابين والمراجعين رقم ٢٢٤٤جلح</div>
-  <div class="cell" style="grid-row:13; grid-column:1;" title="[12,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 TXT">س اعلقبةمجلهيئة المة لرا الالية رقم ٣٧٥لا</div>
-  <div class="cell" style="grid-row:15; grid-column:1;" title="[14,0] conf=0.88 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:16; grid-column:1;" title="[15,0] conf=0.97 TXT">BDخالد وشركاهO</div>
-  <div class="cell hdr" style="grid-row:17; grid-column:1;" title="[16,0] conf=0.87 TXT">· · · · · ·        ········ · · · · · </div>
-</div>
-<hr>
-<h2>Table 3 — Page 3 (6×1, conf=0.97)</h2>
-<div class="table-grid" style="grid-template-columns:44px; grid-template-rows:repeat(6, auto);">
-  <div class="cell" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.98 TXT">ل لربكاأهل مالياصي (شركة مساهمة مصرية)ن</div>
-  <div class="cell" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.99 TXT">خ يماترخقا م-ة من القوائم المالية الكاملة للبنكصولالسماة جلئمال ل</div>
-  <div class="cell" style="grid-row:5; grid-column:1;" title="[4,0] conf=0.98 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:6; grid-column:1;" title="[5,0] conf=0.94 TXT">اا(ميع لمبل لوردة بالمليون جنيه)جااغم  ةقنةارك اماىالمتل- في ٣١ ديسمبر ٢٠٢٤الزللسق م</div>
-</div>
-<hr>
-<h2>Table 4 — Page 3 (13×4, conf=0.80)</h2>
-<div class="table-grid" style="grid-template-columns:50px 179px 150px 85px; grid-template-rows:repeat(13, auto);">
-  <div class="cell hdr" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.90 TXT">YT ATY</div>
-  <div class="cell hdr low-conf" style="grid-row:1; grid-column:2;" title="[0,1] conf=0.66 TXT">ETN OT.</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:4;" title="[0,3] conf=1.00 TXT">ي  امكيينقدةوأرصدة لدى البنكلرز ف إطار نسبة الاحتياطي</div>
-  <div class="cell hdr num low-conf" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.38 NUM">775 757</div>
-  <div class="cell hdr low-conf" style="grid-row:2; grid-column:2;" title="[1,1] conf=0.62 TXT">APT EPT</div>
-  <div class="cell hdr" style="grid-row:2; grid-column:3;" title="[1,2] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:2; grid-column:4;" title="[1,3] conf=0.99 TXT">ردة دلبنوك(بالصافي)أصلى ا </div>
-  <div class="cell hdr num" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.74 NUM">1 690</div>
-  <div class="cell hdr low-conf" style="grid-row:3; grid-column:2;" title="[2,1] conf=0.59 TXT">NOP YI(٤)</div>
-  <div class="cell hdr" style="grid-row:3; grid-column:3;" title="[2,2] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:3; grid-column:4;" title="[2,3] conf=0.99 TXT">دعإاالمستثل بلقمةخلال الأرباح او الخسائرمرت ماياي الة نا ة</div>
-  <div class="cell hdr num" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.83 NUM">710 7170</div>
-  <div class="cell hdr" style="grid-row:4; grid-column:2;" title="[3,1] conf=0.81 TXT">77777 73 (°)</div>
-  <div class="cell hdr" style="grid-row:4; grid-column:3;" title="[3,2] conf=0.96 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:4; grid-column:4;" title="[3,3] conf=1.00 TXT">سماقوض هلت علءوالبنوك (بالصافي)روتياال </div>
-  <div class="cell hdr num low-conf" style="grid-row:5; grid-column:1;" title="[4,0] conf=0.38 NUM">5 777</div>
-  <div class="cell hdr" style="grid-row:5; grid-column:2;" title="[4,1] conf=0.81 TXT">Y . 9Y</div>
-  <div class="cell hdr" style="grid-row:5; grid-column:3;" title="[4,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:5; grid-column:4;" title="[4,3] conf=1.00 TXT">مشتقات مالية</div>
-  <div class="cell" style="grid-row:6; grid-column:1;" title="[5,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:6; grid-column:2;" title="[5,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:6; grid-column:3;" title="[5,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:6; grid-column:4;" title="[5,3] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:7; grid-column:1;" title="[6,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:7; grid-column:2;" title="[6,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:7; grid-column:3;" title="[6,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:7; grid-column:4;" title="[6,3] conf=0.97 TXT">اسمراتماليةتثا </div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=0.81 NUM">.7. 715</div>
-  <div class="cell num low-conf" style="grid-row:8; grid-column:2;" title="[7,1] conf=0.63 NUM">1 478 017(7)</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=0.99 TXT">ايةاستمرتملةبلقم العادلة من خلال الدخل الشامل الآخرثا ي اا</div>
-  <div class="cell" style="grid-row:8; grid-column:4;" title="[7,3] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:9; grid-column:1;" title="[8,0] conf=0.90 TXT">1Y 1 20TT </div>
-  <div class="cell low-conf" style="grid-row:9; grid-column:2;" title="[8,1] conf=0.61 TXT">1 440 441(Y)</div>
-  <div class="cell" style="grid-row:9; grid-column:3;" title="[8,2] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:4;" title="[8,3] conf=0.99 TXT">إت ديتلة المستهلكةستمر اية فأوتنبلكفثااملي دا ا</div>
-  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=0.86 NUM">17 ...</div>
-  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=0.93 NUM">07811</div>
-  <div class="cell" style="grid-row:10; grid-column:3;" title="[9,2] conf=0.98 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:4;" title="[9,3] conf=0.98 TXT">إاة ركات تابعة وشقيقةستثارت مالي فيشم</div>
-  <div class="cell num low-conf" style="grid-row:11; grid-column:1;" title="[10,0] conf=0.61 NUM">81777</div>
-  <div class="cell num low-conf" style="grid-row:11; grid-column:2;" title="[10,1] conf=0.69 NUM">.14 . 9</div>
-  <div class="cell" style="grid-row:11; grid-column:3;" title="[10,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:11; grid-column:4;" title="[10,3] conf=0.98 TXT">صوابة بالصافي)أل ثت(</div>
-  <div class="cell low-conf" style="grid-row:12; grid-column:1;" title="[11,0] conf=0.65 TXT">YAA YOL</div>
-  <div class="cell" style="grid-row:12; grid-column:2;" title="[11,1] conf=0.82 TXT">7997.£</div>
-  <div class="cell" style="grid-row:12; grid-column:3;" title="[11,2] conf=0.98 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:12; grid-column:4;" title="[11,3] conf=0.98 TXT">أصو أخ  اتثمارات عقاريةلرىوس</div>
-  <div class="cell num low-conf" style="grid-row:13; grid-column:1;" title="[12,0] conf=0.54 NUM">0 744 904</div>
-  <div class="cell low-conf" style="grid-row:13; grid-column:2;" title="[12,1] conf=0.56 TXT">T T9 £1 1Y </div>
-  <div class="cell" style="grid-row:13; grid-column:3;" title="[12,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:13; grid-column:4;" title="[12,3] conf=0.94 TXT">احمالي الأصول</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>81,777.00</td><td>1</td></tr>
-<tr><td>Col 1</td><td>7,811.00</td><td>1</td></tr>
-</table>
-<h3>⚠️ Low Confidence (12 cells)</h3>
-<ul>
-<li>Row 0, Col 1: "ETN OT." (conf=0.66)</li>
-<li>Row 1, Col 0: "775 757" (conf=0.38)</li>
-<li>Row 1, Col 1: "APT EPT" (conf=0.62)</li>
-<li>Row 2, Col 1: "NOP YI(٤)" (conf=0.59)</li>
-<li>Row 4, Col 0: "5 777" (conf=0.38)</li>
-<li>Row 7, Col 1: "1 478 017(7)" (conf=0.63)</li>
-<li>Row 8, Col 1: "1 440 441(Y)" (conf=0.61)</li>
-<li>Row 10, Col 0: "81777" (conf=0.61)</li>
-<li>Row 10, Col 1: ".14 . 9" (conf=0.69)</li>
-<li>Row 11, Col 0: "YAA YOL" (conf=0.65)</li>
-<li>Row 12, Col 0: "0 744 904" (conf=0.54)</li>
-<li>Row 12, Col 1: "T T9 £1 1Y " (conf=0.56)</li>
-</ul>
-</div>
-<hr>
-<h2>Table 5 — Page 3 (27×4, conf=0.82)</h2>
-<div class="table-grid" style="grid-template-columns:50px 174px 147px 96px; grid-template-rows:repeat(27, auto);">
-  <div class="cell hdr" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:2;" title="[0,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:4;" title="[0,3] conf=0.93 TXT">تزاماتالإل</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.90 NUM">17.070</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=0.75 NUM">481 17 4.</div>
-  <div class="cell" style="grid-row:2; grid-column:3;" title="[1,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:4;" title="[1,3] conf=1.00 TXT">أرصدة مستحقة للبنوك</div>
-  <div class="cell low-conf" style="grid-row:3; grid-column:1;" title="[2,0] conf=0.59 TXT">Y . 9 2 .</div>
-  <div class="cell num low-conf" style="grid-row:3; grid-column:2;" title="[2,1] conf=0.56 NUM">7.077</div>
-  <div class="cell" style="grid-row:3; grid-column:3;" title="[2,2] conf=0.99 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:4;" title="[2,3] conf=1.00 TXT">ية لمتبي ذ اعزنعاتهد بإعادة الشراءع عوال أنخم</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.79 NUM">77 7.7 77</div>
-  <div class="cell low-conf" style="grid-row:4; grid-column:2;" title="[3,1] conf=0.69 TXT">£ 977 VT7(y)</div>
-  <div class="cell" style="grid-row:4; grid-column:3;" title="[3,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:4;" title="[3,3] conf=0.99 TXT">ودانع العملاء</div>
-  <div class="cell low-conf" style="grid-row:5; grid-column:1;" title="[4,0] conf=0.58 TXT">410 3 YT</div>
-  <div class="cell" style="grid-row:5; grid-column:2;" title="[4,1] conf=0.76 TXT">YT.  0 £Y(9)</div>
-  <div class="cell" style="grid-row:5; grid-column:3;" title="[4,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:4;" title="[4,3] conf=0.97 TXT">قروض أخرى</div>
-  <div class="cell num low-conf" style="grid-row:6; grid-column:1;" title="[5,0] conf=0.38 NUM">7 2 2 . 19</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=0.83 NUM">.4.707</div>
-  <div class="cell" style="grid-row:6; grid-column:3;" title="[5,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:4;" title="[5,3] conf=0.97 TXT">التزامات أخرى</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=0.74 NUM">.  . ..1</div>
-  <div class="cell num anomaly" style="grid-row:7; grid-column:2;" title="[6,1] conf=0.84 NUM">77010</div>
-  <div class="cell" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:4;" title="[6,3] conf=0.99 TXT">التزامات ضرانب الدخل الجارية</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=0.81 NUM">14 511</div>
-  <div class="cell low-conf" style="grid-row:8; grid-column:2;" title="[7,1] conf=0.61 TXT">T AT. 9</div>
-  <div class="cell" style="grid-row:8; grid-column:3;" title="[7,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:4;" title="[7,3] conf=1.00 TXT">مخصصات أخرى</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=0.83 NUM">00.1</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=0.70 NUM">.497</div>
-  <div class="cell" style="grid-row:9; grid-column:3;" title="[8,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:4;" title="[8,3] conf=1.00 TXT">تالتزاما مزايا التقاعد</div>
-  <div class="cell" style="grid-row:10; grid-column:1;" title="[9,0] conf=0.74 TXT">97£ 7 V£7</div>
-  <div class="cell low-conf" style="grid-row:10; grid-column:2;" title="[9,1] conf=0.49 TXT">V 7. 7 VYE</div>
-  <div class="cell" style="grid-row:10; grid-column:3;" title="[9,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:4;" title="[9,3] conf=1.00 TXT">الي الالتزاماتإجم</div>
-  <div class="cell" style="grid-row:11; grid-column:1;" title="[10,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:11; grid-column:2;" title="[10,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:11; grid-column:3;" title="[10,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:11; grid-column:4;" title="[10,3] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:12; grid-column:1;" title="[11,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:12; grid-column:2;" title="[11,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:12; grid-column:3;" title="[11,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:12; grid-column:4;" title="[11,3] conf=1.00 TXT">قوقح الملكية</div>
-  <div class="cell num" style="grid-row:13; grid-column:1;" title="[12,0] conf=0.95 NUM">.10 ...</div>
-  <div class="cell" style="grid-row:13; grid-column:2;" title="[12,1] conf=0.81 TXT">17. ...&lt;math&gt;&lt;/math&gt;(,),</div>
-  <div class="cell" style="grid-row:13; grid-column:3;" title="[12,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:13; grid-column:4;" title="[12,3] conf=0.99 TXT">امرأس لال المدفوع</div>
-  <div class="cell low-conf" style="grid-row:14; grid-column:1;" title="[13,0] conf=0.58 TXT">TY NEN</div>
-  <div class="cell num low-conf" style="grid-row:14; grid-column:2;" title="[13,1] conf=0.69 NUM">75 ...(11)</div>
-  <div class="cell" style="grid-row:14; grid-column:3;" title="[13,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:14; grid-column:4;" title="[13,3] conf=0.99 TXT">اطياتإحتي</div>
-  <div class="cell" style="grid-row:15; grid-column:1;" title="[14,0] conf=0.80 TXT">V . 2 £7</div>
-  <div class="cell num anomaly" style="grid-row:15; grid-column:2;" title="[14,1] conf=0.75 NUM">17070.</div>
-  <div class="cell rtl" style="grid-row:15; grid-column:3;" title="[14,2] conf=1.00 TXT">ةاحةر قةليعل رق الم ليم الضمساند من البنك المركزييقاواةقيا نلللفاسم </div>
-  <div class="cell" style="grid-row:15; grid-column:4;" title="[14,3] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:16; grid-column:1;" title="[15,0] conf=0.83 NUM">7. 179</div>
-  <div class="cell num low-conf" style="grid-row:16; grid-column:2;" title="[15,1] conf=0.58 NUM">٤٠ .٣.</div>
-  <div class="cell" style="grid-row:16; grid-column:3;" title="[15,2] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:16; grid-column:4;" title="[15,3] conf=1.00 TXT">إط نخاحييات ايم عدةم لل الدخل الشامل الآخرتالقةالال</div>
-  <div class="cell num" style="grid-row:17; grid-column:1;" title="[16,0] conf=0.76 NUM">٧. ٦٨٦</div>
-  <div class="cell num" style="grid-row:17; grid-column:2;" title="[16,1] conf=0.71 NUM">177 771</div>
-  <div class="cell" style="grid-row:17; grid-column:3;" title="[16,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:17; grid-column:4;" title="[16,3] conf=0.98 TXT">صفىأباحالعاما ر </div>
-  <div class="cell num anomaly" style="grid-row:18; grid-column:1;" title="[17,0] conf=0.92 NUM">8191</div>
-  <div class="cell num low-conf" style="grid-row:18; grid-column:2;" title="[17,1] conf=0.58 NUM">4.9</div>
-  <div class="cell" style="grid-row:18; grid-column:3;" title="[17,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:18; grid-column:4;" title="[17,3] conf=1.00 TXT">أرباح محتجزة</div>
-  <div class="cell low-conf" style="grid-row:19; grid-column:1;" title="[18,0] conf=0.63 TXT">7. 7VPY</div>
-  <div class="cell num" style="grid-row:19; grid-column:2;" title="[18,1] conf=0.77 NUM">٥٣٣ ٦٦.</div>
-  <div class="cell" style="grid-row:19; grid-column:3;" title="[18,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:19; grid-column:4;" title="[18,3] conf=0.98 TXT">إجمالي حقوق الملكية</div>
-  <div class="cell num low-conf" style="grid-row:20; grid-column:1;" title="[19,0] conf=0.56 NUM">0 744 404</div>
-  <div class="cell low-conf" style="grid-row:20; grid-column:2;" title="[19,1] conf=0.58 TXT">1  Y T9 £1T</div>
-  <div class="cell" style="grid-row:20; grid-column:3;" title="[19,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:20; grid-column:4;" title="[19,3] conf=0.98 TXT">للتاإجلات وحقوق الملكيةماي اازم</div>
-  <div class="cell" style="grid-row:21; grid-column:1;" title="[20,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:21; grid-column:2;" title="[20,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:21; grid-column:3;" title="[20,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:21; grid-column:4;" title="[20,3] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:22; grid-column:1;" title="[21,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:22; grid-column:2;" title="[21,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:22; grid-column:3;" title="[21,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:22; grid-column:4;" title="[21,3] conf=1.00 TXT">لزمتعري وارتباطاتاتاا ضة</div>
-  <div class="cell" style="grid-row:23; grid-column:1;" title="[22,0] conf=0.74 TXT">109 TAA</div>
-  <div class="cell num low-conf" style="grid-row:23; grid-column:2;" title="[22,1] conf=0.61 NUM">.4 1941</div>
-  <div class="cell rtl" style="grid-row:23; grid-column:3;" title="[22,2] conf=0.99 TXT">إاموعتماتمب ت ض إتاات مستندية وإرتباطات أخرىلز الخطاباانمدق</div>
-  <div class="cell" style="grid-row:23; grid-column:4;" title="[22,3] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:24; grid-column:1;" title="[23,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:24; grid-column:2;" title="[23,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:24; grid-column:3;" title="[23,2] conf=0.98 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:24; grid-column:4;" title="[23,3] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:25; grid-column:1;" title="[24,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:25; grid-column:2;" title="[24,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:25; grid-column:3;" title="[24,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:25; grid-column:4;" title="[24,3] conf=0.99 TXT">لرااا ل(٤إتمق نإ ضح الفم(١)ى١) متممة للقوائم المالية وتقرأ معهاي ة</div>
-  <div class="cell" style="grid-row:26; grid-column:1;" title="[25,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:26; grid-column:2;" title="[25,1] conf=0.95 TXT">سئري مجلس الإدارة</div>
-  <div class="cell low-conf" style="grid-row:26; grid-column:3;" title="[25,2] conf=0.43 TXT">IGHTM</div>
-  <div class="cell rtl" style="grid-row:26; grid-column:4;" title="[25,3] conf=0.98 TXT">الرئيس التنفيذي المالى</div>
-  <div class="cell" style="grid-row:27; grid-column:1;" title="[26,0] conf=1.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:27; grid-column:2;" title="[26,1] conf=0.99 TXT">محمد كمال الدين يركات</div>
-  <div class="cell rtl" style="grid-row:27; grid-column:3;" title="[26,2] conf=1.00 TXT">محمد محمواد الأتربى</div>
-  <div class="cell rtl" style="grid-row:27; grid-column:4;" title="[26,3] conf=0.95 TXT">وائلابو علی </div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>8,208.17</td><td>3</td></tr>
-<tr><td>Col 1</td><td>94,092.47</td><td>5</td></tr>
-</table>
-<h3>⚠️ Low Confidence (16 cells)</h3>
-<ul>
-<li>Row 2, Col 0: "Y . 9 2 ." (conf=0.59)</li>
-<li>Row 2, Col 1: "7.077" (conf=0.56)</li>
-<li>Row 3, Col 1: "£ 977 VT7(y)" (conf=0.69)</li>
-<li>Row 4, Col 0: "410 3 YT" (conf=0.58)</li>
-<li>Row 5, Col 0: "7 2 2 . 19" (conf=0.38)</li>
-<li>Row 7, Col 1: "T AT. 9" (conf=0.61)</li>
-<li>Row 9, Col 1: "V 7. 7 VYE" (conf=0.49)</li>
-<li>Row 13, Col 0: "TY NEN" (conf=0.58)</li>
-<li>Row 13, Col 1: "75 ...(11)" (conf=0.69)</li>
-<li>Row 15, Col 1: "٤٠ .٣." (conf=0.58)</li>
-<li>Row 17, Col 1: "4.9" (conf=0.58)</li>
-<li>Row 18, Col 0: "7. 7VPY" (conf=0.63)</li>
-<li>Row 19, Col 0: "0 744 404" (conf=0.56)</li>
-<li>Row 19, Col 1: "1  Y T9 £1T" (conf=0.58)</li>
-<li>Row 22, Col 1: ".4 1941" (conf=0.61)</li>
-<li>Row 25, Col 2: "IGHTM" (conf=0.43)</li>
-</ul>
-<h3>🔴 Numeric Anomalies (3)</h3>
-<ul>
-<li>Row 17, Col 0: "8191" — Value 8191.00 is 479.8× column median 17.07</li>
-<li>Row 6, Col 1: "77010" — Value 77010.00 is 10881.7× column median 7.08</li>
-<li>Row 14, Col 1: "17070." — Value 17070.00 is 2412.0× column median 7.08</li>
-</ul>
-</div>
-<hr>
-<h2>Table 6 — Page 4 (17×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:59px 176px 215px; grid-template-rows:repeat(17, auto);">
-  <div class="cell hdr num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٦٠٥ ١٨١</div>
-  <div class="cell hdr num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">٩٤٨ ٩٦٥</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:3;" title="[0,2] conf=1.00 TXT">ةهباشملا تاداريلاإو ضورقلا دئاع</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">(٤٢٧ ٢٤٠)</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">(٦٧٠ ٩٥٠)</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">ةهباشملا فيلاكتلاو عئادولا ةفلكت</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">١٧٧ ٩٤١</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٢٧٨ ٠١٥</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT"> دئاعلا نم لخدلا يفاص</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">١٨ ٧٢٤</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">٢٨ ٤٦٤</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">تلوامعلاو باعتلاأ تاداريإ</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">(٧٢٠)</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">(١ ٥٥٥)</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">تلوامعلاو باعتلاأ تافورصم</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">١٨ ٠٠٤</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">٢٦ ٩٠٩</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT">تلوامعلاو باعتلاأ نم لخدلا يفاص</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">٢ ٠٣٨</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">١ ٧٣٥</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">حابرأ تاعيزوت</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">(١ ٠٠٤)</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">٢٢ ٤٤٩</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT">ةرجاتملا لخد يفاص</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">٤٠٢</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٣ ١١١</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">ةيلام تارامثتسإ حابرأ </div>
-  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 NUM">(٣١ ٩١١)</div>
-  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=1.00 NUM">(٣٧ ٩١٥)</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:3;" title="[9,2] conf=1.00 TXT">ةعقوتملا ةينامتئلاإ رئاسخلا ءبع</div>
-  <div class="cell num" style="grid-row:11; grid-column:1;" title="[10,0] conf=1.00 NUM">(٥٦ ١٦١)</div>
-  <div class="cell num" style="grid-row:11; grid-column:2;" title="[10,1] conf=1.00 NUM">(٧٨ ٢٢٦)</div>
-  <div class="cell rtl" style="grid-row:11; grid-column:3;" title="[10,2] conf=1.00 TXT">ةيرادإو ةيمومع تافورصم</div>
-  <div class="cell num" style="grid-row:12; grid-column:1;" title="[11,0] conf=1.00 NUM">١٧ ٠٠٠</div>
-  <div class="cell num" style="grid-row:12; grid-column:2;" title="[11,1] conf=1.00 NUM">٧ ٠٨٦</div>
-  <div class="cell rtl" style="grid-row:12; grid-column:3;" title="[11,2] conf=1.00 TXT"> ىرخأ ليغشت تاداريإ</div>
-  <div class="cell num" style="grid-row:13; grid-column:1;" title="[12,0] conf=1.00 NUM">١٢٦ ٣٠٩</div>
-  <div class="cell num" style="grid-row:13; grid-column:2;" title="[12,1] conf=1.00 NUM">٢٢٣ ١٦٤</div>
-  <div class="cell rtl" style="grid-row:13; grid-column:3;" title="[12,2] conf=1.00 TXT"> لخدلا بئارض لبق ماعلا حابرأ</div>
-  <div class="cell num" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 NUM">(٥٥ ٦٢٣)</div>
-  <div class="cell num" style="grid-row:14; grid-column:2;" title="[13,1] conf=1.00 NUM">(٨٩ ٨٩٦)</div>
-  <div class="cell rtl" style="grid-row:14; grid-column:3;" title="[13,2] conf=1.00 TXT"> لخدلا بئارض تافورصم</div>
-  <div class="cell num" style="grid-row:15; grid-column:1;" title="[14,0] conf=1.00 NUM">٧٠ ٦٨٦</div>
-  <div class="cell num" style="grid-row:15; grid-column:2;" title="[14,1] conf=1.00 NUM">١٣٣ ٢٦٨</div>
-  <div class="cell rtl" style="grid-row:15; grid-column:3;" title="[14,2] conf=1.00 TXT">ماعلا حابرأ يفاص</div>
-  <div class="cell" style="grid-row:16; grid-column:1;" title="[15,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:16; grid-column:2;" title="[15,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:16; grid-column:3;" title="[15,2] conf=1.00 TXT">ضفخملا / يساسلاأ مهسلا بيصن</div>
-  <div class="cell num" style="grid-row:17; grid-column:1;" title="[16,0] conf=1.00 NUM">٠.٤٠</div>
-  <div class="cell num" style="grid-row:17; grid-column:2;" title="[16,1] conf=1.00 NUM">٠.٧٥)١٢(</div>
-  <div class="cell rtl" style="grid-row:17; grid-column:3;" title="[16,2] conf=1.00 TXT">يرصم هينج</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>-317.60</td><td>3</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 7 — Page 5 (9×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:52px 127px 236px; grid-template-rows:repeat(9, auto);">
-  <div class="cell hdr num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٧٠ ٦٨٦</div>
-  <div class="cell hdr num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">١٣٣ ٢٦٨</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:3;" title="[0,2] conf=1.00 TXT">ماعلا حابرأ يفاص</div>
-  <div class="cell" style="grid-row:2; grid-column:1;" title="[1,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:2; grid-column:2;" title="[1,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">رئاسخلا وأ حابرلاأ يف اهبيوبت ةداعإ متي ل ادونب</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٩ ٩٥٢</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٨ ٠٣٨</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT"> ةيكلملا قوقح تاودل أةلداعلا ةميقلا يف ريغتلا يفاص</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">(١ ٤٨٩)</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">(٧٠٩)</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">ةزجتحملا حابرلاا ىلا ةلداعلا ةميقلا يطايتحا نم لوحم</div>
-  <div class="cell" style="grid-row:5; grid-column:1;" title="[4,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:5; grid-column:2;" title="[4,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT"> رئاسخلا وأ حابرلاأ يف اهبيوبت ةداعإ متي دق دونب</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">(٢٢٤)</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">١٢ ١٨٢</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT"> نيدلا تاودل أةلداعلا ةميقلا يف ريغتلا ىفاص</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">٢ ٢٦٣</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">٣٨٠</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">نيدلا تاودل أةعقوتملا ةينامتئلاارئاسخلا يفريغتلا ىفاص</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">١٠ ٥٠٢</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">١٩ ٨٩١</div>
-  <div class="cell" style="grid-row:8; grid-column:3;" title="[7,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">٨١ ١٨٨</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">١٥٣ ١٥٩</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">لماشلا لخدلا يلامجإ</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>-224.00</td><td>1</td></tr>
-<tr><td>Col 1</td><td>-329.00</td><td>2</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 8 — Page 6 (14×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:58px 151px 272px; grid-template-rows:repeat(14, auto);">
-  <div class="cell num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٣١١ ٩٢٦</div>
-  <div class="cell num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">(٢٠٤ ٤٢٨)</div>
-  <div class="cell rtl" style="grid-row:1; grid-column:3;" title="[0,2] conf=1.00 TXT">ليغشتلا ةطشنأ نم ةجتانلا / )يف مدختسملا(  ةيدقنلا تاقفدتلا يفاص</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">٤١ ٥٤٤</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">(٤٦٩ ٧٤٠)</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">رامثتسلاا ةطشنأ نم ةجتانلا )يف ةمدختسملا( ةيدقنلا تاقفدتلا ىفاص</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٢٢ ٤٨٨</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٤٧٩ ٧٦٥</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT"> ليومتلا ةطشنأ نم ةجتانلا ةيدقنلا تاقفدتلا يفاص</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">٣٧٥ ٩٥٨</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">(١٩٤ ٤٠٣)</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">ماعلا للخا اهمكح ىف امو ةيدقنلا يف ةدايزلا /صقنلا يفاص</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">٣٦٦ ٠٦٠</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">٧٤٢ ٠١٨</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT"> ماعلا لوأ يف اهمكح يف امو ةيدقنلا ديصر</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">٧٤٢ ٠١٨</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">٥٤٧ ٦١٥</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT"> ماعلا رخأ ىف اهمكح ىف امو ةيدقنلا ديصر</div>
-  <div class="cell" style="grid-row:7; grid-column:1;" title="[6,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:7; grid-column:2;" title="[6,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">-: ىـلي اميـف اـهمكح يف امو ةيدقنلا لثمتتو</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">٧٣ ٨٣٧</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">٣٤٨ ٥٣٠</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT"> ىزكرملا كنبلا ىدل ةدصرأو ةيدقن</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">٦٣٤ ٢٤٧</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٨٩٣ ٤٩٢</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">كونبلا ىدل ةدصرأ</div>
-  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 NUM">٥٨٢ ١٥٦</div>
-  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=1.00 NUM">٤١٢ ٧٢٤</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:3;" title="[9,2] conf=1.00 TXT">)ةنازخ قئاثو / نوذأ(رخلاا لماشلا لخدلا للخا نم ةيلام تارامثتسا</div>
-  <div class="cell num" style="grid-row:11; grid-column:1;" title="[10,0] conf=1.00 NUM">(٤٠ ٠٢٤)</div>
-  <div class="cell num" style="grid-row:11; grid-column:2;" title="[10,1] conf=1.00 NUM">(٣٠٨ ٢٦٠)</div>
-  <div class="cell rtl" style="grid-row:11; grid-column:3;" title="[10,2] conf=1.00 TXT">ىمازللاإ ىطايتحلاإ ةبسن راطإ ىف ةيزكرملا كونبلا ىدل ةدصرأ</div>
-  <div class="cell num" style="grid-row:12; grid-column:1;" title="[11,0] conf=1.00 NUM">(٥٨ ٧٩١)</div>
-  <div class="cell num" style="grid-row:12; grid-column:2;" title="[11,1] conf=1.00 NUM">(٣٩٨ ٧٢٧)</div>
-  <div class="cell rtl" style="grid-row:12; grid-column:3;" title="[11,2] conf=1.00 TXT">رهشأ ةثلثا نم رثكأ لجأ تاذ كونبلا ىدل ةدصرأ</div>
-  <div class="cell num" style="grid-row:13; grid-column:1;" title="[12,0] conf=1.00 NUM">(٤٤٩ ٤٠٧)</div>
-  <div class="cell num" style="grid-row:13; grid-column:2;" title="[12,1] conf=1.00 NUM">(٤٠٠ ١٤٤))</div>
-  <div class="cell rtl" style="grid-row:13; grid-column:3;" title="[12,2] conf=1.00 TXT">روهش ٣ نم رثكا - ةنازخ نوذا( رخلاا لماشلا لخدلا للخا نم ةيلام تارامثتسا</div>
-  <div class="cell num" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 NUM">٧٤٢ ٠١٨</div>
-  <div class="cell num" style="grid-row:14; grid-column:2;" title="[13,1] conf=1.00 NUM">٥٤٧ ٦١٥</div>
-  <div class="cell rtl" style="grid-row:14; grid-column:3;" title="[13,2] conf=1.00 TXT">اـهمكح يف امو ةيدقنلا يلامجإ</div>
-</div>
-<hr>
-<h2>Table 9 — Page 7 (33×9, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:40px 43px 42px 41px 41px 45px 40px 98px 173px; grid-template-rows:repeat(33, auto);">
-  <div class="cell hdr" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:2;" title="[0,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:4;" title="[0,3] conf=1.00 TXT">جراخلا عورف</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:5;" title="[0,4] conf=1.00 TXT">ةيلاحلا ةميقلا</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:6;" title="[0,5] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:7;" title="[0,6] conf=1.00 TXT">لاملا</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:8;" title="[0,7] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:9;" title="[0,8] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">٢٢٣ ٠٨١</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">١ ٠٣٦</div>
-  <div class="cell num" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 NUM">٣٤ ٦٥٠</div>
-  <div class="cell num" style="grid-row:2; grid-column:4;" title="[1,3] conf=1.00 NUM">٨٨٠</div>
-  <div class="cell num" style="grid-row:2; grid-column:5;" title="[1,4] conf=1.00 NUM">٧٩ ٩٨٧</div>
-  <div class="cell num" style="grid-row:2; grid-column:6;" title="[1,5] conf=1.00 NUM">٣١ ٥٢٨</div>
-  <div class="cell num" style="grid-row:2; grid-column:7;" title="[1,6] conf=1.00 NUM">٢٥ ٠٠٠</div>
-  <div class="cell num" style="grid-row:2; grid-column:8;" title="[1,7] conf=1.00 NUM">٥٠ ٠٠٠</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:9;" title="[1,8] conf=1.00 TXT">٢٠٢٣ رياني ١  يلاملا ماعلا  لوا ىف ديصرلا</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٣٤ ٦٥٠</div>
-  <div class="cell num" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 NUM">(٣٤ ٦٥٠)</div>
-  <div class="cell num" style="grid-row:3; grid-column:4;" title="[2,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:3; grid-column:5;" title="[2,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:3; grid-column:6;" title="[2,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:3; grid-column:7;" title="[2,6] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:8;" title="[2,7] conf=1.00 TXT">-  ةزجتحملا حاب</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:9;" title="[2,8] conf=1.00 TXT">رللأ  ةلوحملا ٢٠٢٢ ربمسيد ٣١  يف يهتنملا يلاملا ماعلا حابرأ يفاص </div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">(٦ ٦١٧)</div>
-  <div class="cell num" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:4; grid-column:4;" title="[3,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:4; grid-column:5;" title="[3,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:4; grid-column:6;" title="[3,5] conf=1.00 NUM">٦ ٦١٧</div>
-  <div class="cell num" style="grid-row:4; grid-column:7;" title="[3,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:4; grid-column:8;" title="[3,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:9;" title="[3,8] conf=1.00 TXT"> تايطايتحلاإ يلا لوحملا</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">(٢٤ ٠٨٦)</div>
-  <div class="cell num" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:5; grid-column:4;" title="[4,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:5; grid-column:5;" title="[4,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:5; grid-column:6;" title="[4,5] conf=1.00 NUM">٢٤ ٠٨٦</div>
-  <div class="cell num" style="grid-row:5; grid-column:7;" title="[4,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:5; grid-column:8;" title="[4,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:9;" title="[4,8] conf=1.00 TXT"> نيمهاسم تاعيزوت - يميعدتلا يطايتحلاإ يلا لوحملا</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">(٥٤٦)</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">(٥٤٦)</div>
-  <div class="cell num" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:6; grid-column:4;" title="[5,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:6; grid-column:5;" title="[5,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:6; grid-column:6;" title="[5,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:6; grid-column:7;" title="[5,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:6; grid-column:8;" title="[5,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:9;" title="[5,8] conf=1.00 TXT"> نيمهاسملا حابرأ تاعيزوت </div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">(٤ ٠٩١)</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">(٤ ٠٩١)</div>
-  <div class="cell num" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:7; grid-column:4;" title="[6,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:7; grid-column:5;" title="[6,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:7; grid-column:6;" title="[6,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:7; grid-column:7;" title="[6,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:7; grid-column:8;" title="[6,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:9;" title="[6,8] conf=1.00 TXT"> نيلماعلا حابرأ تاعيزوت </div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">(٣٤٦)</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">(٣٤٦)</div>
-  <div class="cell num" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:8; grid-column:4;" title="[7,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:8; grid-column:5;" title="[7,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:8; grid-column:6;" title="[7,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:8; grid-column:7;" title="[7,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:8; grid-column:8;" title="[7,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:9;" title="[7,8] conf=1.00 TXT">  يفرصملا زاهجلا ريوطت و معد قودنص يلا لوحملا</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:9; grid-column:4;" title="[8,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:9; grid-column:5;" title="[8,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:9; grid-column:6;" title="[8,5] conf=1.00 NUM">(٣٠ ٠٠٠)</div>
-  <div class="cell num" style="grid-row:9; grid-column:7;" title="[8,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:9; grid-column:8;" title="[8,7] conf=1.00 NUM">٣٠ ٠٠٠</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:9;" title="[8,8] conf=1.00 TXT">ماعلا لوا لاملا سأر باسح تحت ددسملا</div>
-  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:10; grid-column:3;" title="[9,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:10; grid-column:4;" title="[9,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:10; grid-column:5;" title="[9,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:10; grid-column:6;" title="[9,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:10; grid-column:7;" title="[9,6] conf=1.00 NUM">(٢٥ ٠٠٠)</div>
-  <div class="cell num" style="grid-row:10; grid-column:8;" title="[9,7] conf=1.00 NUM">٢٥ ٠٠٠</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:9;" title="[9,8] conf=1.00 TXT">لاملا سأر ةدايز</div>
-  <div class="cell num" style="grid-row:11; grid-column:1;" title="[10,0] conf=1.00 NUM">(٣ ٩٤٣)</div>
-  <div class="cell num" style="grid-row:11; grid-column:2;" title="[10,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:11; grid-column:3;" title="[10,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:11; grid-column:4;" title="[10,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:11; grid-column:5;" title="[10,4] conf=1.00 NUM">(٣ ٩٤٣)</div>
-  <div class="cell num" style="grid-row:11; grid-column:6;" title="[10,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:11; grid-column:7;" title="[10,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:11; grid-column:8;" title="[10,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:11; grid-column:9;" title="[10,8] conf=1.00 TXT">ةيلاحلا ةميقلا نع ةيمسلاا ةميقلا قورف</div>
-  <div class="cell num" style="grid-row:12; grid-column:1;" title="[11,0] conf=1.00 NUM">٩ ٧٢٨</div>
-  <div class="cell num" style="grid-row:12; grid-column:2;" title="[11,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:12; grid-column:3;" title="[11,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:12; grid-column:4;" title="[11,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:12; grid-column:5;" title="[11,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:12; grid-column:6;" title="[11,5] conf=1.00 NUM">٩ ٧٢٨</div>
-  <div class="cell num" style="grid-row:12; grid-column:7;" title="[11,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:12; grid-column:8;" title="[11,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:12; grid-column:9;" title="[11,8] conf=1.00 TXT"> رخلاأ لماشلا لخدلا دونبل ةلداعلا ةميقلا يف ريغتلا يفاص</div>
-  <div class="cell num" style="grid-row:13; grid-column:1;" title="[12,0] conf=1.00 NUM">٢ ٢٦٣</div>
-  <div class="cell num" style="grid-row:13; grid-column:2;" title="[12,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:13; grid-column:3;" title="[12,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:13; grid-column:4;" title="[12,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:13; grid-column:5;" title="[12,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:13; grid-column:6;" title="[12,5] conf=1.00 NUM">٢ ٢٦٣</div>
-  <div class="cell num" style="grid-row:13; grid-column:7;" title="[12,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:13; grid-column:8;" title="[12,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:13; grid-column:9;" title="[12,8] conf=1.00 TXT"> نيدلا تاودل اةعقوتملا ةينامتئلاا رئاسخلا يف ريغتلا يفاص</div>
-  <div class="cell num" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 NUM">٣٧٤</div>
-  <div class="cell num" style="grid-row:14; grid-column:2;" title="[13,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:14; grid-column:3;" title="[13,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:14; grid-column:4;" title="[13,3] conf=1.00 NUM">٣٧٤</div>
-  <div class="cell num" style="grid-row:14; grid-column:5;" title="[13,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:14; grid-column:6;" title="[13,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:14; grid-column:7;" title="[13,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:14; grid-column:8;" title="[13,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:14; grid-column:9;" title="[13,8] conf=1.00 TXT">جراخلا عورف ةيبنجا تلماع ةمجرت قورف</div>
-  <div class="cell num" style="grid-row:15; grid-column:1;" title="[14,0] conf=1.00 NUM">٧٠ ٦٨٦</div>
-  <div class="cell num" style="grid-row:15; grid-column:2;" title="[14,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:15; grid-column:3;" title="[14,2] conf=1.00 NUM">٧٠ ٦٨٦</div>
-  <div class="cell num" style="grid-row:15; grid-column:4;" title="[14,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:15; grid-column:5;" title="[14,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:15; grid-column:6;" title="[14,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:15; grid-column:7;" title="[14,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:15; grid-column:8;" title="[14,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:15; grid-column:9;" title="[14,8] conf=1.00 TXT">ماعلا  حابرأ يفاص</div>
-  <div class="cell num" style="grid-row:16; grid-column:1;" title="[15,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:16; grid-column:2;" title="[15,1] conf=1.00 NUM">١ ٤٨٩</div>
-  <div class="cell num" style="grid-row:16; grid-column:3;" title="[15,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:16; grid-column:4;" title="[15,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:16; grid-column:5;" title="[15,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:16; grid-column:6;" title="[15,5] conf=1.00 NUM">(١ ٤٨٩)</div>
-  <div class="cell" style="grid-row:16; grid-column:7;" title="[15,6] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:16; grid-column:8;" title="[15,7] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:16; grid-column:9;" title="[15,8] conf=1.00 TXT">ةزجتحملا حابرلاا ىلا ةلداعلا ةميقلا يطايتحا نم لوحم</div>
-  <div class="cell num" style="grid-row:17; grid-column:1;" title="[16,0] conf=1.00 NUM">٢٩٧ ٢٠٦</div>
-  <div class="cell num" style="grid-row:17; grid-column:2;" title="[16,1] conf=1.00 NUM">١ ٤٨٩</div>
-  <div class="cell num" style="grid-row:17; grid-column:3;" title="[16,2] conf=1.00 NUM">٧٠ ٦٨٦</div>
-  <div class="cell num" style="grid-row:17; grid-column:4;" title="[16,3] conf=1.00 NUM">١ ٢٥٤</div>
-  <div class="cell num" style="grid-row:17; grid-column:5;" title="[16,4] conf=1.00 NUM">٧٦ ٠٤٤</div>
-  <div class="cell num" style="grid-row:17; grid-column:6;" title="[16,5] conf=1.00 NUM">٤٢ ٧٣٣</div>
-  <div class="cell num" style="grid-row:17; grid-column:7;" title="[16,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:17; grid-column:8;" title="[16,7] conf=1.00 NUM">١٠٥ ٠٠٠</div>
-  <div class="cell rtl" style="grid-row:17; grid-column:9;" title="[16,8] conf=1.00 TXT">٢٠٢٣ ربمسيد ٣١ ىف ديصرلا</div>
-  <div class="cell num" style="grid-row:18; grid-column:1;" title="[17,0] conf=1.00 NUM">٢٩٧ ٢٠٦</div>
-  <div class="cell num" style="grid-row:18; grid-column:2;" title="[17,1] conf=1.00 NUM">١ ٤٨٩</div>
-  <div class="cell num" style="grid-row:18; grid-column:3;" title="[17,2] conf=1.00 NUM">٧٠ ٦٨٦</div>
-  <div class="cell num" style="grid-row:18; grid-column:4;" title="[17,3] conf=1.00 NUM">١ ٢٥٤</div>
-  <div class="cell num" style="grid-row:18; grid-column:5;" title="[17,4] conf=1.00 NUM">٧٦ ٠٤٤</div>
-  <div class="cell num" style="grid-row:18; grid-column:6;" title="[17,5] conf=1.00 NUM">٤٢ ٧٣٣</div>
-  <div class="cell num" style="grid-row:18; grid-column:7;" title="[17,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:18; grid-column:8;" title="[17,7] conf=1.00 NUM">١٠٥ ٠٠٠</div>
-  <div class="cell rtl" style="grid-row:18; grid-column:9;" title="[17,8] conf=1.00 TXT">٢٠٢٤ رياني ١  يلاملا ماعلا  لوا ىف ديصرلا</div>
-  <div class="cell num" style="grid-row:19; grid-column:1;" title="[18,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:19; grid-column:2;" title="[18,1] conf=1.00 NUM">٧٠ ٦٨٦</div>
-  <div class="cell num" style="grid-row:19; grid-column:3;" title="[18,2] conf=1.00 NUM">(٧٠ ٦٨٦)</div>
-  <div class="cell num" style="grid-row:19; grid-column:4;" title="[18,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:19; grid-column:5;" title="[18,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:19; grid-column:6;" title="[18,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:19; grid-column:7;" title="[18,6] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:19; grid-column:8;" title="[18,7] conf=1.00 TXT">-  ةزجتحملا حاب</div>
-  <div class="cell rtl" style="grid-row:19; grid-column:9;" title="[18,8] conf=1.00 TXT">رللأ  ةلوحملا ٢٠٢٣ ربمسيد ٣١  يف يهتنملا يلاملا ماعلا حابرأ يفاص </div>
-  <div class="cell num" style="grid-row:20; grid-column:1;" title="[19,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:20; grid-column:2;" title="[19,1] conf=1.00 NUM">(١٣ ٥٢٩)</div>
-  <div class="cell num" style="grid-row:20; grid-column:3;" title="[19,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:20; grid-column:4;" title="[19,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:20; grid-column:5;" title="[19,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:20; grid-column:6;" title="[19,5] conf=1.00 NUM">١٣ ٥٢٩</div>
-  <div class="cell num" style="grid-row:20; grid-column:7;" title="[19,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:20; grid-column:8;" title="[19,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:20; grid-column:9;" title="[19,8] conf=1.00 TXT"> تايطايتحلاإ يلا لوحملا</div>
-  <div class="cell num" style="grid-row:21; grid-column:1;" title="[20,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:21; grid-column:2;" title="[20,1] conf=1.00 NUM">(٥٠ ٦٧٣)</div>
-  <div class="cell num" style="grid-row:21; grid-column:3;" title="[20,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:21; grid-column:4;" title="[20,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:21; grid-column:5;" title="[20,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:21; grid-column:6;" title="[20,5] conf=1.00 NUM">٥٠ ٦٧٣</div>
-  <div class="cell num" style="grid-row:21; grid-column:7;" title="[20,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:21; grid-column:8;" title="[20,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:21; grid-column:9;" title="[20,8] conf=1.00 TXT"> نيمهاسم تاعيزوت - يميعدتلا يطايتحلاإ يلا لوحملا</div>
-  <div class="cell num" style="grid-row:22; grid-column:1;" title="[21,0] conf=1.00 NUM">(٧٦١)</div>
-  <div class="cell num" style="grid-row:22; grid-column:2;" title="[21,1] conf=1.00 NUM">(٧٦١)</div>
-  <div class="cell num" style="grid-row:22; grid-column:3;" title="[21,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:22; grid-column:4;" title="[21,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:22; grid-column:5;" title="[21,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:22; grid-column:6;" title="[21,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:22; grid-column:7;" title="[21,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:22; grid-column:8;" title="[21,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:22; grid-column:9;" title="[21,8] conf=1.00 TXT"> نيمهاسملا حابرأ تاعيزوت </div>
-  <div class="cell num" style="grid-row:23; grid-column:1;" title="[22,0] conf=1.00 NUM">(٦ ٥٠٦)</div>
-  <div class="cell num" style="grid-row:23; grid-column:2;" title="[22,1] conf=1.00 NUM">(٦ ٥٠٦)</div>
-  <div class="cell num" style="grid-row:23; grid-column:3;" title="[22,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:23; grid-column:4;" title="[22,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:23; grid-column:5;" title="[22,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:23; grid-column:6;" title="[22,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:23; grid-column:7;" title="[22,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:23; grid-column:8;" title="[22,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:23; grid-column:9;" title="[22,8] conf=1.00 TXT"> نيلماعلا حابرأ تاعيزوت </div>
-  <div class="cell num" style="grid-row:24; grid-column:1;" title="[23,0] conf=1.00 NUM">(٧٠٦)</div>
-  <div class="cell num" style="grid-row:24; grid-column:2;" title="[23,1] conf=1.00 NUM">(٧٠٦)</div>
-  <div class="cell num" style="grid-row:24; grid-column:3;" title="[23,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:24; grid-column:4;" title="[23,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:24; grid-column:5;" title="[23,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:24; grid-column:6;" title="[23,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:24; grid-column:7;" title="[23,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:24; grid-column:8;" title="[23,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:24; grid-column:9;" title="[23,8] conf=1.00 TXT">  يفرصملا زاهجلا ريوطت و معد قودنص يلا لوحملا</div>
-  <div class="cell num" style="grid-row:25; grid-column:1;" title="[24,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:25; grid-column:2;" title="[24,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:25; grid-column:3;" title="[24,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:25; grid-column:4;" title="[24,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:25; grid-column:5;" title="[24,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:25; grid-column:6;" title="[24,5] conf=1.00 NUM">(٥٥ ٠٠٠)</div>
-  <div class="cell num" style="grid-row:25; grid-column:7;" title="[24,6] conf=1.00 NUM">٥٥ ٠٠٠</div>
-  <div class="cell num" style="grid-row:25; grid-column:8;" title="[24,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:25; grid-column:9;" title="[24,8] conf=1.00 TXT">ماعلا لوا لاملا سأر باسح تحت ددسملا</div>
-  <div class="cell num" style="grid-row:26; grid-column:1;" title="[25,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:26; grid-column:2;" title="[25,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:26; grid-column:3;" title="[25,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:26; grid-column:4;" title="[25,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:26; grid-column:5;" title="[25,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:26; grid-column:6;" title="[25,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:26; grid-column:7;" title="[25,6] conf=1.00 NUM">(٥٥ ٠٠٠)</div>
-  <div class="cell num" style="grid-row:26; grid-column:8;" title="[25,7] conf=1.00 NUM">٥٥ ٠٠٠</div>
-  <div class="cell rtl" style="grid-row:26; grid-column:9;" title="[25,8] conf=1.00 TXT"> لاملا سأر ةدايز</div>
-  <div class="cell num" style="grid-row:27; grid-column:1;" title="[26,0] conf=1.00 NUM">٨٩ ٦٠٦</div>
-  <div class="cell num" style="grid-row:27; grid-column:2;" title="[26,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:27; grid-column:3;" title="[26,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:27; grid-column:4;" title="[26,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:27; grid-column:5;" title="[26,4] conf=1.00 NUM">٨٩ ٦٠٦</div>
-  <div class="cell num" style="grid-row:27; grid-column:6;" title="[26,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:27; grid-column:7;" title="[26,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:27; grid-column:8;" title="[26,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:27; grid-column:9;" title="[26,8] conf=1.00 TXT">ةيلاحلا ةميقلا نع ةيمسلاا ةميقلا قورف</div>
-  <div class="cell num" style="grid-row:28; grid-column:1;" title="[27,0] conf=1.00 NUM">٢٠ ٢٢٠</div>
-  <div class="cell num" style="grid-row:28; grid-column:2;" title="[27,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:28; grid-column:3;" title="[27,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:28; grid-column:4;" title="[27,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:28; grid-column:5;" title="[27,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:28; grid-column:6;" title="[27,5] conf=1.00 NUM">٢٠ ٢٢٠</div>
-  <div class="cell num" style="grid-row:28; grid-column:7;" title="[27,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:28; grid-column:8;" title="[27,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:28; grid-column:9;" title="[27,8] conf=1.00 TXT"> رخلاأ لماشلا لخدلا دونبل ةلداعلا ةميقلا يف ريغتلا يفاص</div>
-  <div class="cell num" style="grid-row:29; grid-column:1;" title="[28,0] conf=1.00 NUM">٣٨٠</div>
-  <div class="cell num" style="grid-row:29; grid-column:2;" title="[28,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:29; grid-column:3;" title="[28,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:29; grid-column:4;" title="[28,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:29; grid-column:5;" title="[28,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:29; grid-column:6;" title="[28,5] conf=1.00 NUM">٣٨٠</div>
-  <div class="cell num" style="grid-row:29; grid-column:7;" title="[28,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:29; grid-column:8;" title="[28,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:29; grid-column:9;" title="[28,8] conf=1.00 TXT"> نيدلا تاودل اةعقوتملا ةينامتئلاا رئاسخلا يف ريغتلا يفاص</div>
-  <div class="cell num" style="grid-row:30; grid-column:1;" title="[29,0] conf=1.00 NUM">٩٥٣</div>
-  <div class="cell num" style="grid-row:30; grid-column:2;" title="[29,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:30; grid-column:3;" title="[29,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:30; grid-column:4;" title="[29,3] conf=1.00 NUM">٩٥٣</div>
-  <div class="cell num" style="grid-row:30; grid-column:5;" title="[29,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:30; grid-column:6;" title="[29,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:30; grid-column:7;" title="[29,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:30; grid-column:8;" title="[29,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:30; grid-column:9;" title="[29,8] conf=1.00 TXT">جراخلا عورف ةيبنجا تلماع ةمجرت قورف</div>
-  <div class="cell num" style="grid-row:31; grid-column:1;" title="[30,0] conf=1.00 NUM">١٣٣ ٢٦٨</div>
-  <div class="cell num" style="grid-row:31; grid-column:2;" title="[30,1] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:31; grid-column:3;" title="[30,2] conf=1.00 NUM">١٣٣ ٢٦٨</div>
-  <div class="cell num" style="grid-row:31; grid-column:4;" title="[30,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:31; grid-column:5;" title="[30,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:31; grid-column:6;" title="[30,5] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:31; grid-column:7;" title="[30,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:31; grid-column:8;" title="[30,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:31; grid-column:9;" title="[30,8] conf=1.00 TXT">ماعلا  حابرأ يفاص</div>
-  <div class="cell num" style="grid-row:32; grid-column:1;" title="[31,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:32; grid-column:2;" title="[31,1] conf=1.00 NUM">٧٠٩</div>
-  <div class="cell num" style="grid-row:32; grid-column:3;" title="[31,2] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:32; grid-column:4;" title="[31,3] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:32; grid-column:5;" title="[31,4] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:32; grid-column:6;" title="[31,5] conf=1.00 NUM">(٧٠٩)</div>
-  <div class="cell num" style="grid-row:32; grid-column:7;" title="[31,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:32; grid-column:8;" title="[31,7] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:32; grid-column:9;" title="[31,8] conf=1.00 TXT">ةزجتحملا حابرلاا ىلا ةلداعلا ةميقلا يطايتحا نم لوحم</div>
-  <div class="cell num" style="grid-row:33; grid-column:1;" title="[32,0] conf=1.00 NUM">٥٣٣ ٦٦٠</div>
-  <div class="cell num" style="grid-row:33; grid-column:2;" title="[32,1] conf=1.00 NUM">٧٠٩</div>
-  <div class="cell num" style="grid-row:33; grid-column:3;" title="[32,2] conf=1.00 NUM">١٣٣ ٢٦٨</div>
-  <div class="cell num" style="grid-row:33; grid-column:4;" title="[32,3] conf=1.00 NUM">٢ ٢٠٧</div>
-  <div class="cell num" style="grid-row:33; grid-column:5;" title="[32,4] conf=1.00 NUM">١٦٥ ٦٥٠</div>
-  <div class="cell num" style="grid-row:33; grid-column:6;" title="[32,5] conf=1.00 NUM">٧١ ٨٢٦</div>
-  <div class="cell num" style="grid-row:33; grid-column:7;" title="[32,6] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:33; grid-column:8;" title="[32,7] conf=1.00 NUM">١٦٠ ٠٠٠</div>
-  <div class="cell rtl" style="grid-row:33; grid-column:9;" title="[32,8] conf=1.00 TXT">٢٠٢٤ ربمسيد ٣١ ىف ديصرلا</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>-652.00</td><td>7</td></tr>
-<tr><td>Col 1</td><td>-941.00</td><td>6</td></tr>
-<tr><td>Col 3</td><td>2,207.00</td><td>3</td></tr>
-<tr><td>Col 5</td><td>-329.00</td><td>2</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 10 — Page 8 (9×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:60px 203px 223px; grid-template-rows:repeat(9, auto);">
-  <div class="cell hdr num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٧0 ٥٦4</div>
-  <div class="cell hdr num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">133 0٧٩</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:3;" title="[0,2] conf=1.00 TXT">عيزوتلل ةلباقلا ماعلا حابرأ </div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">1 4٨٩</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">٧٠٩</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">ةزجتحملا حابرلاأ</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٧2 0٥3</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">133 ٧٨٨</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">عيزوتلل ةلباقلا حابرلاأ ىفاص</div>
-  <div class="cell" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:4; grid-column:2;" title="[3,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">: تاعيزوتلا</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">٧ ٠٥٦</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">١٣ ٣٧٩</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">ينوناق يطايتحإ</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">٦ ٣٥١</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">١٢ ٠٤١</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT">ماع يطايتحإ</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">٧٠٦</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">١ ٣٣٨</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT"> يفرصملا زاهجلا ريوطتو معد قودنصل تاعيزوت</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">٦ ٥٠٦</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">١٣ ٣٠٨</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT">نيلماعلا ةصح</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">٥١ ٤٣٤</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٩٣ ٧٢٢</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">* نيمهاسملا تاعيزوت</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>706.00</td><td>1</td></tr>
-<tr><td>Col 1</td><td>709.00</td><td>1</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 11 — Page 13 (35×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:67px 200px 229px; grid-template-rows:repeat(35, auto);">
-  <div class="cell hdr" style="grid-row:1; grid-column:1;" title="[0,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:2;" title="[0,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:3;" title="[0,2] conf=1.00 TXT">دارفأ</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">١٧ ٣٤٣</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">٢٤ ٩٨٩</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">نامتئإ تاقاطب </div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٩ ٩١٣</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">١٠ ٢٩١</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">ةنيدم ةيراج تاباسح</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">٢٤٠ ٤٥٥</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">٢٩٥ ٨٦٦</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">ةيصخش ضورق</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">٣ ٧٤٠</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">٣ ١٩٣</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">تارايس ضورق</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">٢٠ ٢٥٧</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">٢٢ ٥٦٩</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT">ةيراقع ضورق</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">٢٩١ ٧٠٨</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">٣٥٦ ٩٠٨</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">)١( يلامجإ</div>
-  <div class="cell" style="grid-row:8; grid-column:1;" title="[7,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:8; grid-column:2;" title="[7,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT">)ةيداصتقلاا ةطشنلأل ةريغصلا ضورقلا لمااش( تاسسؤم</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">١ ١٢٥ ٨١٧</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٢ ١٥٥ ٥٠٤</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">ةنيدم ةيراج تاباسح</div>
-  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 NUM">٦٦٣ ٩٣٨</div>
-  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=1.00 NUM">١ ٠٤١ ٨٨١</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:3;" title="[9,2] conf=1.00 TXT">ةرشابم ضورق</div>
-  <div class="cell num" style="grid-row:11; grid-column:1;" title="[10,0] conf=1.00 NUM">٣٢٣ ٥٥٣</div>
-  <div class="cell num" style="grid-row:11; grid-column:2;" title="[10,1] conf=1.00 NUM">٣٨٧ ٤٢٢</div>
-  <div class="cell rtl" style="grid-row:11; grid-column:3;" title="[10,2] conf=1.00 TXT">ةكرتشم ضورق</div>
-  <div class="cell num" style="grid-row:12; grid-column:1;" title="[11,0] conf=1.00 NUM">١ ٨٧٨</div>
-  <div class="cell num" style="grid-row:12; grid-column:2;" title="[11,1] conf=1.00 NUM">٦ ٣١٠</div>
-  <div class="cell rtl" style="grid-row:12; grid-column:3;" title="[11,2] conf=1.00 TXT">كونب ضورق</div>
-  <div class="cell num" style="grid-row:13; grid-column:1;" title="[12,0] conf=1.00 NUM">٢ ١١٥ ١٨٦</div>
-  <div class="cell num" style="grid-row:13; grid-column:2;" title="[12,1] conf=1.00 NUM">٣ ٥٩١ ١١٧</div>
-  <div class="cell rtl" style="grid-row:13; grid-column:3;" title="[12,2] conf=1.00 TXT">)٢( يلامجإ</div>
-  <div class="cell num" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 NUM">٢ ٤٠٦ ٨٩٤</div>
-  <div class="cell num" style="grid-row:14; grid-column:2;" title="[13,1] conf=1.00 NUM">٣ ٩٤٨ ٠٢٥</div>
-  <div class="cell rtl" style="grid-row:14; grid-column:3;" title="[13,2] conf=1.00 TXT">)٢( + )١( كونبلاو ءلماعلل تلياهستلا و ضورقلا يلامجإ</div>
-  <div class="cell" style="grid-row:15; grid-column:1;" title="[14,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:15; grid-column:2;" title="[14,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:15; grid-column:3;" title="[14,2] conf=1.00 TXT"> :مصخي</div>
-  <div class="cell num" style="grid-row:16; grid-column:1;" title="[15,0] conf=1.00 NUM">(٧٦ ٤٨٨)</div>
-  <div class="cell num" style="grid-row:16; grid-column:2;" title="[15,1] conf=1.00 NUM">(١١١ ٧٤٨)</div>
-  <div class="cell rtl" style="grid-row:16; grid-column:3;" title="[15,2] conf=1.00 TXT">)كونبو ءلماع( ةعقوتم ةينامتئإ رئاسخ صصخم</div>
-  <div class="cell num" style="grid-row:17; grid-column:1;" title="[16,0] conf=1.00 NUM">(٥ ٣٠٥)</div>
-  <div class="cell num" style="grid-row:17; grid-column:2;" title="[16,1] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:17; grid-column:3;" title="[16,2] conf=1.00 TXT">ةيراجت قاروأ مصخ</div>
-  <div class="cell num" style="grid-row:18; grid-column:1;" title="[17,0] conf=1.00 NUM">(٩ ٧٨٦)</div>
-  <div class="cell num" style="grid-row:18; grid-column:2;" title="[17,1] conf=1.00 NUM">(١٤ ٠٣٥)</div>
-  <div class="cell rtl" style="grid-row:18; grid-column:3;" title="[17,2] conf=1.00 TXT">ةبنجم دئاوع</div>
-  <div class="cell num" style="grid-row:19; grid-column:1;" title="[18,0] conf=1.00 NUM">٢ ٣١٥ ٣١٥</div>
-  <div class="cell num" style="grid-row:19; grid-column:2;" title="[18,1] conf=1.00 NUM">٣ ٨٢٢ ٢٤٢</div>
-  <div class="cell rtl" style="grid-row:19; grid-column:3;" title="[18,2] conf=1.00 TXT"> )يفاصلاب( كونبلاو ءلماعلا تلياهستو ضورق</div>
-  <div class="cell num" style="grid-row:20; grid-column:1;" title="[19,0] conf=1.00 NUM">٤٦٩ ٩١٨</div>
-  <div class="cell num" style="grid-row:20; grid-column:2;" title="[19,1] conf=1.00 NUM">٧٢٢ ٩٩٣</div>
-  <div class="cell rtl" style="grid-row:20; grid-column:3;" title="[19,2] conf=1.00 TXT">ةلوادتم ةدصرأ</div>
-  <div class="cell num" style="grid-row:21; grid-column:1;" title="[20,0] conf=1.00 NUM">١ ٨٤٥ ٣٩٧</div>
-  <div class="cell num" style="grid-row:21; grid-column:2;" title="[20,1] conf=1.00 NUM">٣ ٠٩٩ ٢٤٩</div>
-  <div class="cell rtl" style="grid-row:21; grid-column:3;" title="[20,2] conf=1.00 TXT"> ةلوادتم ريغ ةدصرأ</div>
-  <div class="cell num" style="grid-row:22; grid-column:1;" title="[21,0] conf=1.00 NUM">٢ ٣١٥ ٣١٥</div>
-  <div class="cell num" style="grid-row:22; grid-column:2;" title="[21,1] conf=1.00 NUM">٣ ٨٢٢ ٢٤٢</div>
-  <div class="cell" style="grid-row:22; grid-column:3;" title="[21,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:23; grid-column:1;" title="[22,0] conf=1.00 TXT">ربمسيد ٣١</div>
-  <div class="cell rtl" style="grid-row:23; grid-column:2;" title="[22,1] conf=1.00 TXT">ربمسيد ٣١)ك</div>
-  <div class="cell rtl" style="grid-row:23; grid-column:3;" title="[22,2] conf=1.00 TXT">ونبلاو ءلماعلل( تلياهستلاو ضورقلل  ةعقوتملا ةينامتئلاإ رئاسخلا</div>
-  <div class="cell hdr num" style="grid-row:24; grid-column:1;" title="[23,0] conf=1.00 NUM">٢٠٢٣</div>
-  <div class="cell hdr num" style="grid-row:24; grid-column:2;" title="[23,1] conf=1.00 NUM">٢٠٢٤</div>
-  <div class="cell hdr" style="grid-row:24; grid-column:3;" title="[23,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:25; grid-column:1;" title="[24,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:25; grid-column:2;" title="[24,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:25; grid-column:3;" title="[24,2] conf=1.00 TXT">كونبو تاسسؤم</div>
-  <div class="cell num" style="grid-row:26; grid-column:1;" title="[25,0] conf=1.00 NUM">٥٤ ٧٦٩</div>
-  <div class="cell num" style="grid-row:26; grid-column:2;" title="[25,1] conf=1.00 NUM">٧٢ ٠٢٨</div>
-  <div class="cell rtl" style="grid-row:26; grid-column:3;" title="[25,2] conf=1.00 TXT">ماعلا لوأ يف ديصرلا</div>
-  <div class="cell num" style="grid-row:27; grid-column:1;" title="[26,0] conf=1.00 NUM">١٦ ٩٦٢</div>
-  <div class="cell num" style="grid-row:27; grid-column:2;" title="[26,1] conf=1.00 NUM">٢٩ ٨٣٧</div>
-  <div class="cell rtl" style="grid-row:27; grid-column:3;" title="[26,2] conf=1.00 TXT">ةعقوتملا ةينامتئلاإ رئاسخلا ءبع </div>
-  <div class="cell num" style="grid-row:28; grid-column:1;" title="[27,0] conf=1.00 NUM">(١ ٦٣٩)</div>
-  <div class="cell num" style="grid-row:28; grid-column:2;" title="[27,1] conf=1.00 NUM">(١ ٨٥١)</div>
-  <div class="cell rtl" style="grid-row:28; grid-column:3;" title="[27,2] conf=1.00 TXT">ماعلا للخا اهمادعإ مت غلابم</div>
-  <div class="cell num" style="grid-row:29; grid-column:1;" title="[28,0] conf=1.00 NUM">١ ٩٣٦</div>
-  <div class="cell num" style="grid-row:29; grid-column:2;" title="[28,1] conf=1.00 NUM">٧ ٠١٥</div>
-  <div class="cell rtl" style="grid-row:29; grid-column:3;" title="[28,2] conf=1.00 TXT">) - / + ( ةيبنجأ تلماع مييقت قورف</div>
-  <div class="cell num" style="grid-row:30; grid-column:1;" title="[29,0] conf=1.00 NUM">٧٢ ٠٢٨</div>
-  <div class="cell num" style="grid-row:30; grid-column:2;" title="[29,1] conf=1.00 NUM">١٠٧ ٠٢٩</div>
-  <div class="cell rtl" style="grid-row:30; grid-column:3;" title="[29,2] conf=1.00 TXT">يلامجلاإ</div>
-  <div class="cell" style="grid-row:31; grid-column:1;" title="[30,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:31; grid-column:2;" title="[30,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:31; grid-column:3;" title="[30,2] conf=1.00 TXT">دارفأ</div>
-  <div class="cell num" style="grid-row:32; grid-column:1;" title="[31,0] conf=1.00 NUM">١ ٧٤١</div>
-  <div class="cell num" style="grid-row:32; grid-column:2;" title="[31,1] conf=1.00 NUM">٤ ٤٦٠</div>
-  <div class="cell rtl" style="grid-row:32; grid-column:3;" title="[31,2] conf=1.00 TXT">ماعلا لوأ يف ديصرلا</div>
-  <div class="cell num" style="grid-row:33; grid-column:1;" title="[32,0] conf=1.00 NUM">٣ ١٢٩</div>
-  <div class="cell num" style="grid-row:33; grid-column:2;" title="[32,1] conf=1.00 NUM">٦١٩</div>
-  <div class="cell rtl" style="grid-row:33; grid-column:3;" title="[32,2] conf=1.00 TXT">ةعقوتملا ةينامتئلاإ رئاسخلا ءبع </div>
-  <div class="cell num" style="grid-row:34; grid-column:1;" title="[33,0] conf=1.00 NUM">(٤١٠)</div>
-  <div class="cell num" style="grid-row:34; grid-column:2;" title="[33,1] conf=1.00 NUM">(٣٦٠)</div>
-  <div class="cell rtl" style="grid-row:34; grid-column:3;" title="[33,2] conf=1.00 TXT">ماعلا للخا اهمادعإ مت غلابم</div>
-  <div class="cell num" style="grid-row:35; grid-column:1;" title="[34,0] conf=1.00 NUM">٤ ٤٦٠</div>
-  <div class="cell num" style="grid-row:35; grid-column:2;" title="[34,1] conf=1.00 NUM">٤ ٧١٩</div>
-  <div class="cell rtl" style="grid-row:35; grid-column:3;" title="[34,2] conf=1.00 TXT">يلامجلاإ</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>-410.00</td><td>1</td></tr>
-<tr><td>Col 1</td><td>259.00</td><td>2</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 12 — Page 14 (17×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:62px 209px 239px; grid-template-rows:repeat(17, auto);">
-  <div class="cell hdr num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٢٠١٩</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:2;" title="[0,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 TXT">ربمسيد ٣١</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 TXT">ربمسيد ٣١)كون</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">بلا و ءلماعلل( تلياهستلاو ضورقلل هعقوتملا هينامتئلاا رئاسخلا عبات</div>
-  <div class="cell hdr num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٢٠٢٣</div>
-  <div class="cell hdr num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٢٠٢٤</div>
-  <div class="cell hdr" style="grid-row:3; grid-column:3;" title="[2,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:4; grid-column:1;" title="[3,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:4; grid-column:2;" title="[3,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">دارفأ</div>
-  <div class="cell num anomaly" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">٣٣٢</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">١ ١٩٢</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">نامتئا تاقاطب</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">١</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">٢</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT">ةنيدم ةيراج تاباسح</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">١ ٣٥٢</div>
-  <div class="cell num anomaly" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">٩٤٥</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">ةيصخش ضورق</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">١٥٥</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">١٨٣</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT">تارايس ضورق</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">٢ ٦٢٠</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٢ ٣٩٧</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">ةيراقع ضورق</div>
-  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 NUM">٤ ٤٦٠</div>
-  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=1.00 NUM">٤ ٧١٩</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:3;" title="[9,2] conf=1.00 TXT">)١( يلامجأ</div>
-  <div class="cell" style="grid-row:11; grid-column:1;" title="[10,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:11; grid-column:2;" title="[10,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:11; grid-column:3;" title="[10,2] conf=1.00 TXT">)ةيداصتقلاا ةطشنلأل ةريغصلا ضورقلا لمااش( تاسسؤم</div>
-  <div class="cell num" style="grid-row:12; grid-column:1;" title="[11,0] conf=1.00 NUM">٢٥ ١٢٢</div>
-  <div class="cell num" style="grid-row:12; grid-column:2;" title="[11,1] conf=1.00 NUM">٢ ٢٥٧</div>
-  <div class="cell rtl" style="grid-row:12; grid-column:3;" title="[11,2] conf=1.00 TXT">ةنيدم ةيراج تاباسح</div>
-  <div class="cell num" style="grid-row:13; grid-column:1;" title="[12,0] conf=1.00 NUM">٣٥ ٦٧٠</div>
-  <div class="cell num" style="grid-row:13; grid-column:2;" title="[12,1] conf=1.00 NUM">٨٨ ٣٣٦</div>
-  <div class="cell rtl" style="grid-row:13; grid-column:3;" title="[12,2] conf=1.00 TXT">ةرشابم ضورق</div>
-  <div class="cell num" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 NUM">١١ ٢١٣</div>
-  <div class="cell num" style="grid-row:14; grid-column:2;" title="[13,1] conf=1.00 NUM">١٦ ٠٢٢</div>
-  <div class="cell rtl" style="grid-row:14; grid-column:3;" title="[13,2] conf=1.00 TXT">ةكرتشم ضورق</div>
-  <div class="cell num" style="grid-row:15; grid-column:1;" title="[14,0] conf=1.00 NUM">٢٣</div>
-  <div class="cell num" style="grid-row:15; grid-column:2;" title="[14,1] conf=1.00 NUM">٤١٤</div>
-  <div class="cell rtl" style="grid-row:15; grid-column:3;" title="[14,2] conf=1.00 TXT">كونب ضورق</div>
-  <div class="cell num" style="grid-row:16; grid-column:1;" title="[15,0] conf=1.00 NUM">٧٢ ٠٢٨</div>
-  <div class="cell num" style="grid-row:16; grid-column:2;" title="[15,1] conf=1.00 NUM">١٠٧ ٠٢٩</div>
-  <div class="cell rtl" style="grid-row:16; grid-column:3;" title="[15,2] conf=1.00 TXT">)٢( يلامجإ</div>
-  <div class="cell num" style="grid-row:17; grid-column:1;" title="[16,0] conf=1.00 NUM">٧٦ ٤٨٨</div>
-  <div class="cell rtl" style="grid-row:17; grid-column:2;" title="[16,1] conf=1.00 TXT">١١١ ٧٤٨)٢(+)١(كونبل</div>
-  <div class="cell rtl" style="grid-row:17; grid-column:3;" title="[16,2] conf=1.00 TXT">او ءلماعلل تلياهستلا و ضورقلا هعقوتملا هينامتئلاا رئاسخلالامجإ</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>511.00</td><td>4</td></tr>
-<tr><td>Col 1</td><td>1,544.00</td><td>4</td></tr>
-</table>
-<h3>🔴 Numeric Anomalies (2)</h3>
-<ul>
-<li>Row 4, Col 0: "٣٣٢" — Value 332.00 is 3.7× column median 89.00</li>
-<li>Row 6, Col 1: "٩٤٥" — Value 945.00 is 3.2× column median 298.50</li>
-</ul>
-</div>
-<hr>
-<h2>Table 13 — Page 14 (17×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:62px 204px 244px; grid-template-rows:repeat(17, auto);">
-  <div class="cell hdr num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٢٠٢٣</div>
-  <div class="cell hdr num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">٢٠٢٤</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">٤١٢ ١٥٦</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">٤١٢ ٧٢٤</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">هنازخلا نوذأ</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٢٨ ٩٩٩</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٣٧ ٠٠٥</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">مهسأ</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">٢٧ ٦٣٥</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">٦٥٠ ٧٦٤</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">نيد تاودأ</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">١ ٢٣٨</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">١ ٥٣٤</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">قودنصلا ءىشنم كنبلل -رامثتسا قيدانص قئاثو</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">١٧٠ ٠٠٠</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">٢٢٢ ٤٨٩</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT"> ةنازخ قئاثو</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">٦٤٠ ٠٢٨</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">١ ٣٢٤ ٥١٦</div>
-  <div class="cell" style="grid-row:7; grid-column:3;" title="[6,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 TXT">ربمسيد ٣١</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 TXT">ربمسيد ٣١</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT">رخلاا لماشلا لخدلا  للخا نم ةلداعلا ةميقلاب ةيلام تارامثتسا - ٦</div>
-  <div class="cell hdr num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">٢٠٢٣</div>
-  <div class="cell hdr num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٢٠٢٤</div>
-  <div class="cell hdr rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">ةنازخ نوذأ  ١/٦</div>
-  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 NUM">١٨ ٧٥٧</div>
-  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=1.00 NUM">١٢ ٩٩٥</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:3;" title="[9,2] conf=1.00 TXT"> موي )٩١( - ةنازخلا نوذأ</div>
-  <div class="cell num" style="grid-row:11; grid-column:1;" title="[10,0] conf=1.00 NUM">٦٠ ٦٨٦</div>
-  <div class="cell num" style="grid-row:11; grid-column:2;" title="[10,1] conf=1.00 NUM">٢٠ ٥٣٨</div>
-  <div class="cell rtl" style="grid-row:11; grid-column:3;" title="[10,2] conf=1.00 TXT">موي )١٨٢( - ةنازخلا نوذأ</div>
-  <div class="cell num" style="grid-row:12; grid-column:1;" title="[11,0] conf=1.00 NUM">٥٤ ٣٩٢</div>
-  <div class="cell num" style="grid-row:12; grid-column:2;" title="[11,1] conf=1.00 NUM">٦٦ ٧١٧</div>
-  <div class="cell rtl" style="grid-row:12; grid-column:3;" title="[11,2] conf=1.00 TXT">موي )٢٧٣( - ةنازخلا نوذأ</div>
-  <div class="cell num" style="grid-row:13; grid-column:1;" title="[12,0] conf=1.00 NUM">٣١٠ ٦٦٢</div>
-  <div class="cell num" style="grid-row:13; grid-column:2;" title="[12,1] conf=1.00 NUM">٣٣٤ ٨٠٧</div>
-  <div class="cell rtl" style="grid-row:13; grid-column:3;" title="[12,2] conf=1.00 TXT"> موي )٣٦٤(- ةنازخلا نوذأ</div>
-  <div class="cell num" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 NUM">٤٤٤ ٤٩٧</div>
-  <div class="cell num" style="grid-row:14; grid-column:2;" title="[13,1] conf=1.00 NUM">٤٣٥ ٠٥٧</div>
-  <div class="cell" style="grid-row:14; grid-column:3;" title="[13,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:15; grid-column:1;" title="[14,0] conf=1.00 NUM">(٣٠ ٩٨١)</div>
-  <div class="cell num" style="grid-row:15; grid-column:2;" title="[14,1] conf=1.00 NUM">(٢١ ٥٨٧)</div>
-  <div class="cell rtl" style="grid-row:15; grid-column:3;" title="[14,2] conf=1.00 TXT">دعب قحتست مل دئاوع</div>
-  <div class="cell num" style="grid-row:16; grid-column:1;" title="[15,0] conf=1.00 NUM">(١ ٣٦٠)</div>
-  <div class="cell num" style="grid-row:16; grid-column:2;" title="[15,1] conf=1.00 NUM">(٧٤٦)</div>
-  <div class="cell rtl" style="grid-row:16; grid-column:3;" title="[15,2] conf=1.00 TXT">ةلداعلا ةميقلاب مييقتلا قورف</div>
-  <div class="cell num" style="grid-row:17; grid-column:1;" title="[16,0] conf=1.00 NUM">٤١٢ ١٥٦</div>
-  <div class="cell num" style="grid-row:17; grid-column:2;" title="[16,1] conf=1.00 NUM">٤١٢ ٧٢٤</div>
-  <div class="cell rtl" style="grid-row:17; grid-column:3;" title="[16,2] conf=1.00 TXT">يفاصلا</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 1</td><td>-746.00</td><td>1</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 14 — Page 15 (5×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:57px 170px 223px; grid-template-rows:repeat(5, auto);">
-  <div class="cell hdr num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٢٠٢٣</div>
-  <div class="cell hdr num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">٢٠٢٤</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">٩ ٤٦٤</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">١٢ ٣٣٨</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">قوسلاب ةجردم مهسا</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">١٩ ٥٣٥</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٢٤ ٦٦٧</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">قوسلاب ةجردم ريغ مهسا</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">٨٥٠</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">٨٨٦</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">قودنصلا ئشنم كنبلل -رامثتسا قيدانص قئاثو</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">٣٨٨</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">٦٤٨</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">تاكرش-رامثتسا قيدانص قئاثو</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>1,238.00</td><td>2</td></tr>
-<tr><td>Col 1</td><td>1,534.00</td><td>2</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 15 — Page 15 (9×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:61px 199px 202px; grid-template-rows:repeat(9, auto);">
-  <div class="cell hdr num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٢٠٢٣</div>
-  <div class="cell hdr num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">٢٠٢٤</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">١ ٠٩٥</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">٦٢٦ ٥٠٩</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">ةيموكح تادنس</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٢٥ ٥٣٨</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٢٣ ٧٣٩</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">تاكرش تادنس</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">٩٧٢</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">٤٦٦</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">كوكص</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">١٧٠ ٠٠٠</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">٢٢٢ ٤٨٩</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT"> ةنازخ قئاثو</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">٣٠</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">٥٠</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT">كونب تادنس</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">١٩٧ ٦٣٥</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">٨٧٣ ٢٥٣</div>
-  <div class="cell" style="grid-row:7; grid-column:3;" title="[6,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">٢٧ ٦٣٥</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">٦٥٠ ٧٦٤</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT">قوسلا يف ةجردم</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">١٧٠ ٠٠٠</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٢٢٢ ٤٨٩</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">قوسلاف ةجردم ريغ</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>1,002.00</td><td>2</td></tr>
-<tr><td>Col 1</td><td>516.00</td><td>2</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 16 — Page 15 (6×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:66px 202px 205px; grid-template-rows:repeat(6, auto);">
-  <div class="cell hdr num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٢٠٢٣</div>
-  <div class="cell hdr num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">٢٠٢٤</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">١ ٣٨٩ ٢١٩</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">١ ٤٢١ ١٤٩</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">ةيموكح تادنس</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">(١٦ ٠٧٤)</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">(٢٥ ٣٦٧)</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">ةعقوتم ةينامتئإ رئاسخ</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">١ ٣٧٣ ١٤٥</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">١ ٣٩٥ ٧٨٢</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">يفاصلا</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">٨٢٦ ١٠٨</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">٧٣٢ ١٨٠</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">قوسلا يف ةجردم</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">٥٦٣ ١١١</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">٦٨٨ ٩٦٩</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT">قوسلا يف ةجردم ريغ</div>
-</div>
-<hr>
-<h2>Table 17 — Page 16 (15×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:65px 187px 190px; grid-template-rows:repeat(15, auto);">
-  <div class="cell num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٧٩٠ ٨٥١</div>
-  <div class="cell num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">١ ٢٦٧ ٩٩٨</div>
-  <div class="cell rtl" style="grid-row:1; grid-column:3;" title="[0,2] conf=1.00 TXT">ةيراج تاباسح - ءلماع عئادو</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">٣٣٤ ١٥٤</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">٣٥٨ ٩٤٩</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">ريفوت عئادو</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٢٦٦ ٦٥٤</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٤١٠ ٠٨٧</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">راطخإبو لجل أعئادو</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">٢ ٣٤٠ ٩٧٥</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">٢ ٩٢٤ ٧٩٢</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">عاديإو راخدا تاداهش</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">٥٦٩</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">٩١٠</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">ىرخأ عئادو</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">٣ ٧٣٣ ٢٠٣</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">٤ ٩٦٢ ٧٣٦</div>
-  <div class="cell" style="grid-row:6; grid-column:3;" title="[5,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">١ ١٨٨ ٩٥٧</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">١ ٦٦٣ ٩٠٥</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">تاسسؤم عئادو</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">٢ ٥٤٤ ٢٤٦</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">٣ ٢٩٨ ٨٣١</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT">دارفا عئادو</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">٣ ٧٣٣ ٢٠٣</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٤ ٩٦٢ ٧٣٦</div>
-  <div class="cell" style="grid-row:9; grid-column:3;" title="[8,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 NUM">٧١٣ ٣٥٩</div>
-  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=1.00 NUM">١ ١١١ ٢٦٣</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:3;" title="[9,2] conf=1.00 TXT">دئاع نودب ةدصرأ</div>
-  <div class="cell num" style="grid-row:11; grid-column:1;" title="[10,0] conf=1.00 NUM">١ ٦٧٨</div>
-  <div class="cell num" style="grid-row:11; grid-column:2;" title="[10,1] conf=1.00 NUM">١٤ ٤٤٩</div>
-  <div class="cell rtl" style="grid-row:11; grid-column:3;" title="[10,2] conf=1.00 TXT">ريغتم دئاع تاذ ةدصرأ</div>
-  <div class="cell num" style="grid-row:12; grid-column:1;" title="[11,0] conf=1.00 NUM">٣ ٠١٨ ١٦٦</div>
-  <div class="cell num" style="grid-row:12; grid-column:2;" title="[11,1] conf=1.00 NUM">٣ ٨٣٧ ٠٢٤</div>
-  <div class="cell rtl" style="grid-row:12; grid-column:3;" title="[11,2] conf=1.00 TXT">تباث دئاع تاذ ةدصرأ</div>
-  <div class="cell num" style="grid-row:13; grid-column:1;" title="[12,0] conf=1.00 NUM">٣ ٧٣٣ ٢٠٣</div>
-  <div class="cell num" style="grid-row:13; grid-column:2;" title="[12,1] conf=1.00 NUM">٤ ٩٦٢ ٧٣٦</div>
-  <div class="cell" style="grid-row:13; grid-column:3;" title="[12,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:14; grid-column:1;" title="[13,0] conf=1.00 NUM">١ ٦٥٩ ٠٢٠</div>
-  <div class="cell num" style="grid-row:14; grid-column:2;" title="[13,1] conf=1.00 NUM">٢ ٦٩٥ ٧٥٨</div>
-  <div class="cell rtl" style="grid-row:14; grid-column:3;" title="[13,2] conf=1.00 TXT">ةلوادتم ةدصرأ</div>
-  <div class="cell num" style="grid-row:15; grid-column:1;" title="[14,0] conf=1.00 NUM">٢ ٠٧٤ ١٨٣</div>
-  <div class="cell num" style="grid-row:15; grid-column:2;" title="[14,1] conf=1.00 NUM">٢ ٢٦٦ ٩٧٨</div>
-  <div class="cell rtl" style="grid-row:15; grid-column:3;" title="[14,2] conf=1.00 TXT">ةلوادتم ريغ ةدصرأ</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>569.00</td><td>1</td></tr>
-<tr><td>Col 1</td><td>910.00</td><td>1</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 18 — Page 16 (9×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:62px 196px 203px; grid-template-rows:repeat(9, auto);">
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 TXT">ربمسيد ٣١</div>
-  <div class="cell hdr rtl" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 TXT">ربمسيد ٣١</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell hdr num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">٢٠٢٣</div>
-  <div class="cell hdr num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">٢٠٢٤</div>
-  <div class="cell hdr rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">ىرخأ ضورق - ٩</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٢٠٧ ٠٨٢</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٥٥٦ ٢٦٤</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">طسولاأ قرشلا</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">١٢٩ ٩١٠</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">١٦٠ ٩٩٩</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">ابوروأ</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">٣٥ ٩٨١</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">٥٤ ٢٦٦</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">ايسآ</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">١ ٥٤٥</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">١ ٥٢٥</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT">ةيلامشلا اكيرمأ</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">٣٧٤ ٥١٨</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">٧٧٣ ٠٥٤</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">يلامجلاإ</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">٢١٢ ٧٣٩</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">٣٦٣ ٧٦٣</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT">ةلوادتم ةدصرأ</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">١٦١ ٧٧٩</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٤٠٩ ٢٩١</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">ةلوادتم ريغ ةدصرأ</div>
-</div>
-<hr>
-<h2>Table 19 — Page 17 (11×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:55px 197px 225px; grid-template-rows:repeat(11, auto);">
-  <div class="cell hdr num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٢٠٢٣</div>
-  <div class="cell hdr num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">٢٠٢٤</div>
-  <div class="cell hdr" style="grid-row:1; grid-column:3;" title="[0,2] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">١٥ ٦٤٩</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">٢٢ ٧٠٥</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT">ىنوناق ىطايتحا</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٧٥٩</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">٢ ٧٨٣</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">ماــــع ىطايتحا</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">٢٥٧</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">٣٧٩</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">ىلامسأر ىطايتحا</div>
-  <div class="cell num" style="grid-row:5; grid-column:1;" title="[4,0] conf=1.00 NUM">-</div>
-  <div class="cell num" style="grid-row:5; grid-column:2;" title="[4,1] conf=1.00 NUM">-</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">ىميعدت ىطايتحا</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">١٠٧</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">١٠٧</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT"> صاخ ىطايتحإ</div>
-  <div class="cell num" style="grid-row:7; grid-column:1;" title="[6,0] conf=1.00 NUM">٢ ٠٢٩</div>
-  <div class="cell num" style="grid-row:7; grid-column:2;" title="[6,1] conf=1.00 NUM">٢ ٠٢٩</div>
-  <div class="cell rtl" style="grid-row:7; grid-column:3;" title="[6,2] conf=1.00 TXT">ماع ةيكنب رطاخم يطايتحإ</div>
-  <div class="cell num" style="grid-row:8; grid-column:1;" title="[7,0] conf=1.00 NUM">٣ ٧٩٣</div>
-  <div class="cell num" style="grid-row:8; grid-column:2;" title="[7,1] conf=1.00 NUM">٣ ٧٩٣</div>
-  <div class="cell rtl" style="grid-row:8; grid-column:3;" title="[7,2] conf=1.00 TXT">ماع رطاخم ىطايتحإ</div>
-  <div class="cell num" style="grid-row:9; grid-column:1;" title="[8,0] conf=1.00 NUM">١ ٢٥٤</div>
-  <div class="cell num" style="grid-row:9; grid-column:2;" title="[8,1] conf=1.00 NUM">٢ ٢٠٧</div>
-  <div class="cell rtl" style="grid-row:9; grid-column:3;" title="[8,2] conf=1.00 TXT">جراخلا عورف  ةيبنجا تلماع ةمجرت قورف</div>
-  <div class="cell num" style="grid-row:10; grid-column:1;" title="[9,0] conf=1.00 NUM">٢٣ ٨٤٨</div>
-  <div class="cell num" style="grid-row:10; grid-column:2;" title="[9,1] conf=1.00 NUM">٣٤ ٠٠٣</div>
-  <div class="cell rtl" style="grid-row:10; grid-column:3;" title="[9,2] conf=1.00 TXT">تايطايتحلاا يلامجإ</div>
-  <div class="cell num" style="grid-row:11; grid-column:1;" title="[10,0] conf=1.00 NUM">٢٠ ١٣٩</div>
-  <div class="cell num" style="grid-row:11; grid-column:2;" title="[10,1] conf=1.00 NUM">٤٠ ٠٣٠</div>
-  <div class="cell rtl" style="grid-row:11; grid-column:3;" title="[10,2] conf=1.00 TXT">*رخلاا لماشلا لخدلا للاخ نم  ةلداعلا ةميقلا تايطايتحا</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>1,123.00</td><td>3</td></tr>
-<tr><td>Col 1</td><td>486.00</td><td>2</td></tr>
-</table>
-</div>
-<hr>
-<h2>Table 20 — Page 18 (6×3, conf=1.00)</h2>
-<div class="table-grid" style="grid-template-columns:56px 189px 244px; grid-template-rows:repeat(6, auto);">
-  <div class="cell num" style="grid-row:1; grid-column:1;" title="[0,0] conf=1.00 NUM">٧٠ ٦٨٦</div>
-  <div class="cell num" style="grid-row:1; grid-column:2;" title="[0,1] conf=1.00 NUM">١٣٣ ٢٦٨</div>
-  <div class="cell rtl" style="grid-row:1; grid-column:3;" title="[0,2] conf=1.00 TXT">ماعلا حابرأ يفاص</div>
-  <div class="cell num" style="grid-row:2; grid-column:1;" title="[1,0] conf=1.00 NUM">(٦ ٥٠٦)</div>
-  <div class="cell num" style="grid-row:2; grid-column:2;" title="[1,1] conf=1.00 NUM">(١٣ ٣٠٨)</div>
-  <div class="cell rtl" style="grid-row:2; grid-column:3;" title="[1,2] conf=1.00 TXT"> ماعلا حابرأ يف نيلماعلا ةصح</div>
-  <div class="cell num" style="grid-row:3; grid-column:1;" title="[2,0] conf=1.00 NUM">٦4 1٨0</div>
-  <div class="cell num" style="grid-row:3; grid-column:2;" title="[2,1] conf=1.00 NUM">11٩ ٩٦0</div>
-  <div class="cell rtl" style="grid-row:3; grid-column:3;" title="[2,2] conf=1.00 TXT">)١( كنبلا يمهاسم ىلع عيزوتلل لباقلا حبرلا يفاص</div>
-  <div class="cell num" style="grid-row:4; grid-column:1;" title="[3,0] conf=1.00 NUM">١٦٠ ٠٠٠</div>
-  <div class="cell num" style="grid-row:4; grid-column:2;" title="[3,1] conf=1.00 NUM">١٦٠ ٠٠٠</div>
-  <div class="cell rtl" style="grid-row:4; grid-column:3;" title="[3,2] conf=1.00 TXT">*)٢( ةردصملا ةيداعلا مهسللأ حجرملا طسوتملا</div>
-  <div class="cell" style="grid-row:5; grid-column:1;" title="[4,0] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell" style="grid-row:5; grid-column:2;" title="[4,1] conf=0.00 TXT">&nbsp;</div>
-  <div class="cell rtl" style="grid-row:5; grid-column:3;" title="[4,2] conf=1.00 TXT">1/2  ضفخملا / يساسلاأ مهسلا بيصن</div>
-  <div class="cell num" style="grid-row:6; grid-column:1;" title="[5,0] conf=1.00 NUM">0.40</div>
-  <div class="cell num" style="grid-row:6; grid-column:2;" title="[5,1] conf=1.00 NUM">0.٧٥</div>
-  <div class="cell rtl" style="grid-row:6; grid-column:3;" title="[5,2] conf=1.00 TXT">يرصم هينج</div>
-</div>
-<div class="qa-section">
-<h3>📊 Column Sums</h3><table class="qa-table">
-<tr><th>Column</th><th>Sum</th><th>Count</th></tr>
-<tr><td>Col 0</td><td>0.40</td><td>1</td></tr>
-<tr><td>Col 1</td><td>0.75</td><td>1</td></tr>
-</table>
-</div>
-<hr>
-
-</body>
-</html>

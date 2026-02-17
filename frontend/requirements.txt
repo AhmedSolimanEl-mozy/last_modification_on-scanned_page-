@@ -1,0 +1,4 @@
+# Streamlit Frontend - Phase 3
+
+streamlit==1.31.0
+httpx==0.26.0

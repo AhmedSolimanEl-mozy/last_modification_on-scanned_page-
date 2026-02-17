@@ -1,0 +1,11 @@
+# Database connectivity
+psycopg2-binary==2.9.9
+
+# Embedding model
+sentence-transformers==2.3.1
+torch>=2.2.0            # Changed from 2.1.2 to support Python 3.12
+
+# Utilities
+tqdm==4.66.1
+python-dotenv==1.0.0
+numpy>=1.26.0           # Bumped to 1.26+ for Python 3.12 compatibility
